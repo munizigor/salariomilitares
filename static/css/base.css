@@ -11,6 +11,9 @@ footer p {
     line-height: 1.0;
     height: 4px;
 }
+.form-row {
+margin-bottom: 15px;
+}
 .input-holder:after {
 /*TODO Ajustar para o sinal caber dentro do col-md*/
   content: '%';

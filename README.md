@@ -8,7 +8,7 @@
 >remunerações. Serve também para toda a comunidade interessada.
 >
 >O código se encontra sob a Licença MIT. Isso quer dizer que ele é livre pra uso comercial, modificação, distribuição e 
->sublicenciamento. Aqueles que quiserem colaborar serão mais que bem vindos.
+>sublicenciamento. Aqueles que quiserem colaborar com sugestões e críticas serão mais que bem vindos.
 
 
 ***
