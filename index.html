@@ -29,10 +29,10 @@
 
 </head>
 <body>
+<div class="main-container">
     <div class="container">
         <h1>REMUNERAÇÃO DOS MILITARES DO DISTRITO FEDERAL</h1>
 
-        <div>
             <div class="form-row">
 				<div class="form-group col-md-2 align-self-end">
 				  <label for="situacao_funcional">Situação Funcional</label>
@@ -44,12 +44,12 @@
 				</div>
 				<div class="form-group col-md-3 align-self-end">
 				  <label for="posto">Posto/Graduação</label>
-				  <select class="form-control" required id="posto">
+				  <select class="form-control" required id="posto" onchange="calcular_rubricas ()">
 					 <option value="null"></option>
 					 <option value="CORONEL">CORONEL</option>
 					 <option value="TENENTE-CORONEL">TENENTE-CORONEL</option>
 					 <option value="MAJOR">MAJOR</option>
-					 <option value="CAPITÃO">CAPITAO</option>
+					 <option value="CAPITAO">CAPITAO</option>
 					 <option value="PRIMEIRO TENENTE">PRIMEIRO TENENTE</option>
 					 <option value="SEGUNDO TENENTE">SEGUNDO TENENTE</option>
 					 <option value="ASPIRANTE">ASPIRANTE</option>
@@ -73,8 +73,8 @@
 				  </select>
 				</div>
 				<div class="form-group col-md-2 align-self-end">
-				  <label for="gfne">GFNE</label>
-				  <select class="form-control" required id="gfne">
+				  <label for="tipo_gfne">GFNE</label>
+				  <select class="form-control" required id="tipo_gfne">
                       <option value="null"></option>
                       <option value="0">NÃO RECEBE</option>
                       <option value="1">I</option>
@@ -85,13 +85,13 @@
 				  </select>
 				</div>
 				<div class="form-group col-md-2 align-self-end">
-				  <label for="ats">Adicional de Tempo de Serviço</label>
-                    <input type="text" id="ats" class="form-control">
+				  <label for="pct_ats">Adicional de Tempo de Serviço</label>
+                    <input type="text" id="pct_ats" class="form-control">
 <!--                    TODO: Inserir sinal de % após o textbox-->
 				</div>
 				<div class="form-group col-md-2 align-self-end inativo" style="display:none;">
-				  <label for="pttc">Está no PTTC?</label>
-				  <select class="form-control" required id="pttc">
+				  <label for="bool_pttc">Está no PTTC?</label>
+				  <select class="form-control" required id="bool_pttc">
 					 <option value="null"></option>
 					 <option value="sim">SIM</option>
 					 <option value="nao">NÃO</option>
@@ -114,7 +114,7 @@
                 <div class="col-md-12">
                     <p><b>CURSOS QUE POSSUI:</b></p>
                 </div>
-				<div class="form-group col-md-auto align-self-end" id="acp">
+				<div class="form-group col-md-auto align-self-end">
                     <div class="form-check ">
                       <input class="form-check-input" type="checkbox" id="acp_10" value=10>
                       <label class="form-check-label" for="acp_10">Formação (CFSD, CFO, CHO)</label>
@@ -248,9 +248,9 @@
                 </div>
             </div>
         <div>
-            <h2>REMUNERAÇÃO</h2>
+            <h2>SALÁRIO</h2>
 
-            <table class="table table-bordered table-hover table-sm rendimentos_tributaveis">
+            <table class="table table-bordered table-hover table-sm">
               <thead>
 
                 <tr id="mes">
@@ -260,104 +260,104 @@
                   <th scope="col" headers="01/01/2021">A partir de Jan/2021</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="salario">
                 <tr>
-                    <th colspan="4" class="table-success">RENDIMENTOS TRIBUTÁVEIS</th>
+                    <th colspan="4" class="table-success">REMUNERAÇÃO</th>
                 </tr>
-                <tr id="82001">
+                <tr id="soldo">
                   <td scope="row">SOLDO</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
-                <tr id="82128">
+                <tr id="apg">
                   <td scope="row">ADICIONAL DE POSTO OU GRADUAÇÃO</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
-                <tr id="82133">
+                <tr id="ats">
                   <td scope="row">ADICIONAL DE TEMPO DE SERVIÇO</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
-                <tr id="82254">
+                <tr id="compl_soldo">
                   <td scope="row">COMPLEMENTO DE SOLDO</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
-                <tr id="82134">
+                <tr id="aom">
                   <td scope="row">ADICIONAL DE OPERAÇÕES MILITARES</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
-                <tr id="82219">
+                <tr id="gfr">
                   <td scope="row">GRATIFICAÇÃO DE REPRESENTAÇÃO MILITAR</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
-                <tr id="82235">
+                <tr id="acp">
                   <td scope="row">ADICIONAL DE CERTIFICAÇÃO PROFISSIONAL</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
-                <tr id="82283">
+                <tr id="gcef">
                   <td scope="row">GCEF-GRAT. COND. ESP. FUN. MILITAR</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
-                <tr id="82386">
+                <tr id="vpe">
                   <td scope="row">VPE - VANTAGEM PECUNIÁRIA ESPECIAL</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
-                <tr id="82279">
+                <tr id="grv">
                   <td scope="row">GRV - GRATIFICAÇÃO POR RISCO DE VIDA</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
-                <tr id="82256">
+                <tr id="gfne">
                   <td scope="row">GFNE</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
-                <tr id="82764">
+                <tr id="pttc">
                   <td scope="row">PTTC</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
-                <tr id="82307">
+                <tr id="gsv">
                   <td scope="row">GSV - GRATIFICAÇÃO DE SERVIÇO VOLUNTÁRIO</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
                 <tr>
-                    <th colspan="4" class="table-secondary">RENDIMENTOS NÃO TRIBUTÁVEIS</th>
+                    <th colspan="4" class="table-secondary">DIREITOS PECUNIÁRIOS</th>
                 </tr>
-                <tr id="82135">
+                <tr id="aux_mor">
                   <td scope="row">AUXILIO MORADIA</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
-                <tr id="82011">
+                <tr id="alim">
                   <td scope="row">ETAPA ALIMENTAÇÃO</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
-                <tr id="82869">
+                <tr id="aux_pe">
                   <td scope="row">AUXÍLIO PRÉ ESCOLAR</td>
                   <td></td>
                   <td></td>
@@ -366,49 +366,49 @@
                 <tr class="table-danger">
                     <th colspan="4">DESCONTOS</th>
                 </tr>
-                <tr id="73528">
+                <tr id="cota_pe">
                   <td scope="row">COTA PRÉ ESCOLAR</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
-                <tr id="97523">
+                <tr id="pensao_alim">
                   <td scope="row">PENSÃO ALIMENTÍCIA</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
-                <tr id="97527">
+                <tr id="pensao_alim_pe">
                   <td scope="row">PENSÃO ALIMENTÍCIA SOBRE PRÉ ESCOLAR</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
-                <tr id="98028">
+                <tr id="contr_pensao_militar">
                   <td scope="row">CONTR. PENSÃO MILITAR</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
-                <tr id="98029">
+                <tr id="contr_pensao_militar_adic">
                   <td scope="row">CONTR. PENSÃO MILITAR ADICIONAL</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
-                <tr id="98035">
+                <tr id="fundo_saude">
                   <td scope="row">FUNDO DE SAÚDE</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
-                <tr id="98036">
+                <tr id="fundo_saude_adicional">
                   <td scope="row">FUNDO DE SAÚDE ADICIONAL</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
-                <tr id="99001">
+                <tr id="irrf">
                   <td scope="row">IRRF - IMPOSTO DE RENDA RETIDO NA FONTE</td>
                   <td></td>
                   <td></td>
@@ -452,5 +452,6 @@
         <p>Desenvolvimento: Maj QOBM/Comb. Igor MUNIZ da Silva</p>
         <p>Suporte/Sugestões: muniz.igor@gmail.com</p>
     </footer>
+</div>
 </body>
 </html>

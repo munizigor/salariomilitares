@@ -62,7 +62,7 @@ remuneracao= {
          "amsd":717.9,
          "cotafsa":16
       },
-      "ASPIRANTE A OFICIAL":{
+      "ASPIRANTE":{
          "soldo":1792.42,
          "vpe":3725.32,
          "apg":1254.69,
