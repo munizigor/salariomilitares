@@ -1,3 +1,4 @@
+//Formulas Gerais
 function getMes (coluna) {
     return document.getElementById('mes').cells[coluna].headers
 }
@@ -9,12 +10,26 @@ function valor_parcela (rubrica) {
         return remuneracao[document.getElementById('posto').value][rubrica]
     }
 }
-
 function parseMoney (x) {
     return 'R$ '+ x.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})
 }
 
+function preencher_celula(id,col,valor){
+    document.getElementById(id).cells[col].innerHTML = parseMoney (valor)
+}
 
+function rounddown(x) {
+    return Math.floor(x*100)/100
+}
+
+//function loop_cols(funcao){
+//    for (col=1;col<document.getElementById('mes').cells.length;col++){
+//        funcao
+//    }
+//}
+//TODO: Envelopar funcoes de calculo dentro do loop_cols, como um decorator
+
+//Formula base de calculo das parcelas vinculadas ao posto/graduacao
 function calcular_rubricas (){
 
     for (col=1;col<document.getElementById('mes').cells.length;col++){
@@ -31,15 +46,22 @@ function calcular_rubricas (){
                     celula.innerHTML = parseMoney (rubrica)
                 }
                 else {
-                    celula.innerHTML = 'NÃO ENCONTRADO' //TODO Manter por enquanto para identificar erros
+                    celula.innerHTML = 'NÃO ENCONTRADO' //TODO Manter por enquanto para identificar erros. trocar depois por parseMoney (0)
                 }
-                //TODO:Calcular complemento de Soldo
                 //TODO:Chamar outras funções de parcelas específicas
             }
             else {
                 continue
             }
         }
+
+//     Calcular complemento de Soldo
+        if (salario_minimo[mes]>valor_parcela('soldo')) {
+            compl_soldo=salario_minimo[mes]-valor_parcela('soldo')
+            preencher_celula('compl_soldo',col,compl_soldo)
+                    }
+//Calcular Fundo de Saúde
+        preencher_celula('fundo_saude',col,rounddown(valor_parcela('soldo')*0.02))
     }
 }
 

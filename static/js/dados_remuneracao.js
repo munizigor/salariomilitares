@@ -152,7 +152,7 @@ remuneracao= {
          "amsd":342.62,
          "cotafsa":8
       },
-      "CADETE PRIMEIRO ANO":{
+      "CADETE DEMAIS ANOS":{
          "soldo":501.62,
          "vpe":1498.95,
          "apg":250.81,
@@ -162,4 +162,9 @@ remuneracao= {
          "amsd":283.53,
          "cotafsa":8
       }
+}
+salario_minimo={
+"03/01/2020":1045.00,
+"04/01/2020":1045.00,
+"01/01/2021":1081.00
 }
