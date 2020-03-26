@@ -36,7 +36,7 @@
             <div class="form-row">
 				<div class="form-group col-md-2 align-self-end">
 				  <label for="situacao_funcional">Situação Funcional</label>
-				  <select class="form-control" name="run_sit_func" required id="situacao_funcional"
+				  <select class="form-control" name="calcular_rubricas" required id="situacao_funcional"
                           onchange="mostrar_campos(event,'inativo')">
 					 <option value=""></option>
 					 <option value="ativo">ATIVO</option>
@@ -67,7 +67,7 @@
 				</div>
 				<div class="form-group col-md-3 align-self-end">
 				  <label for="aux_moradia_dependente">Tipo de Auxílio Moradia</label>
-				  <select class="form-control" name="calc_aux_mor" required id="aux_moradia_dependente">
+				  <select class="form-control" name="calcular_rubricas" required id="aux_moradia_dependente">
 					 <option value=""></option>
 					 <option value="amcd">COM DEPENDENTE</option>
 					 <option value="amsd">SEM DEPENDENTE</option>
@@ -75,7 +75,7 @@
 				</div>
 				<div class="form-group col-md-2 align-self-end ativo">
 				  <label for="tipo_gfne">GFNE</label>
-				  <select class="form-control" name="calc_gfne" required id="tipo_gfne">
+				  <select class="form-control" name="calcular_rubricas" required id="tipo_gfne">
                       <option value=""></option>
                       <option value="0">NÃO RECEBE</option>
                       <option value="1">I</option>
@@ -87,12 +87,12 @@
 				</div>
 				<div class="form-group col-md-2 align-self-end">
 				  <label for="pct_ats">Adicional de Tempo de Serviço</label>
-                    <input type="text" id="pct_ats" name="calc_ats" class="form-control">
+                    <input type="text" id="pct_ats" name="calcular_rubricas" class="form-control">
 <!--                    TODO: Inserir sinal de % após o textbox-->
 				</div>
 				<div class="form-group col-md-2 align-self-end inativo" style="display:none;">
 				  <label for="bool_pttc">Está no PTTC?</label>
-				  <select class="form-control" name="run_pttc" required id="bool_pttc">
+				  <select class="form-control" name="calcular_rubricas" required id="bool_pttc">
 					 <option value=""></option>
 					 <option value="sim">SIM</option>
 					 <option value="nao">NÃO</option>
@@ -100,7 +100,7 @@
 				</div>
 				<div class="form-group col-md-2 align-self-end">
 				  <label for="pensao_militar_adicional">Paga Pensão Militar Adicional?</label>
-				  <select class="form-control" required id="pensao_militar_adicional">
+				  <select class="form-control" name="calcular_rubricas" required id="pensao_militar_adicional">
 					 <option value=""></option>
 					 <option value="sim">SIM</option>
 					 <option value="nao">NÃO</option>
@@ -109,7 +109,7 @@
 				<div class="form-group col-md-2 align-self-end ativo">
 				  <label for="horas_gsv">Horas de Serviço Voluntário</label>
 <!--                    TODO: style.display=none se for INATIVO-->
-				  <input type="text" id="horas_gsv" class="form-control">
+				  <input type="text" id="horas_gsv" name="calcular_rubricas" class="form-control">
 				</div>
             </div>
             <div class="form-row border rounded">
@@ -118,19 +118,19 @@
                 </div>
 				<div class="form-group col-md-auto align-self-end">
                     <div class="form-check ">
-                      <input class="form-check-input acp" name="calc_acp" type="checkbox" id="acp_10" value=10>
+                      <input class="form-check-input acp" name="calcular_rubricas" type="checkbox" id="acp_10" value=10>
                       <label class="form-check-label" for="acp_10">Formação (CFSD, CFO, CHO)</label>
                     </div>
                     <div class="form-check ">
-                      <input class="form-check-input acp" name="calc_acp" type="checkbox" id="acp_15" value=15>
+                      <input class="form-check-input acp" name="calcular_rubricas" type="checkbox" id="acp_15" value=15>
                       <label class="form-check-label" for="acp_15">Especialização (CESEI, CMAUT, SCI...)</label>
                     </div>
                     <div class="form-check ">
-                      <input class="form-check-input acp" name="calc_acp" type="checkbox" id="acp_20" value=20>
+                      <input class="form-check-input acp" name="calcular_rubricas" type="checkbox" id="acp_20" value=20>
                       <label class="form-check-label" for="acp_20">Aperfeiçoamento (CAP, CAO)</label>
                     </div>
                     <div class="form-check ">
-                      <input class="form-check-input acp" name="calc_acp" type="checkbox" id="acp_30" value=30>
+                      <input class="form-check-input acp" name="calcular_rubricas" type="checkbox" id="acp_30" value=30>
                       <label class="form-check-label" for="acp_30">Altos Estudos (CAEP, CAEO)</label>
                     </div>
 				</div>
@@ -141,7 +141,7 @@
                 </div>
 				<div class="form-group col-md-2 align-self-end">
 				  <label for="dep_ir">Imposto de Renda</label>
-				  <select class="form-control" required id="dep_ir">
+				  <select class="form-control" name="calcular_rubricas" required id="dep_ir">
                       <option value=""></option>
                       <option value="0">0</option>
                       <option value="1">1</option>
@@ -163,7 +163,7 @@
                 </div>
 				<div class="form-group col-md-2 align-self-end">
 				  <label for="dep_fs">Fundo de Saúde</label>
-				  <select class="form-control" required id="dep_fs">
+				  <select class="form-control" name="calcular_rubricas" required id="dep_fs">
                       <option value=""></option>
                       <option value="0">0</option>
                       <option value="1">1</option>
@@ -185,7 +185,7 @@
                 </div>
 				<div class="form-group col-md-2 align-self-end">
 				  <label for="pre_escolar">Auxílio Pré-Escolar</label>
-				  <select class="form-control" required id="pre_escolar">
+				  <select class="form-control" name="calcular_rubricas" required id="pre_escolar">
                       <option value=""></option>
                       <option value="0">0</option>
                       <option value="1">1</option>
@@ -212,13 +212,13 @@
                 </div>
 				<div class="form-group col-md-2 align-self-end">
 				  <label for="percentual_pa">Percentual de Pensão</label>
-                    <input type="text" id="percentual_pa" class="form-control"
+                    <input type="text" id="percentual_pa" class="form-control" name="calcular_rubricas"
                                                       onblur="mostrar_campos(event,'possui_pa')">
 <!--                     TODO: Inserir sinal de % após o textbox-->
 				</div>
 				<div class="form-group col-md-3 align-self-end possui_pa" style="display:none;">
 				  <label for="tipo_pa">Tipo de Incidência</label>
-				  <select class="form-control" required id="tipo_pa">
+				  <select class="form-control" name="calcular_rubricas" required id="tipo_pa">
                       <!--                    TODO: Explicar como se calcula cada tipo-->
 					 <option value=""></option>
 					 <option value="liquido">REMUNERAÇÃO LÍQUIDA</option>
@@ -419,8 +419,9 @@
                 <tr>
                     <th colspan="4" class="table-dark">TOTAL</th>
                 </tr>
-                <tr id="remuneracao">
+                <tr id="remuneracao_total">
                   <td scope="row">REMUNERAÇÃO</td>
+<!--                    TODO: Somas estão aparecendo com 400 reais a mais e so altera com calculo_rubricas-->
 <!--                    TODO: Explicar conforme a Lei 10.486/02 o que compõe a remuneração-->
                   <td></td>
                   <td></td>

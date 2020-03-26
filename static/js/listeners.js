@@ -1,5 +1,8 @@
 for (col=1;col<document.getElementById('mes').cells.length;col++){
-    window['verbas'+col] = new Verbas
+    window['verbas'+col] = new Verbas(col)
+    window['verbas'+col].lista_metodos = Object.getOwnPropertyNames(window['verbas'+col]).filter(function (p) {
+                        return typeof window['verbas'+col][p] === 'function';
+                    })
 }
 
 //addEventListener para selects, chamando as funcoes inscritas nos names dos campos
@@ -19,3 +22,15 @@ function calc_from_tags(tag){
 }
 calc_from_tags('select');
 calc_from_tags('input');
+
+//(function () {
+//    elementos = document.getElementsByClassName(classe)
+//    starter = document.getElementById(event.target.id)
+//   document.getElementById('situacao_funcional').addEventListener('change', function (event) {
+//    if (event.target.value)=='ativo'{
+//
+//    }
+//    }
+//    )
+//}
+//)();
