@@ -1,12 +1,32 @@
 //Formulas Gerais
 
-//TODO: Criar Object Verbas para armazenar e acessar todos os valores
 function Verbas(col){
+
 //  REMUNERAÇÃO FIXA
 
+    this.valor_parcela = function (rubrica) {
+        try {
+            if (!isNaN(remuneracao[rubrica])) {
+                return remuneracao[rubrica]
+            }
+            else if (document.getElementById('posto').value!=false){
+                return remuneracao[document.getElementById('posto').value][rubrica]
+            }
+        }
+        catch(err) {
+            console.log(err.message);
+        }
+    }
+    this.soldo = function() { return this.valor_parcela ("soldo")}
+    this.gcef = function() { return this.valor_parcela ("gcef")}
+    this.grv = function() { return this.valor_parcela ("grv")}
+    this.vpe = function() { return this.valor_parcela ("vpe")}
+    this.apg = function() { return this.valor_parcela ("apg")}
+    this.aom = function() { return this.valor_parcela ("aom")}
+    this.gfr = function() { return this.valor_parcela ("gfr")}
     this.compl_soldo = function() {
-        if (salario_minimo[mes]>this.soldo) {
-            valor_compl_soldo = salario_minimo[mes]-this.soldo
+        if (salario_minimo[mes]>this.soldo()) {
+            valor_compl_soldo = salario_minimo[mes]-this.soldo()
                     }
         else{
             valor_compl_soldo = 0
@@ -17,11 +37,11 @@ function Verbas(col){
         ind = document.getElementsByClassName("acp")
         pct_acp=0;
         for (count=0;count<ind.length;count++) {
-        if (ind[count].checked) {
-            pct_acp+= parseInt(ind[count].value)
+            if (ind[count].checked) {
+                pct_acp+= parseInt(ind[count].value)
+            }
         }
-        }
-        acp = rounddown(this.soldo*(parseInt(pct_acp)/100))
+        acp = rounddown((this.soldo()*parseFloat(pct_acp))/100)
         return acp
     }
     this.ats = function () {
@@ -34,18 +54,20 @@ function Verbas(col){
             ats = 0
         }
         else {
-            ats = rounddown(this.soldo*(parseInt(pct_ats)/100))
+            ats = rounddown(this.soldo()*(parseInt(pct_ats)/100))
         }
         return ats
     }
+
 //    REMUNERAÇÃO FLUTUANTE
+
     this.gfne = function () {
         if (document.getElementById('tipo_gfne').value == false) {
             valor_gnfe = 0
         }
         else {
             pct_gfne = gfne[document.getElementById('tipo_gfne').value]
-            valor_gnfe = Math.round((remuneracao['CORONEL']['soldo']*pct_gfne)*100)/100
+            valor_gnfe = (remuneracao['CORONEL']['soldo']*pct_gfne)
         }
         return valor_gnfe
     }
@@ -77,7 +99,7 @@ function Verbas(col){
 
     this.alim = function (){
         if (document.getElementById('situacao_funcional').value=='ativo' || document.getElementById('bool_pttc').value=='sim') {
-            valor_alim = valor_parcela ('alim')
+            valor_alim = this.valor_parcela ('alim')
         }
         else{
             valor_alim = 0
@@ -90,7 +112,7 @@ function Verbas(col){
         }
         else {
             moradia = document.getElementById('aux_moradia_dependente').value
-            valor_aux_mor = valor_parcela (moradia)
+            valor_aux_mor = this.valor_parcela (moradia)
         }
         return valor_aux_mor
     }
@@ -100,7 +122,7 @@ function Verbas(col){
         }
         else {
             qtde_pe = document.getElementById('pre_escolar').value
-            valor_pe = qtde_pe*valor_parcela ("pre_escolar")
+            valor_pe = qtde_pe*this.valor_parcela ("pre_escolar")
         }
         return valor_pe
     }
@@ -109,7 +131,12 @@ function Verbas(col){
         return rounddown((this.aux_pe())*0.05)
     }
     this.contr_pensao_militar = function() {
-        valor_pmil = rounddown((this.remuneracao_fixa())*pensao_militar[mes])
+        if (getMes(col) == '03/01/2020') {
+            valor_pmil = Math.round((this.remuneracao_fixa())*pensao_militar[mes]*100)/100
+        }
+        else {
+            valor_pmil = rounddown((this.remuneracao_fixa())*pensao_militar[mes])
+        }
         return valor_pmil
     }
     this.contr_pensao_militar_adic = function () {
@@ -122,7 +149,7 @@ function Verbas(col){
         return valor_pmad
     }
     this.fundo_saude = function () {
-        return rounddown((this.soldo)*0.02)
+        return rounddown((this.soldo())*0.02)
     }
     this.fundo_saude_adicional = function () {
         if (document.getElementById('dep_fs').value == false) {
@@ -131,10 +158,11 @@ function Verbas(col){
         else {
             qtde_fsa = document.getElementById('dep_fs').value
         }
-        valor_fsa = parseInt(qtde_fsa)*valor_parcela ("cotafsa")
+        valor_fsa = parseInt(qtde_fsa)*this.valor_parcela ("cotafsa")
         return valor_fsa
     }
-    this.pensao_alim = function () {
+    this.pensao_alim = function (tipo='pensao_alim') {
+//    TODO: Verificar em casos especificos e ver como se chega aos valores da ficha
         pct_pa = document.getElementById('percentual_pa').value
         if (isNaN(pct_pa)) {
             alert('Informe um valor numérico')
@@ -144,12 +172,19 @@ function Verbas(col){
             pa = 0
         }
         else {
+              if (tipo=='pa_decimo_terceiro'){
+                parcela_base = this.decimo_terceiro()
+              }
+              else {
+                parcela_base = this.remuneracao_total() - this.contr_pensao_militar()
+              }
               tipo_pa = document.getElementById('tipo_pa').value
               if (tipo_pa=='sal_minimo') {
                 base_calculo = salario_minimo[mes]
               }
               else if (tipo_pa=='liquido') {
-              base_calculo = this.remuneracao_total() - this.contr_pensao_militar() //  TODO: - this.irrfAntesDaPA
+//              console.log(this.irrf(tipo))
+              base_calculo = parcela_base - this.irrf(tipo)
               }
               else if (tipo_pa=='bruto') {
                 base_calculo = this.remuneracao_total()
@@ -161,14 +196,71 @@ function Verbas(col){
         }
         return pa
     }
+    this.pensao_alim_pe = function () {
+        if (document.getElementById('pre_escolar_pensao').value == false) {
+            valor_pa_sobre_pe = 0
+        }
+        else {
+            qtde_pa_sobre_pe = document.getElementById('pre_escolar_pensao').value
+            valor_pa_sobre_pe = qtde_pa_sobre_pe*this.valor_parcela ("pre_escolar")
+        }
+        return rounddown((valor_pa_sobre_pe)*0.95)
+    }
+    this.irrf = function (tipo='remuneracao') {
+        if (document.getElementById('dep_ir').value == false) {
+            qtde_ir = 0
+        }
+        else {
+            qtde_ir = document.getElementById('dep_ir').value
+        }
+        deducao_dependente = (189.59)*parseInt(qtde_ir)
+        descontos = (this.contr_pensao_militar() + this.contr_pensao_militar_adic() + this.fundo_saude() +
+        this.fundo_saude_adicional())
+//        Base de Calculo do IRRF mensal Antes da Pensao Alimenticia
+        if (tipo =='pensao_alim') {
+            base_calculo = this.remuneracao_total() - descontos
+        }
+//        Base de Calculo do IRRF mensal Final
+        if (tipo =='remuneracao') {
+            base_calculo = this.remuneracao_total() - descontos - this.pensao_alim()
+        }
+//        Base de Calculo do 13 Salario
+        if (tipo =='decimo_terceiro') {
+            base_calculo = this.decimo_terceiro() - this.pa_decimo_terceiro()
+        }
+//        Base de Calculo das ferias
+        if (tipo =='ferias') {
+            base_calculo = this.ferias()
+        }
+//        Base de Calculo do 13o antes da PA
+        if (tipo =='pa_decimo_terceiro') {
+            base_calculo = this.decimo_terceiro()
+        }
+        base_calculo -= deducao_dependente
+        valor_final_irrf = 0
+        valores_irrf = Object.values(faixas_irrf)
+        for (count=(valores_irrf.length)-1;count>=0;count--) {
+            if (base_calculo>valores_irrf[count]['piso']) {
+                valor_final_irrf = ((base_calculo*valores_irrf[count]['aliquota'])- valores_irrf[count]['deducao'])
+                break;
+            }
+        }
+        if (tipo =='ferias' || tipo =='decimo_terceiro' || tipo =='remuneracao') {
+            valor_final_irrf = rounddown(valor_final_irrf)
+        }
+        else {
+            valor_final_irrf = Math.round((valor_final_irrf)*100)/100
+        }
+        return valor_final_irrf
+    }
 
 //    SOMAS
     this.remuneracao_fixa = function() {
-        soma = (this.soldo + this.apg + this.ats() + this.compl_soldo() + this.aom + this.gfr +
-                this.acp() + this.gcef + this.vpe + this.grv)
+        soma = (this.soldo() + this.apg() + this.ats() + this.compl_soldo() + this.aom() + this.gfr() +
+                this.acp() + this.gcef() + this.vpe() + this.grv())
         return soma
     }
-    this.remuneracao_total = function() {
+    this.remuneracao_total = function(variavelqualqer=0) {
         soma = (this.remuneracao_fixa() + this.gfne() + this.pttc() + this.gsv())
         return soma
     }
@@ -181,33 +273,60 @@ function Verbas(col){
         return soma
     }
     this.descontos_total = function() {
-        soma = (this.cota_pe() + this.pensao_alim() + this.pensao_alim_pe + this.contr_pensao_militar() +
-                this.contr_pensao_militar_adic() + this.fundo_saude() + this.fundo_saude_adicional()  + this.irrf)
+        soma = (this.cota_pe() + this.pensao_alim() + this.pensao_alim_pe() + this.contr_pensao_militar() +
+                this.contr_pensao_militar_adic() + this.fundo_saude() + this.fundo_saude_adicional()  + this.irrf())
         return soma
     }
     this.rendimento_liquido = function() {
         soma = (this.rendimento_bruto() - this.descontos_total())
         return soma
     }
+
+//    RENDIMENTOS EVENTUAIS
+    this.decimo_terceiro = function() {
+        soma = (this.soldo() + this.apg() + this.ats() + this.aom() + this.gfr() +
+                this.acp() + this.gcef() + this.vpe() + this.grv() + this.gfne() + this.pttc())
+        return soma
+    }
+    this.ferias = function() {
+        if (document.getElementById('situacao_funcional').value=='ativo') {
+            valor_ferias = Math.round((this.decimo_terceiro()/3)*100)/100
+        }
+        else if (document.getElementById('bool_pttc').value=='sim'){
+            valor_ferias = Math.round((this.pttc()/3)*100)/100
+        }
+        else {
+            valor_ferias = 0
+        }
+        return valor_ferias
+    }
+    this.auxilio_fardamento = function() {
+        if (document.getElementById('situacao_funcional').value=='ativo') {
+            valor_fardamento = rounddown(this.decimo_terceiro()/4)
+        }
+        else {
+            valor_fardamento = 0
+        }
+        return valor_fardamento
+    }
+
+//    DESCONTOS EVENTUAIS
+    this.irrf_decimo_terceiro = function() {
+        return this.irrf('decimo_terceiro')
+    }
+    this.irrf_ferias = function() {
+        return this.irrf('ferias')
+    }
+    this.pa_decimo_terceiro = function() {
+        return this.pensao_alim('pa_decimo_terceiro')
+    }
 }
+
 
 function getMes (coluna) {
     return document.getElementById('mes').cells[coluna].headers
 }
-//Formula para calcular as parcelas do posto
-function valor_parcela (rubrica) {
-    try {
-        if (!isNaN(remuneracao[rubrica])) {
-            return remuneracao[rubrica]
-        }
-        else {
-            return remuneracao[document.getElementById('posto').value][rubrica]
-        }
-    }
-    catch(err) {
-        console.log(err.message);
-    }
-}
+
 function parseMoney (x,format=true) {
     if (isNaN(x)) {
         return ''
@@ -220,34 +339,26 @@ function parseMoney (x,format=true) {
     }
 }
 
-function preencher_celula(id,col,valor){
+function preencher_celula(id,col){
 
     if (typeof(window['verbas'+col][id])==='function') {
         valor = window['verbas'+col][id]()
     }
     else {
-        window['verbas'+col][id] = valor
+        valor = window['verbas'+col][id]
     }
     document.getElementById(id).cells[col].innerHTML = parseMoney (valor)
-//  Inserir campos parametrizados como metodos
-    metodos = window['verbas'+col]['lista_metodos']
-    for (i=0;i<metodos.length;i++) {
-        if (document.getElementById(metodos[i])!=null) {
-            document.getElementById(metodos[i]).cells[col].innerHTML = parseMoney (window['verbas'+col][metodos[i]]())
-        }
-    }
 }
 
 function rounddown(x) {
     return Math.floor(x*100)/100
 }
 
-var loop_cols = function (fn){
+loop_cols = function () {
 //TODO: Loops estao deixando o sistema lento
-        return function () {
             for (col=1;col<document.getElementById('mes').cells.length;col++){
                 try {
-                    fn.call(this,col);
+                    calcular_rubricas (col)
                     }
                 catch(err) {
                     if (this.event.target.value=='' || this.event.target.value=='null') {
@@ -264,9 +375,8 @@ var loop_cols = function (fn){
                     }
                 }
             }
-    }
 }
-//TODO: Envelopar funcoes de calculo dentro do loop_cols, como um decorator
+
 
 //Formula base de calculo das parcelas vinculadas ao posto/graduacao
 function calcular_rubricas (col){
@@ -274,83 +384,13 @@ function calcular_rubricas (col){
         mes = getMes(col)
         salario_row = document.getElementById('salario').rows
         for (row=0;row<salario_row.length;row++){
-            if (salario_row[row].hasAttribute('id')){
-                rubrica = valor_parcela (salario_row[row].id)
-                celula = salario_row[row].cells[col]
-                if (typeof(rubrica)=='object' && !isNaN(rubrica[mes])) {
-                    valor_final=rubrica[mes]
-                }
-                else if (!isNaN(rubrica)) {
-                    valor_final=rubrica
-                }
-                else {
-                    valor_final = 0 //TODO Manter por enquanto para identificar erros. trocar depois por parseMoney (0)
-                }
-
-                preencher_celula(salario_row[row].id,col,valor_final)
-
+            if (salario_row[row].hasAttribute('id') && salario_row[row].id != 'mes'){
+                preencher_celula(salario_row[row].id,col)
             }
             else {
                 continue
             }
         }
-
-//TODO:Chamar outras funções de parcelas específicas
-//     Calcular complemento de Soldo
-//        if (salario_minimo[mes]>valor_parcela('soldo')) {
-//            compl_soldo=salario_minimo[mes]-valor_parcela('soldo')
-//            preencher_celula('compl_soldo',col,compl_soldo)
-//                    }
-//        else{
-//            preencher_celula('compl_soldo',col,0)
-//        }
-//      Calcular Fundo de Saúde
-//        preencher_celula('fundo_saude',col,rounddown(valor_parcela('soldo')*0.02))
-}
-
-
-//Calculo dos descontos
-
-/*
-//-Alterar parametro
-//-Aciona funcao de calculo de rubricas
-//    -SE rubrica é interferida por event.target:
-//        Percorrer colunas: for (i=1;i<document.getElementById('mes').cells.length;i++){}
-    //            -DE INICIO, se valor campo for =='' ou 'null', atribuir 0 pra não haver erro de cálculo
-        //            -Calcular rubrica
-        //            -Recalcular todas as rubricas dependentes dela
-    //            -Lancar valor nas celulas
-//    -Se row tiver TODOS os valores ==0:
-        -row.style.display='none';
-//    -No mais:
-        -row.removeAttribute("style");
-*/
-
-function mostrar_campos(event,classe) {
-elementos = document.getElementsByClassName(classe)
-starter = document.getElementById(event.target.id)
-    for (i=0;i<elementos.length;i++) {
-        if (
-            (event.target.id=='situacao_funcional' && starter.value!=classe) ||
-            (starter.value=='null' || parseFloat(starter.value)==0 || starter.value=='')
-        ){
-            elementos[i].style.display='none';
-            elementos[i].required = false;
-            entradas = elementos[i].querySelectorAll('.form-control,.form-check-input')
-            for (j=0;j<entradas.length;j++) {
-                if (entradas[j].classList.contains('form-check-input')) {
-                    entradas[j].checked=false
-                }
-                else {
-                    entradas[j].value=''
-                }
-            }
-        }
-        else {
-            elementos[i].removeAttribute("style");
-            elementos[i].required = true;
-    }
-    }
 }
 
 function mostrar_campos(event,classe) {

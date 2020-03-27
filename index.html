@@ -34,15 +34,6 @@
         <h1>REMUNERAÇÃO DOS MILITARES DO DISTRITO FEDERAL</h1>
 
             <div class="form-row">
-				<div class="form-group col-md-2 align-self-end">
-				  <label for="situacao_funcional">Situação Funcional</label>
-				  <select class="form-control" name="calcular_rubricas" required id="situacao_funcional"
-                          onchange="mostrar_campos(event,'inativo')">
-					 <option value=""></option>
-					 <option value="ativo">ATIVO</option>
-					 <option value="inativo">INATIVO</option>
-				  </select>
-				</div>
 				<div class="form-group col-md-3 align-self-end">
 				  <label for="posto">Posto/Graduação</label>
 				  <select class="form-control" name="calcular_rubricas" required id="posto">
@@ -65,6 +56,16 @@
 					 <option value="CADETE DEMAIS ANOS">CADETE DEMAIS ANOS</option>
 				  </select>
 				</div>
+				<div class="form-group col-md-2 align-self-end">
+				  <label for="situacao_funcional">Situação Funcional</label>
+				  <select class="form-control" name="calcular_rubricas" required id="situacao_funcional"
+                          onchange="mostrar_campos(event,'inativo')">
+					 <option value=""></option>
+					 <option value="ativo">ATIVO</option>
+					 <option value="inativo">INATIVO</option>
+				  </select>
+				</div>
+
 				<div class="form-group col-md-3 align-self-end">
 				  <label for="aux_moradia_dependente">Tipo de Auxílio Moradia</label>
 				  <select class="form-control" name="calcular_rubricas" required id="aux_moradia_dependente">
@@ -228,7 +229,7 @@
 				</div>
 				<div class="form-group col-md-3 align-self-end possui_pa" style="display:none;">
 				  <label for="pre_escolar_pensao">Quantidade de Auxílio Pré-Escolar revertido em Pensão Alimentícia</label>
-				  <select class="form-control" required id="pre_escolar_pensao">
+				  <select class="form-control" name="calcular_rubricas" required id="pre_escolar_pensao">
                       <option value=""></option>
                       <option value="0">0</option>
                       <option value="1">1</option>
@@ -252,7 +253,7 @@
         <div>
             <h2>SALÁRIO</h2>
 
-            <table class="table table-bordered table-hover table-sm">
+            <table id="salario" class="table table-bordered table-hover table-sm">
               <thead>
 
                 <tr id="mes">
@@ -262,9 +263,9 @@
                   <th scope="col" headers="01/01/2021">A partir de Jan/2021</th>
                 </tr>
               </thead>
-              <tbody id="salario">
+              <tbody>
                 <tr>
-                    <th colspan="4" class="table-success">REMUNERAÇÃO</th>
+                    <th colspan="4" class="table-dark">RENDIMENTOS</th>
                 </tr>
                 <tr id="soldo">
                   <td scope="row">SOLDO</td>
@@ -344,9 +345,9 @@
                   <td></td>
                   <td></td>
                 </tr>
-                <tr>
-                    <th colspan="4" class="table-secondary">DIREITOS PECUNIÁRIOS</th>
-                </tr>
+<!--                <tr>-->
+<!--                    <th colspan="4" class="table-dark">DIREITOS PECUNIÁRIOS</th>-->
+<!--                </tr>-->
                 <tr id="aux_mor">
                   <td scope="row">AUXILIO MORADIA</td>
                   <td></td>
@@ -365,8 +366,8 @@
                   <td></td>
                   <td></td>
                 </tr>
-                <tr class="table-danger">
-                    <th colspan="4">DESCONTOS</th>
+                <tr >
+                    <th colspan="4" class="table-dark">DESCONTOS</th>
                 </tr>
                 <tr id="cota_pe">
                   <td scope="row">COTA PRÉ ESCOLAR</td>
@@ -421,7 +422,6 @@
                 </tr>
                 <tr id="remuneracao_total">
                   <td scope="row">REMUNERAÇÃO</td>
-<!--                    TODO: Somas estão aparecendo com 400 reais a mais e so altera com calculo_rubricas-->
 <!--                    TODO: Explicar conforme a Lei 10.486/02 o que compõe a remuneração-->
                   <td></td>
                   <td></td>
@@ -441,6 +441,51 @@
                 </tr>
                 <tr id="rendimento_liquido">
                   <td scope="row">RENDIMENTO LÍQUIDO</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                    <th colspan="4" class="table-dark">RENDIMENTOS EVENTUAIS</th>
+                </tr>
+                <tr id="decimo_terceiro">
+                  <td scope="row">GRATIFICAÇÃO DE NATAL (DÉCIMO TERCEIRO)</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="ferias">
+                  <td scope="row">FÉRIAS</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="auxilio_fardamento">
+                  <td scope="row">AUXÍLIO FARDAMENTO</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                    <th colspan="4" class="table-dark">DESCONTOS EVENTUAIS</th>
+                </tr>
+                <tr id="irrf_decimo_terceiro">
+                  <td scope="row">IRRF - DÉCIMO TERCEIRO</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="irrf_ferias">
+                  <td scope="row">IRRF - FÉRIAS</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="pa_decimo_terceiro">
+                  <td scope="row">PENSÃO ALIMENTÍCIA - DÉCIMO TERCEIRO</td>
                   <td></td>
                   <td></td>
                   <td></td>

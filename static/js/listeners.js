@@ -5,32 +5,14 @@ for (col=1;col<document.getElementById('mes').cells.length;col++){
                     })
 }
 
-//addEventListener para selects, chamando as funcoes inscritas nos names dos campos
-function calc_from_tags(tag){
-    tags = document.getElementsByTagName(tag)
-    for (var i = 0; i < tags.length; i++) {
-        if (tags[i].hasAttribute('name')){
-            action = ((tags[i].type=="text")? 'blur' : 'change')
-            tags[i].addEventListener(action, function (event) {
-                    var loop = loop_cols(window[event.target.name])
-                    loop();
-//                    TODO: Apenas o ultimo selects com attr name está funcionando. Pq?
-                }
-            );
-        }
+function load () {
+    elems_name = document.getElementsByName('calcular_rubricas')
+    for (var i = 0; i < elems_name.length; i++) {
+        action = ((elems_name[i].type=="text")? 'blur' : 'change')
+        elems_name[i].addEventListener(action, function () {
+            loop_cols();
+        })
     }
-}
-calc_from_tags('select');
-calc_from_tags('input');
 
-//(function () {
-//    elementos = document.getElementsByClassName(classe)
-//    starter = document.getElementById(event.target.id)
-//   document.getElementById('situacao_funcional').addEventListener('change', function (event) {
-//    if (event.target.value)=='ativo'{
-//
-//    }
-//    }
-//    )
-//}
-//)();
+}
+document.addEventListener("DOMContentLoaded", load, false);

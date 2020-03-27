@@ -43,3 +43,9 @@ h2 {
 .table td,th {
    text-align: center;
 }
+.soma {
+    font-weight:bold;
+}
+.desconto {
+    color:#FF0000;
+}
