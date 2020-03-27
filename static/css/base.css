@@ -45,9 +45,12 @@ div.main-container {
 }
 div.topo-ini {
 	background-color: #292b2c;
-	height: 25px;
+	height: auto;
 	width: 100%;
 	text-align: center;
 	margin-left: 0px;
 	color: white;
+}
+p span{
+display: inline-block;
 }
