@@ -33,7 +33,7 @@ h2 {
     padding-left: 15px;
     margin-top: 40px;
 }
-.main-container {
+div.main-container {
  min-height: 100vh; /* will cover the 100% of viewport */
  overflow: hidden;
  display: block;
@@ -43,9 +43,11 @@ h2 {
 .table td,th {
    text-align: center;
 }
-.soma {
-    font-weight:bold;
-}
-.desconto {
-    color:#FF0000;
+div.topo-ini {
+	background-color: #292b2c;
+	height: 25px;
+	width: 100%;
+	text-align: center;
+	margin-left: 0px;
+	color: white;
 }
