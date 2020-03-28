@@ -45,7 +45,7 @@ function Verbas(col){
         return acp
     }
     this.ats = function () {
-        pct_ats = document.getElementById('pct_ats').value
+        pct_ats = document.getElementById('pct_ats').value.replace(/,/g, '.')
         if (isNaN(pct_ats)) {
             alert('Informe um valor numérico')
             ats = 0
@@ -163,7 +163,7 @@ function Verbas(col){
     }
     this.pensao_alim = function (tipo='pensao_alim') {
 //    TODO: Verificar em casos especificos e ver como se chega aos valores da ficha
-        pct_pa = document.getElementById('percentual_pa').value
+        pct_pa = document.getElementById('percentual_pa').value.replace(/,/g, '.')
         if (isNaN(pct_pa)) {
             alert('Informe um valor numérico')
             pa = 0
@@ -222,7 +222,7 @@ function Verbas(col){
         }
 //        Base de Calculo do IRRF mensal Final
         if (tipo =='remuneracao') {
-            base_calculo = this.remuneracao_total() - descontos - this.pensao_alim()
+            base_calculo = this.remuneracao_total() - descontos - this.pensao_alim() - this.outros_descontos_dedutiveis()
         }
 //        Base de Calculo do 13 Salario
         if (tipo =='decimo_terceiro') {
@@ -254,6 +254,24 @@ function Verbas(col){
         return valor_final_irrf
     }
 
+    this.outros_descontos_dedutiveis = function (id='soma_descontos_dedutiveis') {
+        valor_outros_descontos = document.getElementById(id).value.replace(/,/g, '.')
+        if (isNaN(valor_outros_descontos)) {
+            alert('Informe um valor numérico')
+            outros_descontos = 0
+        }
+        else if (valor_outros_descontos=='') {
+            outros_descontos = 0
+        }
+        else {
+            outros_descontos = (parseFloat(valor_outros_descontos))
+        }
+        return outros_descontos
+    }
+    this.outros_descontos_nao_dedutiveis = function () {
+        return this.outros_descontos_dedutiveis ('soma_descontos_nao_dedutiveis')
+    }
+
 //    SOMAS
     this.remuneracao_fixa = function() {
         soma = (this.soldo() + this.apg() + this.ats() + this.compl_soldo() + this.aom() + this.gfr() +
@@ -274,7 +292,8 @@ function Verbas(col){
     }
     this.descontos_total = function() {
         soma = (this.cota_pe() + this.pensao_alim() + this.pensao_alim_pe() + this.contr_pensao_militar() +
-                this.contr_pensao_militar_adic() + this.fundo_saude() + this.fundo_saude_adicional()  + this.irrf())
+                this.contr_pensao_militar_adic() + this.fundo_saude() + this.fundo_saude_adicional()  + this.irrf() +
+                 this.outros_descontos_nao_dedutiveis() + this.outros_descontos_dedutiveis())
         return soma
     }
     this.rendimento_liquido = function() {

@@ -30,471 +30,506 @@
 </head>
 <body>
 <div class="main-container">
-    <div class="row topo-ini">
+    <div class="navbar navbar-dark bg-dark fixed-top topo-ini">
         <b><p>REMUNERAÇÃO DOS MILITARES DO DISTRITO FEDERAL</p></b>
 	</div>
-    <div class="container">
-    </br>
-            <div class="form-row">
-				<div class="form-group col-md-3 align-self-end">
-				  <label for="posto">Posto/Graduação</label>
-				  <select class="form-control" name="calcular_rubricas" required id="posto">
-					 <option value=""></option>
-					 <option value="CORONEL">CORONEL</option>
-					 <option value="TENENTE-CORONEL">TENENTE-CORONEL</option>
-					 <option value="MAJOR">MAJOR</option>
-					 <option value="CAPITAO">CAPITAO</option>
-					 <option value="PRIMEIRO TENENTE">PRIMEIRO TENENTE</option>
-					 <option value="SEGUNDO TENENTE">SEGUNDO TENENTE</option>
-					 <option value="ASPIRANTE">ASPIRANTE</option>
-					 <option value="SUBTENENTE">SUBTENENTE</option>
-					 <option value="PRIMEIRO SARGENTO">PRIMEIRO SARGENTO</option>
-					 <option value="SEGUNDO SARGENTO">SEGUNDO SARGENTO</option>
-					 <option value="TERCEIRO SARGENTO">TERCEIRO SARGENTO</option>
-					 <option value="CABO">CABO</option>
-					 <option value="SOLDADO PRIMEIRA CLASSE">SOLDADO PRIMEIRA CLASSE</option>
-					 <option value="SOLDADO SEGUNDA CLASSE">SOLDADO SEGUNDA CLASSE</option>
-					 <option value="CADETE ULTIMO ANO">CADETE ULTIMO ANO</option>
-					 <option value="CADETE DEMAIS ANOS">CADETE DEMAIS ANOS</option>
-				  </select>
-				</div>
-				<div class="form-group col-md-2 align-self-end">
-				  <label for="situacao_funcional">Situação Funcional</label>
-				  <select class="form-control" name="calcular_rubricas" required id="situacao_funcional"
-                          onchange="mostrar_campos(event,'inativo')">
-					 <option value=""></option>
-					 <option value="ativo">ATIVO</option>
-					 <option value="inativo">INATIVO</option>
-				  </select>
-				</div>
-
-				<div class="form-group col-md-3 align-self-end">
-				  <label for="aux_moradia_dependente">Tipo de Auxílio Moradia</label>
-				  <select class="form-control" name="calcular_rubricas" required id="aux_moradia_dependente">
-					 <option value=""></option>
-					 <option value="amcd">COM DEPENDENTE</option>
-					 <option value="amsd">SEM DEPENDENTE</option>
-				  </select>
-				</div>
-				<div class="form-group col-md-2 align-self-end ativo">
-				  <label for="tipo_gfne">GFNE</label>
-				  <select class="form-control" name="calcular_rubricas" required id="tipo_gfne">
-                      <option value=""></option>
-                      <option value="0">NÃO RECEBE</option>
-                      <option value="1">I</option>
-                      <option value="2">II</option>
-                      <option value="3">III</option>
-                      <option value="4">IV</option>
-                      <option value="5">V</option>
-				  </select>
-				</div>
-				<div class="form-group col-md-2 align-self-end">
-				  <label for="pct_ats">Adicional de Tempo de Serviço</label>
-                    <input type="text" id="pct_ats" name="calcular_rubricas" class="form-control">
-<!--                    TODO: Inserir sinal de % após o textbox-->
-				</div>
-				<div class="form-group col-md-2 align-self-end inativo" style="display:none;">
-				  <label for="bool_pttc">Está no PTTC?</label>
-				  <select class="form-control" name="calcular_rubricas" required id="bool_pttc">
-					 <option value=""></option>
-					 <option value="sim">SIM</option>
-					 <option value="nao">NÃO</option>
-				  </select>
-				</div>
-				<div class="form-group col-md-2 align-self-end">
-				  <label for="pensao_militar_adicional">Paga Pensão Militar Adicional?</label>
-				  <select class="form-control" name="calcular_rubricas" required id="pensao_militar_adicional">
-					 <option value=""></option>
-					 <option value="sim">SIM</option>
-					 <option value="nao">NÃO</option>
-				  </select>
-				</div>
-				<div class="form-group col-md-2 align-self-end ativo">
-				  <label for="horas_gsv">Horas de Serviço Voluntário</label>
-<!--                    TODO: style.display=none se for INATIVO-->
-				  <input type="text" id="horas_gsv" name="calcular_rubricas" class="form-control">
-				</div>
-            </div>
-            <div class="form-row border rounded">
-                <div class="col-md-12">
-                    <p><b>CURSOS QUE POSSUI:</b></p>
-                </div>
-				<div class="form-group col-md-auto align-self-end">
-                    <div class="form-check ">
-                      <input class="form-check-input acp" name="calcular_rubricas" type="checkbox" id="acp_10" value=10>
-                      <label class="form-check-label" for="acp_10">Formação (CFSD, CFO, CHO)</label>
+    <div class="container-fluid" style="margin-top: 40px">
+        <div class="row">
+            <div class="col col-lg-3 bd-links">
+                <h2>Dados</h2>
+                <div class="form-row">
+                    <div class="form-group col-md align-self-end">
+                      <label for="posto">Posto/Graduação</label>
+                      <select class="form-control" name="calcular_rubricas" required id="posto">
+                         <option value=""></option>
+                         <option value="CORONEL">CORONEL</option>
+                         <option value="TENENTE-CORONEL">TENENTE-CORONEL</option>
+                         <option value="MAJOR">MAJOR</option>
+                         <option value="CAPITAO">CAPITAO</option>
+                         <option value="PRIMEIRO TENENTE">PRIMEIRO TENENTE</option>
+                         <option value="SEGUNDO TENENTE">SEGUNDO TENENTE</option>
+                         <option value="ASPIRANTE">ASPIRANTE</option>
+                         <option value="SUBTENENTE">SUBTENENTE</option>
+                         <option value="PRIMEIRO SARGENTO">PRIMEIRO SARGENTO</option>
+                         <option value="SEGUNDO SARGENTO">SEGUNDO SARGENTO</option>
+                         <option value="TERCEIRO SARGENTO">TERCEIRO SARGENTO</option>
+                         <option value="CABO">CABO</option>
+                         <option value="SOLDADO PRIMEIRA CLASSE">SOLDADO PRIMEIRA CLASSE</option>
+                         <option value="SOLDADO SEGUNDA CLASSE">SOLDADO SEGUNDA CLASSE</option>
+                         <option value="CADETE ULTIMO ANO">CADETE ULTIMO ANO</option>
+                         <option value="CADETE DEMAIS ANOS">CADETE DEMAIS ANOS</option>
+                      </select>
                     </div>
-                    <div class="form-check ">
-                      <input class="form-check-input acp" name="calcular_rubricas" type="checkbox" id="acp_15" value=15>
-                      <label class="form-check-label" for="acp_15">Especialização (CESEI, CMAUT, SCI...)</label>
+                    <div class="form-group col-md align-self-end">
+                      <label for="situacao_funcional">Situação Funcional</label>
+                      <select class="form-control" name="calcular_rubricas" required id="situacao_funcional"
+                              onchange="mostrar_campos(event,'inativo')">
+                         <option value=""></option>
+                         <option value="ativo">ATIVO</option>
+                         <option value="inativo">INATIVO</option>
+                      </select>
                     </div>
-                    <div class="form-check ">
-                      <input class="form-check-input acp" name="calcular_rubricas" type="checkbox" id="acp_20" value=20>
-                      <label class="form-check-label" for="acp_20">Aperfeiçoamento (CAP, CAO)</label>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md align-self-end">
+                      <label for="aux_moradia_dependente">Tipo de Auxílio Moradia</label>
+                      <select class="form-control" name="calcular_rubricas" required id="aux_moradia_dependente">
+                         <option value=""></option>
+                         <option value="amcd">COM DEPENDENTE</option>
+                         <option value="amsd">SEM DEPENDENTE</option>
+                      </select>
                     </div>
-                    <div class="form-check ">
-                      <input class="form-check-input acp" name="calcular_rubricas" type="checkbox" id="acp_30" value=30>
-                      <label class="form-check-label" for="acp_30">Altos Estudos (CAEP, CAEO)</label>
+                    <div class="form-group col-md align-self-end ativo">
+                      <label for="tipo_gfne">GFNE</label>
+                      <select class="form-control" name="calcular_rubricas" required id="tipo_gfne">
+                          <option value=""></option>
+                          <option value="0">NÃO RECEBE</option>
+                          <option value="1">I</option>
+                          <option value="2">II</option>
+                          <option value="3">III</option>
+                          <option value="4">IV</option>
+                          <option value="5">V</option>
+                      </select>
                     </div>
-				</div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md align-self-end">
+                      <label for="pct_ats">Adicional de Tempo de Serviço</label>
+                        <input type="text" id="pct_ats" name="calcular_rubricas" class="form-control">
+    <!--                    TODO: Inserir sinal de % após o textbox-->
+                    </div>
+                    <div class="form-group col-md align-self-end inativo" style="display:none;">
+                      <label for="bool_pttc">Está no PTTC?</label>
+                      <select class="form-control" name="calcular_rubricas" required id="bool_pttc">
+                         <option value=""></option>
+                         <option value="sim">SIM</option>
+                         <option value="nao">NÃO</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md align-self-end">
+                      <label for="pensao_militar_adicional">Paga Pensão Militar Adicional?</label>
+                      <select class="form-control" name="calcular_rubricas" required id="pensao_militar_adicional">
+                         <option value=""></option>
+                         <option value="sim">SIM</option>
+                         <option value="nao">NÃO</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md align-self-end ativo">
+                      <label for="horas_gsv">Horas de Serviço Voluntário</label>
+    <!--                    TODO: style.display=none se for INATIVO-->
+                      <input type="text" id="horas_gsv" name="calcular_rubricas" class="form-control">
+                    </div>
+                </div>
+                <div class="form-row border rounded">
+                    <div class="col-md-6">
+                        <p><b>CURSOS QUE POSSUI:</b></p>
+                    </div>
+                    <div class="form-group col-md-auto align-self-end">
+                        <div class="form-check ">
+                          <input class="form-check-input acp" name="calcular_rubricas" type="checkbox" id="acp_10" value=10>
+                          <label class="form-check-label" for="acp_10">Formação (CFSD, CFO, CHO)</label>
+                        </div>
+                        <div class="form-check ">
+                          <input class="form-check-input acp" name="calcular_rubricas" type="checkbox" id="acp_15" value=15>
+                          <label class="form-check-label" for="acp_15">Especialização (CESEI, CMAUT, SCI...)</label>
+                        </div>
+                        <div class="form-check ">
+                          <input class="form-check-input acp" name="calcular_rubricas" type="checkbox" id="acp_20" value=20>
+                          <label class="form-check-label" for="acp_20">Aperfeiçoamento (CAP, CAO)</label>
+                        </div>
+                        <div class="form-check ">
+                          <input class="form-check-input acp" name="calcular_rubricas" type="checkbox" id="acp_30" value=30>
+                          <label class="form-check-label" for="acp_30">Altos Estudos (CAEP, CAEO)</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row border rounded">
+                    <div class="col-md-12">
+                        <p><b>QUANTIDADE DE DEPENDENTES PARA:</b></p>
+                    </div>
+                    <div class="form-group col-md align-self-end">
+                      <label for="dep_ir">Imposto de Renda</label>
+                      <select class="form-control" name="calcular_rubricas" required id="dep_ir">
+                          <option value=""></option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                          <option value="13">13</option>
+                          <option value="14">14</option>
+                          <option value="15">15</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md align-self-end">
+                      <label for="dep_fs">Fundo de Saúde</label>
+                      <select class="form-control" name="calcular_rubricas" required id="dep_fs">
+                          <option value=""></option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                          <option value="13">13</option>
+                          <option value="14">14</option>
+                          <option value="15">15</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md align-self-end">
+                      <label for="pre_escolar">Auxílio Pré-Escolar</label>
+                      <select class="form-control" name="calcular_rubricas" required id="pre_escolar">
+                          <option value=""></option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                          <option value="13">13</option>
+                          <option value="14">14</option>
+                          <option value="15">15</option>
+                      </select>
+                    </div>
+                </div>
+                <div class="form-row border rounded">
+                    <div class="col-md-12">
+                        <p><b>PENSÃO ALIMENTÍCIA</b></p>
+                    </div>
+                    <div class="form-group col-md-8 align-self-end">
+                      <label for="percentual_pa">Percentual de Pensão</label>
+                        <input type="text" id="percentual_pa" class="form-control" name="calcular_rubricas"
+                                                          onblur="mostrar_campos(event,'possui_pa')">
+    <!--                     TODO: Inserir sinal de % após o textbox-->
+                    </div>
+                    <div class="form-group col-md-8 align-self-end possui_pa" style="display:none;">
+                      <label for="tipo_pa">Tipo de Incidência</label>
+                      <select class="form-control" name="calcular_rubricas" required id="tipo_pa">
+                          <!--                    TODO: Explicar como se calcula cada tipo-->
+                         <option value=""></option>
+                         <option value="liquido">REMUNERAÇÃO LÍQUIDA</option>
+                         <option value="bruto">REMUNERAÇÃO BRUTA</option>
+                         <option value="sal_minimo">SALÁRIO MÍNIMO</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-8 align-self-end possui_pa" style="display:none;">
+                      <label for="pre_escolar_pensao">Quantidade de Auxílio Pré-Escolar revertido em Pensão Alimentícia</label>
+                      <select class="form-control" name="calcular_rubricas" required id="pre_escolar_pensao">
+                          <option value=""></option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                          <option value="13">13</option>
+                          <option value="14">14</option>
+                          <option value="15">15</option>
+                      </select>
+                    </div>
+                </div>
+                <div class="form-row border rounded">
+                    <div class="col-md-12">
+                        <p><b>OUTROS DESCONTOS</b></p>
+                    </div>
+                    <div class="form-group col-md align-self-end">
+                      <label for="soma_descontos_dedutiveis">Dedutíveis</label>
+                        <input type="text" id="soma_descontos_dedutiveis" class="form-control" name="calcular_rubricas">
+                    </div>
+                    <div class="form-group col-md align-self-end">
+                      <label for="soma_descontos_nao_dedutiveis">Não Dedutíveis</label>
+                        <input type="text" id="soma_descontos_nao_dedutiveis" class="form-control" name="calcular_rubricas">
+                    </div>
+                </div>
             </div>
-            <div class="form-row border rounded">
-                <div class="col-md-12">
-                    <p><b>QUANTIDADE DE DEPENDENTES PARA:</b></p>
-                </div>
-				<div class="form-group col-md-2 align-self-end">
-				  <label for="dep_ir">Imposto de Renda</label>
-				  <select class="form-control" name="calcular_rubricas" required id="dep_ir">
-                      <option value=""></option>
-                      <option value="0">0</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
-                      <option value="10">10</option>
-                      <option value="11">11</option>
-                      <option value="12">12</option>
-                      <option value="13">13</option>
-                      <option value="14">14</option>
-                      <option value="15">15</option>
-                  </select>
-                </div>
-				<div class="form-group col-md-2 align-self-end">
-				  <label for="dep_fs">Fundo de Saúde</label>
-				  <select class="form-control" name="calcular_rubricas" required id="dep_fs">
-                      <option value=""></option>
-                      <option value="0">0</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
-                      <option value="10">10</option>
-                      <option value="11">11</option>
-                      <option value="12">12</option>
-                      <option value="13">13</option>
-                      <option value="14">14</option>
-                      <option value="15">15</option>
-                  </select>
-                </div>
-				<div class="form-group col-md-2 align-self-end">
-				  <label for="pre_escolar">Auxílio Pré-Escolar</label>
-				  <select class="form-control" name="calcular_rubricas" required id="pre_escolar">
-                      <option value=""></option>
-                      <option value="0">0</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
-                      <option value="10">10</option>
-                      <option value="11">11</option>
-                      <option value="12">12</option>
-                      <option value="13">13</option>
-                      <option value="14">14</option>
-                      <option value="15">15</option>
-                  </select>
-                </div>
+
+
+
+
+            <div class="col col-lg-9">
+                <h2>Cálculo Salarial</h2>
+
+                <table id="salario" class="table table-bordered table-hover table-sm">
+                  <thead>
+
+                    <tr id="mes">
+                      <th scope="col"></th>
+                      <th scope="col" headers="03/01/2020">Mar/2020</th>
+                      <th scope="col" headers="04/01/2020">A partir de Abr/2020</th>
+                      <th scope="col" headers="01/01/2021">A partir de Jan/2021</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                        <th colspan="4" class="table-dark">RENDIMENTOS</th>
+                    </tr>
+                    <tr id="soldo">
+                      <td scope="row">SOLDO</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="apg">
+                      <td scope="row">ADICIONAL DE POSTO OU GRADUAÇÃO</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="ats">
+                      <td scope="row">ADICIONAL DE TEMPO DE SERVIÇO</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="compl_soldo">
+                      <td scope="row">COMPLEMENTO DE SOLDO</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="aom">
+                      <td scope="row">ADICIONAL DE OPERAÇÕES MILITARES</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="gfr">
+                      <td scope="row">GRATIFICAÇÃO DE REPRESENTAÇÃO MILITAR</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="acp">
+                      <td scope="row">ADICIONAL DE CERTIFICAÇÃO PROFISSIONAL</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="gcef">
+                      <td scope="row">GCEF-GRAT. COND. ESP. FUN. MILITAR</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="vpe">
+                      <td scope="row">VPE - VANTAGEM PECUNIÁRIA ESPECIAL</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="grv">
+                      <td scope="row">GRV - GRATIFICAÇÃO POR RISCO DE VIDA</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="gfne">
+                      <td scope="row">GFNE</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="pttc">
+                      <td scope="row">PTTC</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="gsv">
+                      <td scope="row">GSV - GRATIFICAÇÃO DE SERVIÇO VOLUNTÁRIO</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+    <!--                <tr>-->
+    <!--                    <th colspan="4" class="table-dark">DIREITOS PECUNIÁRIOS</th>-->
+    <!--                </tr>-->
+                    <tr id="aux_mor">
+                      <td scope="row">AUXILIO MORADIA</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="alim">
+                      <td scope="row">ETAPA ALIMENTAÇÃO</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="aux_pe">
+                      <td scope="row">AUXÍLIO PRÉ ESCOLAR</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr >
+                        <th colspan="4" class="table-dark">DESCONTOS</th>
+                    </tr>
+                    <tr id="cota_pe">
+                      <td scope="row">COTA PRÉ ESCOLAR</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="pensao_alim">
+                      <td scope="row">PENSÃO ALIMENTÍCIA</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="pensao_alim_pe">
+                      <td scope="row">PENSÃO ALIMENTÍCIA SOBRE PRÉ ESCOLAR</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="contr_pensao_militar">
+                      <td scope="row">CONTR. PENSÃO MILITAR</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="contr_pensao_militar_adic">
+                      <td scope="row">CONTR. PENSÃO MILITAR ADICIONAL</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="fundo_saude">
+                      <td scope="row">FUNDO DE SAÚDE</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="fundo_saude_adicional">
+                      <td scope="row">FUNDO DE SAÚDE ADICIONAL</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="outros_descontos_dedutiveis">
+                      <td scope="row">OUTROS DESCONTOS DEDUTÍVEIS</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="outros_descontos_nao_dedutiveis">
+                      <td scope="row">OUTROS DESCONTOS NÃO DEDUTÍVEIS</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="irrf">
+                      <td scope="row">IRRF - IMPOSTO DE RENDA RETIDO NA FONTE</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                        <th colspan="4" class="table-dark">TOTAL</th>
+                    </tr>
+                    <tr id="remuneracao_total">
+                      <td scope="row">REMUNERAÇÃO</td>
+    <!--                    TODO: Explicar conforme a Lei 10.486/02 o que compõe a remuneração-->
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="rendimento_bruto">
+                      <td scope="row">RENDIMENTO BRUTO</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="descontos_total">
+                      <td scope="row">DESCONTOS</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="rendimento_liquido">
+                      <td scope="row">RENDIMENTO LÍQUIDO</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                        <th colspan="4" class="table-dark">RENDIMENTOS EVENTUAIS</th>
+                    </tr>
+                    <tr id="decimo_terceiro">
+                      <td scope="row">GRATIFICAÇÃO DE NATAL (DÉCIMO TERCEIRO)</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="ferias">
+                      <td scope="row">FÉRIAS</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="auxilio_fardamento">
+                      <td scope="row">AUXÍLIO FARDAMENTO</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4" class="table-dark">DESCONTOS EVENTUAIS</th>
+                    </tr>
+                    <tr id="irrf_decimo_terceiro">
+                      <td scope="row">IRRF - DÉCIMO TERCEIRO</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="irrf_ferias">
+                      <td scope="row">IRRF - FÉRIAS</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="pa_decimo_terceiro">
+                      <td scope="row">PENSÃO ALIMENTÍCIA - DÉCIMO TERCEIRO</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
             </div>
-            <div class="form-row border rounded">
-                <div class="col-md-12">
-                    <p><b>PENSÃO ALIMENTÍCIA</b></p>
-                </div>
-				<div class="form-group col-md-2 align-self-end">
-				  <label for="percentual_pa">Percentual de Pensão</label>
-                    <input type="text" id="percentual_pa" class="form-control" name="calcular_rubricas"
-                                                      onblur="mostrar_campos(event,'possui_pa')">
-<!--                     TODO: Inserir sinal de % após o textbox-->
-				</div>
-				<div class="form-group col-md-3 align-self-end possui_pa" style="display:none;">
-				  <label for="tipo_pa">Tipo de Incidência</label>
-				  <select class="form-control" name="calcular_rubricas" required id="tipo_pa">
-                      <!--                    TODO: Explicar como se calcula cada tipo-->
-					 <option value=""></option>
-					 <option value="liquido">REMUNERAÇÃO LÍQUIDA</option>
-					 <option value="bruto">REMUNERAÇÃO BRUTA</option>
-                     <option value="sal_minimo">SALÁRIO MÍNIMO</option>
-				  </select>
-				</div>
-				<div class="form-group col-md-3 align-self-end possui_pa" style="display:none;">
-				  <label for="pre_escolar_pensao">Quantidade de Auxílio Pré-Escolar revertido em Pensão Alimentícia</label>
-				  <select class="form-control" name="calcular_rubricas" required id="pre_escolar_pensao">
-                      <option value=""></option>
-                      <option value="0">0</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
-                      <option value="10">10</option>
-                      <option value="11">11</option>
-                      <option value="12">12</option>
-                      <option value="13">13</option>
-                      <option value="14">14</option>
-                      <option value="15">15</option>
-                  </select>
-                </div>
-            </div>
-        <div>
-            <h2>Cálculo Salarial</h2>
-
-            <table id="salario" class="table table-bordered table-hover table-sm">
-              <thead>
-
-                <tr id="mes">
-                  <th scope="col"></th>
-                  <th scope="col" headers="03/01/2020">Mar/2020</th>
-                  <th scope="col" headers="04/01/2020">A partir de Abr/2020</th>
-                  <th scope="col" headers="01/01/2021">A partir de Jan/2021</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                    <th colspan="4" class="table-dark">RENDIMENTOS</th>
-                </tr>
-                <tr id="soldo">
-                  <td scope="row">SOLDO</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="apg">
-                  <td scope="row">ADICIONAL DE POSTO OU GRADUAÇÃO</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="ats">
-                  <td scope="row">ADICIONAL DE TEMPO DE SERVIÇO</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="compl_soldo">
-                  <td scope="row">COMPLEMENTO DE SOLDO</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="aom">
-                  <td scope="row">ADICIONAL DE OPERAÇÕES MILITARES</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="gfr">
-                  <td scope="row">GRATIFICAÇÃO DE REPRESENTAÇÃO MILITAR</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="acp">
-                  <td scope="row">ADICIONAL DE CERTIFICAÇÃO PROFISSIONAL</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="gcef">
-                  <td scope="row">GCEF-GRAT. COND. ESP. FUN. MILITAR</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="vpe">
-                  <td scope="row">VPE - VANTAGEM PECUNIÁRIA ESPECIAL</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="grv">
-                  <td scope="row">GRV - GRATIFICAÇÃO POR RISCO DE VIDA</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="gfne">
-                  <td scope="row">GFNE</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="pttc">
-                  <td scope="row">PTTC</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="gsv">
-                  <td scope="row">GSV - GRATIFICAÇÃO DE SERVIÇO VOLUNTÁRIO</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-<!--                <tr>-->
-<!--                    <th colspan="4" class="table-dark">DIREITOS PECUNIÁRIOS</th>-->
-<!--                </tr>-->
-                <tr id="aux_mor">
-                  <td scope="row">AUXILIO MORADIA</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="alim">
-                  <td scope="row">ETAPA ALIMENTAÇÃO</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="aux_pe">
-                  <td scope="row">AUXÍLIO PRÉ ESCOLAR</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr >
-                    <th colspan="4" class="table-dark">DESCONTOS</th>
-                </tr>
-                <tr id="cota_pe">
-                  <td scope="row">COTA PRÉ ESCOLAR</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="pensao_alim">
-                  <td scope="row">PENSÃO ALIMENTÍCIA</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="pensao_alim_pe">
-                  <td scope="row">PENSÃO ALIMENTÍCIA SOBRE PRÉ ESCOLAR</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="contr_pensao_militar">
-                  <td scope="row">CONTR. PENSÃO MILITAR</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="contr_pensao_militar_adic">
-                  <td scope="row">CONTR. PENSÃO MILITAR ADICIONAL</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="fundo_saude">
-                  <td scope="row">FUNDO DE SAÚDE</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="fundo_saude_adicional">
-                  <td scope="row">FUNDO DE SAÚDE ADICIONAL</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="irrf">
-                  <td scope="row">IRRF - IMPOSTO DE RENDA RETIDO NA FONTE</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                    <th colspan="4" class="table-dark">TOTAL</th>
-                </tr>
-                <tr id="remuneracao_total">
-                  <td scope="row">REMUNERAÇÃO</td>
-<!--                    TODO: Explicar conforme a Lei 10.486/02 o que compõe a remuneração-->
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="rendimento_bruto">
-                  <td scope="row">RENDIMENTO BRUTO</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="descontos_total">
-                  <td scope="row">DESCONTOS</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="rendimento_liquido">
-                  <td scope="row">RENDIMENTO LÍQUIDO</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                    <th colspan="4" class="table-dark">RENDIMENTOS EVENTUAIS</th>
-                </tr>
-                <tr id="decimo_terceiro">
-                  <td scope="row">GRATIFICAÇÃO DE NATAL (DÉCIMO TERCEIRO)</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="ferias">
-                  <td scope="row">FÉRIAS</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="auxilio_fardamento">
-                  <td scope="row">AUXÍLIO FARDAMENTO</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-
-                <tr>
-                    <th colspan="4" class="table-dark">DESCONTOS EVENTUAIS</th>
-                </tr>
-                <tr id="irrf_decimo_terceiro">
-                  <td scope="row">IRRF - DÉCIMO TERCEIRO</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="irrf_ferias">
-                  <td scope="row">IRRF - FÉRIAS</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr id="pa_decimo_terceiro">
-                  <td scope="row">PENSÃO ALIMENTÍCIA - DÉCIMO TERCEIRO</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-
         </div>
     </div>
     <footer>
