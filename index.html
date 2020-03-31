@@ -182,11 +182,12 @@
                         </div>
                     </div>
                     <div class="accordion " id="opcionais">
-                        <b><p style="text-align center;">VALORES OPCIONAIS</p></b>
+                        <b><p style="text-align center;">OUTROS VALORES</p></b>
                     <div class="card rounded">
 <!--                        TODO: Mudar cores dos cards-->
                       <ul class="list-group list-group-flush">
-                        <button class="btn btn-link bg-light" data-toggle="collapse" data-target="#card_gfne" aria-expanded="true" aria-controls="card_gfne">GFNE</button>
+                        <button class="btn btn-link bg-light" data-toggle="collapse" data-target="#card_gfne"
+                                aria-expanded="true" aria-controls="card_gfne">GFNE</button>
                             <div class="card-body collapse ativo" id="card_gfne">
         <!--                        TODO Campos nao obrigatorios (GFNE, GSV, PA, ATS) ficam escondidos em um botao Collapse-->
                               <label for="tipo_gfne">Tipo</label>
@@ -200,13 +201,17 @@
                                   <option value="5">V</option>
                               </select>
                             </div>
-                        <button class="btn btn-link bg-light" data-toggle="collapse" data-target="#card_ats" aria-expanded="true" aria-controls="card_ats">Adicional de Tempo de Serviço</button>
+                        <button class="btn btn-link bg-light" data-toggle="collapse" data-target="#card_ats"
+                                aria-expanded="true" aria-controls="card_ats"
+                                title="Anos de Efetivo Serviço Militar (incluindo tempo de outras Forças) até 05/09/2001.
+                                &#013Militares que ingressaram após essa data não precisam preencher.">Adicional de Tempo de Serviço</button>
                             <div class="card-body collapse" id="card_ats">
-                              <label for="pct_ats">Valor</label>
+                              <label for="pct_ats">Tempo (em Anos)</label>
                                 <input type="text" id="pct_ats" name="calcular_rubricas" class="form-control">
             <!--                    TODO: Inserir sinal de % após o textbox-->
                             </div>
-                        <button class="btn btn-link inativo bg-light" data-toggle="collapse" data-target="#card_pttc" aria-expanded="true" aria-controls="card_pttc" style="display:none;">PTTC</button>
+                        <button class="btn btn-link inativo bg-light" data-toggle="collapse" data-target="#card_pttc"
+                                aria-expanded="true" aria-controls="card_pttc" style="display:none;">PTTC</button>
                             <div class="card-body collapse" id="card_pttc">
                                   <label for="bool_pttc">Está no PTTC?</label>
                                   <select class="form-control" name="calcular_rubricas" required id="bool_pttc">
@@ -215,42 +220,50 @@
                                      <option value="nao">NÃO</option>
                                   </select>
                             </div>
-                        <button class="btn btn-link bg-light" data-toggle="collapse" data-target="#card_pensao_militar_adicional" aria-expanded="true" aria-controls="card_pensao_militar_adicional">Pensão Militar Adicional</button>
+                        <button class="btn btn-link bg-light" data-toggle="collapse"
+                                data-target="#card_pensao_militar_adicional" aria-expanded="true"
+                                aria-controls="card_pensao_militar_adicional">Pensão Militar Adicional</button>
                             <div class="card-body collapse" id="card_pensao_militar_adicional">
                               <label for="pensao_militar_adicional">Paga Pensão Militar Adicional?</label>
-                              <select class="form-control" name="calcular_rubricas" required id="pensao_militar_adicional">
+                              <select class="form-control" name="calcular_rubricas" required
+                                      id="pensao_militar_adicional">
                                  <option value=""></option>
                                  <option value="sim">SIM</option>
                                  <option value="nao">NÃO</option>
                               </select>
                             </div>
-                        <button class="btn btn-link bg-light" data-toggle="collapse" data-target="#card_horas_gsv" aria-expanded="true" aria-controls="card_horas_gsv">Serviço Voluntário</button>
+                        <button class="btn btn-link bg-light" data-toggle="collapse" data-target="#card_horas_gsv"
+                                aria-expanded="true" aria-controls="card_horas_gsv">Serviço Voluntário</button>
                             <div class="card-body collapse ativo" id="card_horas_gsv">
                               <label for="horas_gsv">Horas</label>
             <!--                    TODO: style.display=none se for INATIVO-->
                               <input type="text" id="horas_gsv" name="calcular_rubricas" class="form-control">
                             </div>
-                        <button class="btn btn-link bg-light" data-toggle="collapse" data-target="#card_pensao_alimenticia" aria-expanded="true" aria-controls="card_pensao_alimenticia">Pensão Alimentícia</button>
+                        <button class="btn btn-link bg-light" data-toggle="collapse"
+                                data-target="#card_pensao_alimenticia" aria-expanded="true"
+                                aria-controls="card_pensao_alimenticia">Pensão Alimentícia</button>
                             <div class="card-body collapse ativo" id="card_pensao_alimenticia">
-                                <div class="form-group col-md-8 align-self-end">
+                                <div class="form-group col-md-12 align-self-end">
                                   <label for="percentual_pa">Percentual de Pensão</label>
                                     <input type="text" id="percentual_pa" class="form-control" name="calcular_rubricas"
                                                                       onblur="mostrar_campos(event,'possui_pa')">
                 <!--                     TODO: Inserir sinal de % após o textbox-->
                                 </div>
-                                <div class="form-group col-md-8 align-self-end possui_pa" style="display:none;">
+                                <div class="form-group col-md-12 align-self-end possui_pa" style="display:none;">
                                   <label for="tipo_pa">Tipo de Incidência</label>
                                   <select class="form-control" name="calcular_rubricas" required id="tipo_pa">
                                       <!--                    TODO: Explicar como se calcula cada tipo-->
                                      <option value=""></option>
-                                     <option value="liquido">REMUNERAÇÃO LÍQUIDA</option>
+                                     <option value="liquido" selected>REMUNERAÇÃO LÍQUIDA</option>
                                      <option value="bruto">REMUNERAÇÃO BRUTA</option>
                                      <option value="sal_minimo">SALÁRIO MÍNIMO</option>
                                   </select>
                                 </div>
-                                <div class="form-group col-md-8 align-self-end possui_pa" style="display:none;">
-                                  <label for="pre_escolar_pensao">Quantidade de Auxílio Pré-Escolar revertido em Pensão Alimentícia</label>
-                                  <select class="form-control" name="calcular_rubricas" required id="pre_escolar_pensao">
+                                <div class="form-group col-md-12 align-self-end possui_pa" style="display:none;">
+                                  <label for="pre_escolar_pensao">
+                                      Quantidade de Auxílio Pré-Escolar revertido em Pensão Alimentícia</label>
+                                  <select class="form-control" name="calcular_rubricas" required
+                                          id="pre_escolar_pensao">
                                       <option value=""></option>
                                       <option value="0">0</option>
                                       <option value="1">1</option>
@@ -271,15 +284,19 @@
                                   </select>
                                 </div>
                             </div>
-                        <button class="btn btn-link bg-light"  data-toggle="collapse" data-target="#card_outros_descontos" aria-expanded="true" aria-controls="card_outros_descontos">Outros Descontos</button>
+                        <button class="btn btn-link bg-light"  data-toggle="collapse"
+                                data-target="#card_outros_descontos" aria-expanded="true"
+                                aria-controls="card_outros_descontos">Outros Descontos</button>
                             <div class="card-body collapse" id="card_outros_descontos">
                                 <div class="form-group align-self-end">
                                   <label for="soma_descontos_dedutiveis">Dedutíveis</label>
-                                    <input type="text" id="soma_descontos_dedutiveis" class="form-control" name="calcular_rubricas">
+                                    <input type="text" id="soma_descontos_dedutiveis" class="form-control"
+                                           name="calcular_rubricas">
                                 </div>
                                 <div class="form-group align-self-end">
                                   <label for="soma_descontos_nao_dedutiveis">Não Dedutíveis</label>
-                                    <input type="text" id="soma_descontos_nao_dedutiveis" class="form-control" name="calcular_rubricas">
+                                    <input type="text" id="soma_descontos_nao_dedutiveis" class="form-control"
+                                           name="calcular_rubricas">
                                 </div>
                             </div>
                       </ul>
