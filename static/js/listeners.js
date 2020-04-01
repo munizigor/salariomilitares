@@ -10,7 +10,26 @@ function load () {
     for (var i = 0; i < elems_name.length; i++) {
         action = ((elems_name[i].type=="text")? 'blur' : 'change')
         elems_name[i].addEventListener(action, function () {
-            loop_cols();
+//        Loop nas colunas
+            for (col=1;col<document.getElementById('mes').cells.length;col++){
+                try {
+                    calcular_rubricas (col)
+                    }
+                catch(err) {
+                    if (this.event.target.value=='' || this.event.target.value=='null') {
+                        return
+                        break;
+                    }
+                    else if (document.getElementById('posto').value=='' || document.getElementById('posto').value=='null'){
+                        return alert('Informe o Posto/Graduação')
+                        break;
+                    }
+                    else {
+                        console.log(err.message);
+                        break;
+                    }
+                }
+            }
         })
     }
 

@@ -373,29 +373,6 @@ function rounddown(x) {
     return Math.floor(x*100)/100
 }
 
-loop_cols = function () {
-//TODO: Loops estao deixando o sistema lento
-            for (col=1;col<document.getElementById('mes').cells.length;col++){
-                try {
-                    calcular_rubricas (col)
-                    }
-                catch(err) {
-                    if (this.event.target.value=='' || this.event.target.value=='null') {
-                        return
-                        break;
-                    }
-                    else if (document.getElementById('posto').value=='' || document.getElementById('posto').value=='null'){
-                        return alert('Informe o Posto/Graduação')
-                        break;
-                    }
-                    else {
-                        console.log(err.message);
-                        break;
-                    }
-                }
-            }
-}
-
 
 //Formula base de calculo das parcelas vinculadas ao posto/graduacao
 function calcular_rubricas (col){
