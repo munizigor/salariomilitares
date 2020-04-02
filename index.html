@@ -268,9 +268,10 @@
                                   <select class="form-control" name="calcular_rubricas" required id="tipo_pa">
                                       <!--                    TODO: Explicar como se calcula cada tipo-->
                                      <option value=""></option>
-                                     <option value="liquido" selected>REMUNERAÇÃO LÍQUIDA</option>
-                                     <option value="bruto">REMUNERAÇÃO BRUTA</option>
-                                     <option value="sal_minimo">SALÁRIO MÍNIMO</option>
+                                     <option value="liquido" selected>ABATENDO DESCONTOS COMPULSÓRIOS E VERBAS INDENIZATÓRIAS</option>
+                                     <option value="bruto_com_indenizacoes">ABATENDO APENAS DESCONTOS COMPULSÓRIOS</option>
+                                      <option value="bruto">SEM ABATIMENTO DE DESCONTOS COMPULSÓRIOS OU VERBAS INDENIZATÓRIAS</option>
+                                     <option value="sal_minimo">SOBRE SALÁRIO MÍNIMO</option>
                                   </select>
                                 </div>
                                 <div class="form-group col-md-12 align-self-end possui_pa" style="display:none;">
@@ -302,12 +303,14 @@
                                 data-target="#card_outros_descontos" aria-expanded="true"
                                 aria-controls="card_outros_descontos">Outros Descontos</button>
                             <div class="card-body collapse" id="card_outros_descontos">
-                                <div class="form-group align-self-end">
+                                <div class="form-group align-self-end" title="Descontos tributáveis efetuados em contracheque.
+                                &#013Ex.: Previdência Privada, Plano de Saúde, Ressarcimentos ao Fundo de Saúde Adicional (Não inclui o valor mensal pago por dependente) etc.">
                                   <label for="soma_descontos_dedutiveis">Dedutíveis</label>
                                     <input type="text" id="soma_descontos_dedutiveis" class="form-control"
                                            name="calcular_rubricas">
                                 </div>
-                                <div class="form-group align-self-end">
+                                <div class="form-group align-self-end" title="Descontos não tributáveis efetuados em contracheque.
+                                &#013Ex.: Empréstimos, Clubes, Caixas Beneficentes etc.">
                                   <label for="soma_descontos_nao_dedutiveis">Não Dedutíveis</label>
                                     <input type="text" id="soma_descontos_nao_dedutiveis" class="form-control"
                                            name="calcular_rubricas">

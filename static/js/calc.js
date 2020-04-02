@@ -179,7 +179,7 @@ function Verbas(col){
                 parcela_base = this.decimo_terceiro()
               }
               else {
-                parcela_base = this.remuneracao_total() - this.contr_pensao_militar()
+                parcela_base = this.remuneracao_total() - this.contr_pensao_militar() - this.irrf(tipo)
               }
               tipo_pa = document.getElementById('tipo_pa').value
               if (tipo_pa=='sal_minimo') {
@@ -187,10 +187,13 @@ function Verbas(col){
               }
               else if (tipo_pa=='liquido') {
 //              console.log(this.irrf(tipo))
-              base_calculo = parcela_base - this.irrf(tipo)
+              base_calculo = parcela_base
               }
               else if (tipo_pa=='bruto') {
-                base_calculo = this.remuneracao_total()
+                base_calculo = this.remuneracao_total() + this.alim() + this.aux_mor()
+              }
+              else if (tipo_pa=='bruto_com_indenizacoes') {
+                base_calculo = parcela_base + this.alim() + this.aux_mor()
               }
               else {
                 base_calculo = 0
@@ -218,14 +221,14 @@ function Verbas(col){
         }
         deducao_dependente = (189.59)*parseInt(qtde_ir)
         descontos = (this.contr_pensao_militar() + this.contr_pensao_militar_adic() + this.fundo_saude() +
-        this.fundo_saude_adicional())
+        this.fundo_saude_adicional() + this.outros_descontos_dedutiveis())
 //        Base de Calculo do IRRF mensal Antes da Pensao Alimenticia
         if (tipo =='pensao_alim') {
             base_calculo = this.remuneracao_total() - descontos
         }
 //        Base de Calculo do IRRF mensal Final
         if (tipo =='remuneracao') {
-            base_calculo = this.remuneracao_total() - descontos - this.pensao_alim() - this.outros_descontos_dedutiveis()
+            base_calculo = this.remuneracao_total() - descontos - this.pensao_alim()
         }
 //        Base de Calculo do 13 Salario
         if (tipo =='decimo_terceiro') {
