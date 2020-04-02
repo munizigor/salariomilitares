@@ -11,7 +11,10 @@ remuneracao = {
          "gfr":31.95,
          "amcd":3600,
          "amsd":1200,
-         "cotafsa":18
+         "cotafsa":{
+            "pmdf":12,
+            "cbmdf":18,
+            },
       },
       "TENENTE-CORONEL":{
          "soldo":3067.23,
@@ -21,7 +24,10 @@ remuneracao = {
          "gfr":30.67,
          "amcd":3473.61,
          "amsd":1157.87,
-         "cotafsa":18
+         "cotafsa":{
+            "pmdf":12,
+            "cbmdf":18,
+            },
       },
       "MAJOR":{
          "soldo":2929.85,
@@ -31,7 +37,10 @@ remuneracao = {
          "gfr":29.29,
          "amcd":3256.66,
          "amsd":1085.55,
-         "cotafsa":18
+         "cotafsa":{
+            "pmdf":12,
+            "cbmdf":18,
+            },
       },
       "CAPITAO":{
          "soldo":2434.62,
@@ -41,7 +50,10 @@ remuneracao = {
          "gfr":24.34,
          "amcd":2613.52,
          "amsd":871.17,
-         "cotafsa":16
+         "cotafsa":{
+            "pmdf":10,
+            "cbmdf":16,
+            },
       },
       "PRIMEIRO TENENTE":{
          "soldo":2249.31,
@@ -51,7 +63,10 @@ remuneracao = {
          "gfr":22.49,
          "amcd":2284.63,
          "amsd":761.54,
-         "cotafsa":16
+         "cotafsa":{
+            "pmdf":10,
+            "cbmdf":16,
+            },
       },
       "SEGUNDO TENENTE":{
          "soldo":2079.97,
@@ -61,7 +76,10 @@ remuneracao = {
          "gfr":20.79,
          "amcd":2153.71,
          "amsd":717.9,
-         "cotafsa":16
+         "cotafsa":{
+            "pmdf":10,
+            "cbmdf":16,
+            },
       },
       "ASPIRANTE":{
          "soldo":1792.42,
@@ -71,7 +89,10 @@ remuneracao = {
          "gfr":17.92,
          "amcd":1813.48,
          "amsd":604.49,
-         "cotafsa":16
+         "cotafsa":{
+            "pmdf":9,
+            "cbmdf":16,
+            },
       },
       "SUBTENENTE":{
          "soldo":1613.49,
@@ -81,7 +102,10 @@ remuneracao = {
          "gfr":16.13,
          "amcd":1942.54,
          "amsd":647.51,
-         "cotafsa":14
+         "cotafsa":{
+            "pmdf":8,
+            "cbmdf":14,
+            },
       },
       "PRIMEIRO SARGENTO":{
          "soldo":1405.82,
@@ -91,7 +115,10 @@ remuneracao = {
          "gfr":14.05,
          "amcd":1763.5,
          "amsd":587.83,
-         "cotafsa":14
+         "cotafsa":{
+            "pmdf":8,
+            "cbmdf":14,
+            },
       },
       "SEGUNDO SARGENTO":{
          "soldo":1201.33,
@@ -101,7 +128,10 @@ remuneracao = {
          "gfr":12.01,
          "amcd":1516.07,
          "amsd":505.36,
-         "cotafsa":14
+         "cotafsa":{
+            "pmdf":8,
+            "cbmdf":14,
+            },
       },
       "TERCEIRO SARGENTO":{
          "soldo":1070.34,
@@ -111,7 +141,10 @@ remuneracao = {
          "gfr":10.7,
          "amcd":1398.52,
          "amsd":466.17,
-         "cotafsa":14
+         "cotafsa":{
+            "pmdf":8,
+            "cbmdf":14,
+            },
       },
       "CABO":{
          "soldo":801.95,
@@ -121,7 +154,10 @@ remuneracao = {
          "gfr":8.01,
          "amcd":1157.83,
          "amsd":385.94,
-         "cotafsa":12
+         "cotafsa":{
+            "pmdf":6,
+            "cbmdf":12,
+            },
       },
       "SOLDADO PRIMEIRA CLASSE":{
          "soldo":706.1,
@@ -131,7 +167,10 @@ remuneracao = {
          "gfr":7.06,
          "amcd":1095.58,
          "amsd":365.19,
-         "cotafsa":12
+         "cotafsa":{
+            "pmdf":6,
+            "cbmdf":12,
+            },
       },
       "SOLDADO SEGUNDA CLASSE":{
          "soldo":501.62,
@@ -141,7 +180,10 @@ remuneracao = {
          "gfr":5.01,
          "amcd":850.59,
          "amsd":283.53,
-         "cotafsa":8
+         "cotafsa":{
+            "pmdf":4,
+            "cbmdf":8,
+            },
       },
       "CADETE ULTIMO ANO":{
          "soldo":706.1,
@@ -151,7 +193,10 @@ remuneracao = {
          "gfr":7.06,
          "amcd":1027.86,
          "amsd":342.62,
-         "cotafsa":8
+         "cotafsa":{
+            "pmdf":6,
+            "cbmdf":8,
+            },
       },
       "CADETE DEMAIS ANOS":{
          "soldo":501.62,
@@ -161,7 +206,10 @@ remuneracao = {
          "gfr":5.01,
          "amcd":850.59,
          "amsd":283.53,
-         "cotafsa":8
+         "cotafsa":{
+            "pmdf":4,
+            "cbmdf":8,
+            },
       }
 }
 

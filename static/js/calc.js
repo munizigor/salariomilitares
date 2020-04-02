@@ -4,18 +4,20 @@ function Verbas(col){
 
 //  REMUNERAÇÃO FIXA
 
-    this.valor_parcela = function (rubrica) {
-        try {
+    this.valor_parcela = function (rubrica , corporacao) {
+//        try {
             if (!isNaN(remuneracao[rubrica])) {
-                return remuneracao[rubrica]
+                valor = remuneracao[rubrica]
             }
             else if (document.getElementById('posto').value!=false){
-                return remuneracao[document.getElementById('posto').value][rubrica]
+                valor = remuneracao[document.getElementById('posto').value][rubrica]
             }
-        }
-        catch(err) {
-            console.log(err.message);
-        }
+            valor_final = (corporacao === undefined) ? valor : valor[corporacao]
+            return valor_final
+//        }
+//        catch(err) {
+//            console.log(err.message);
+//        }
     }
     this.soldo = function() { return this.valor_parcela ("soldo")}
     this.gcef = function() { return this.valor_parcela ("gcef")}
@@ -158,7 +160,8 @@ function Verbas(col){
         else {
             qtde_fsa = document.getElementById('dep_fs').value
         }
-        valor_fsa = parseInt(qtde_fsa)*this.valor_parcela ("cotafsa")
+        corporacao = document.getElementById('corporacao').value
+        valor_fsa = parseInt(qtde_fsa)*this.valor_parcela ("cotafsa",corporacao)
         return valor_fsa
     }
     this.pensao_alim = function (tipo='pensao_alim') {
