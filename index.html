@@ -89,6 +89,8 @@
                              <option value=""></option>
                              <option value="ativo">ATIVO</option>
                              <option value="inativo">INATIVO</option>
+<!--                              TODO: Inserir o campo abaixo logo que fechada logica de calculo-->
+<!--                             <option value="pensionista">FALECIDO (INSTITUIDOR DE PENSÃO)</option>-->
                           </select>
                         </div>
                     </div>
@@ -104,7 +106,7 @@
                     </div>
                     <div class="form-row border rounded">
                         <div class="col-md-6">
-                            <p><b>CURSOS QUE POSSUI:</b></p>
+                            <p><b>CAPACITAÇÕES:</b></p>
                         </div>
                         <div class="form-group col-md-auto align-self-end">
                             <div class="form-check ">
@@ -306,15 +308,21 @@
                                 data-target="#card_outros_descontos" aria-expanded="true"
                                 aria-controls="card_outros_descontos">Outros Descontos</button>
                             <div class="card-body collapse" id="card_outros_descontos">
+                                <div class="form-group align-self-end" title="Descontos obrigatórios de reparação ao erário.
+                                &#013Identificados no contracheque como 'REP.ERARIO L.8112/90-10486/02'.">
+                                  <label for="soma_reparacao_erario">Reparação ao Erário</label>
+                                    <input type="text" id="soma_reparacao_erario" class="form-control"
+                                           name="calcular_rubricas">
+                                </div>
                                 <div class="form-group align-self-end" title="Descontos tributáveis efetuados em contracheque.
                                 &#013Ex.: Previdência Privada, Plano de Saúde, Ressarcimentos ao Fundo de Saúde Adicional (Não inclui o valor mensal pago por dependente) etc.">
-                                  <label for="soma_descontos_dedutiveis">Dedutíveis</label>
+                                  <label for="soma_descontos_dedutiveis">Descontos Dedutíveis</label>
                                     <input type="text" id="soma_descontos_dedutiveis" class="form-control"
                                            name="calcular_rubricas">
                                 </div>
                                 <div class="form-group align-self-end" title="Descontos não tributáveis efetuados em contracheque.
                                 &#013Ex.: Empréstimos, Clubes, Caixas Beneficentes etc.">
-                                  <label for="soma_descontos_nao_dedutiveis">Não Dedutíveis</label>
+                                  <label for="soma_descontos_nao_dedutiveis">Descontos Não Dedutíveis</label>
                                     <input type="text" id="soma_descontos_nao_dedutiveis" class="form-control"
                                            name="calcular_rubricas">
                                 </div>
@@ -481,6 +489,12 @@
                     </tr>
                     <tr id="fundo_saude_adicional">
                       <td scope="row">FUNDO DE SAÚDE ADICIONAL</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr id="reparacao_erario">
+                      <td scope="row">REP.ERARIO L.8112/90-10486/02</td>
                       <td></td>
                       <td></td>
                       <td></td>

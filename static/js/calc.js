@@ -179,7 +179,7 @@ function Verbas(col){
                 parcela_base = this.decimo_terceiro()
               }
               else {
-                parcela_base = this.remuneracao_total() - this.contr_pensao_militar() - this.irrf(tipo)
+                parcela_base = this.remuneracao_total() - this.contr_pensao_militar() - this.irrf(tipo) - this.reparacao_erario()
               }
               tipo_pa = document.getElementById('tipo_pa').value
               if (tipo_pa=='sal_minimo') {
@@ -221,7 +221,7 @@ function Verbas(col){
         }
         deducao_dependente = (189.59)*parseInt(qtde_ir)
         descontos = (this.contr_pensao_militar() + this.contr_pensao_militar_adic() + this.fundo_saude() +
-        this.fundo_saude_adicional() + this.outros_descontos_dedutiveis())
+        this.fundo_saude_adicional() + this.outros_descontos_dedutiveis() + this.reparacao_erario())
 //        Base de Calculo do IRRF mensal Antes da Pensao Alimenticia
         if (tipo =='pensao_alim') {
             base_calculo = this.remuneracao_total() - descontos
@@ -274,6 +274,9 @@ function Verbas(col){
         }
         return outros_descontos
     }
+    this.reparacao_erario = function () {
+        return this.outros_descontos_dedutiveis ('soma_reparacao_erario')
+    }
     this.outros_descontos_nao_dedutiveis = function () {
         return this.outros_descontos_dedutiveis ('soma_descontos_nao_dedutiveis')
     }
@@ -299,7 +302,7 @@ function Verbas(col){
     this.descontos_total = function() {
         soma = (this.cota_pe() + this.pensao_alim() + this.pensao_alim_pe() + this.contr_pensao_militar() +
                 this.contr_pensao_militar_adic() + this.fundo_saude() + this.fundo_saude_adicional()  + this.irrf() +
-                 this.outros_descontos_nao_dedutiveis() + this.outros_descontos_dedutiveis())
+                 this.outros_descontos_nao_dedutiveis() + this.outros_descontos_dedutiveis() + this.reparacao_erario())
         return soma
     }
     this.rendimento_liquido = function() {
