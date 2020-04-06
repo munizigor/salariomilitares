@@ -425,6 +425,52 @@ starter = document.getElementById(event.target.id)
     }
 }
 
+function imprimir() {
+style = `
+		<meta charset="utf-8" >
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://militaresdf.com.br/static/css/base.css">
+`
+/*
+cabecalho = `
+</br>
+<div class="form-row">
+<div class="form-group col-md-2">
+	<img src="static/img/brasao.png" alt="Brasao" height="120" width="120">
+</div>
+<div class="form-group col-md-8" >
+<h6>CORPO DE BOMBEIROS MILITAR DO DISTRITO FEDERAL</h6>
+<h6>DEPARTAMENTO DE RECURSOS HUMANOS</h6>
+<h6>DIRETORIA DE GESTÃO DE PESSOAL</h6>
+<h6>SEÇÃO DE PAGAMENTO</h6>
+</div>
+<div class="form-group col-md-2">
+	<img src="static/img/gdf.png" alt="Brasao" height="120" width="120">
+</div>
+</div>
+</br>
+<div class="dropdown-divider"></div>
+<h3><b>PLANILHA DE CÁLCULO DE DIÁRIAS E AJUDA DE CUSTO</b></h3>
+</br>
+</br>
+`
+*/
+    var mywindow = window.open('', 'PRINT','height=400,width=600');
+    mywindow.document.write('<html><head><title>Remuneração dos Militares do Distrito Federal</title>');
+    mywindow.document.write(style)
+    mywindow.document.write('</head><body>');
+    mywindow.document.write(`<div class="container">`)
+//    mywindow.document.write(cabecalho)
+    h=document.getElementById('salario').outerHTML
+    mywindow.document.write(h)
+    mywindow.document.write('</div>')
+    mywindow.document.write('</body></html>');
+    mywindow.focus();
+    setTimeout(function(){mywindow.print();},1000);
+    return true;
+}
+
+
 //EventListener de Ativos
 
 //EventListener de Pensao Alimenticia

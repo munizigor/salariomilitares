@@ -48,14 +48,12 @@
     <div class="container-fluid" style="margin-top: 40px">
         <div class="row">
             <div class="col-12 col-lg-3 bd-links collapse show" id="dados">
-<!--                <nav class="navbar navbar-dark bg-dark">-->
-<!--                    <button class="navbar-toggler d-block d-lg-none" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--                        <span class="navbar-toggler-icon"></span>-->
-<!--                    </button>-->
-<!--                </nav>-->
-<!--                <div class="collapse" id="navbarToggleExternalContent">-->
 <!--                TODO: Fazer com que esse menu fique igual navbar collapse navbar-collapse-->
-                    <h2>Dados</h2>
+                    <div class="row" style="margin-top: 20px; margin-bottom: 10px;">
+                    <div class="col-12 text-center">
+                        <h2>Dados</h2>
+                    </div>
+                    </div>
                     <div class="form-row">
                         <div class="form-group col-md align-self-end">
                           <label for="posto">Posto/Graduação</label>
@@ -341,8 +339,15 @@
                     </div>
             </div>
             <div class="col-12 col-lg-9 bd-links">
-<!--                TODO: Fazer com que coluna tenha scroll próprio e que não encavale na de cima-->
-                <h2>Cálculo Salarial</h2>
+                <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+                    <div class="col-10 text-center">
+                        <h2>Cálculo Salarial</h2>
+                    </div>
+                    <div class="col-2 text-right">
+                        <a id="imprimir" title="Clique para Imprimir ou Gerar PDF"
+                        href="#" onclick="imprimir();return false;"><img src="static/img/picture_as_pdf.png"></a>
+                    </div>
+                </div>
 
                 <table id="salario" class="table table-bordered table-hover table-sm">
                   <thead>
@@ -557,7 +562,7 @@
                   </tbody>
                   <tbody style="border-collapse: separate; border-spacing:0 20px;">
                     <tr class="bg-white">
-                        <td colspan="4" style="padding:7rem"></td>
+                        <td colspan="4" style="padding:8rem"></td>
                     </tr>
                     <tr>
                         <th colspan="4" class="table-dark">RENDIMENTOS EVENTUAIS</th>
@@ -608,7 +613,7 @@
         </div>
     </div>
     <footer>
-        <p>Versão 0.0.1</p>
+        <p>Versão 1.0.2</p>
         <p>Desenvolvimento: Maj QOBM/Comb. Igor MUNIZ da Silva</p>
         <p>Github: <a href="https://github.com/munizigor/salariomilitares" target="_blank">@munizigor</a></p>
         <p>Suporte/Sugestões: muniz.igor@gmail.com</p>
