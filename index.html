@@ -25,8 +25,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"> </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+<!--    <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"> </script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>-->
     <script src="static/js/calc.js"></script>
     <script src="static/js/dados_remuneracao.js"></script>
 
@@ -226,11 +226,11 @@
                               </select>
                             </div>
                         <button class="btn btn-link bg-light" data-toggle="collapse" data-target="#card_ats"
-                                aria-expanded="true" aria-controls="card_ats"
-                                title="Anos de Efetivo Serviço Militar (incluindo tempo de outras Forças) até 05/09/2001.
-                                &#013Militares que ingressaram após essa data não precisam preencher.">
+                                aria-expanded="true" aria-controls="card_ats">
                                                                     Adicional de Tempo de Serviço</button>
-                            <div class="card-body collapse" id="card_ats">
+                            <div class="card-body collapse" id="card_ats" data-toggle="tooltip" data-html="true"
+                                 title="Anos de Efetivo Serviço Militar (incluindo tempo de outras Forças) até <b>05/09/2001</b>.
+                                 <br/><br/>Militares que ingressaram após essa data não precisam preencher.">
                               <label for="pct_ats">Tempo (em Anos)</label>
                                 <input type="text" id="pct_ats" name="calcular_rubricas" class="form-control"
 >

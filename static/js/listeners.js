@@ -35,3 +35,8 @@ function load () {
 
 }
 document.addEventListener("DOMContentLoaded", load, false);
+
+//Iniciar tooltips
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip({template:'<div class="tooltip" role="tooltip"><div class="arrow"></div><div class="tooltip-inner" data-html="true"></div></div>'})
+})
