@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Remuneração dos Militares do DF</title>
+    <title>Cálculo Salarial dos Militares do DF</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="static/img/favicon.ico"/>
@@ -10,10 +10,10 @@
     <!-- Bloco de Estilos -->
 
     <meta charset="utf-8" >
-    <meta name="description" content="Remuneração de militares do Corpo de Bombeiros Militar e da Polícia Militar do Distrito Federal. Autor: Igor Muniz da Silva, Ano: 2020">
-    <meta name="og:description" content="Página destinada ao cálculo de remuneração de militares do Corpo de Bombeiros Militar e da Polícia Militar do Distrito Federal.">
+    <meta name="description" content="Cálculo Salarial dos militares do Corpo de Bombeiros Militar e da Polícia Militar do Distrito Federal. Autor: Igor Muniz da Silva, Ano: 2020">
+    <meta name="og:description" content="Página destinada ao cálculo do salário de militares do Corpo de Bombeiros Militar e da Polícia Militar do Distrito Federal.">
     <meta name="og:image" content="https://militaresdf.com.br/static/img/cbmpm.png">
-    <meta name="keywords" content="militar, bombeiro, polícia, policial, militares, df, gdf, distrito federal, cbmdf, pmdf">
+    <meta name="keywords" content="salario, pagamento, remuneração, rendimento, militar, bombeiro, polícia, policial, militares, df, gdf, distrito federal, cbmdf, pmdf">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
@@ -42,10 +42,10 @@
                     </button>
         </div>
         <div class="col-9" style="text-align: right;">
-            <b><p>REMUNERAÇÃO DOS MILITARES DO DISTRITO FEDERAL</p></b>
+            <b><p>CÁLCULO SALARIAL DOS MILITARES DO DISTRITO FEDERAL</p></b>
         </div>
 	</div>
-    <div class="container-fluid" style="margin-top: 60px">
+    <div class="container-fluid" style="margin-top: 60px; margin-bottom: -16px">
         <div class="row">
             <div class="col-12 col-lg-3 bd-links collapse show" id="dados">
 <!--                TODO: Fazer com que esse menu fique igual navbar collapse navbar-collapse-->
@@ -341,7 +341,7 @@
             <div class="col-12 col-lg-9 bd-links">
                 <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
                     <div class="col-10 text-center">
-                        <h2>Cálculo Salarial</h2>
+                        <h2>Cálculo</h2>
                     </div>
                     <div class="col-2 text-right">
                         <a id="imprimir" title="Clique para Imprimir ou Gerar PDF"
@@ -361,7 +361,7 @@
                   </thead>
                   <tbody>
                     <tr>
-                        <th colspan="4" class="table-dark">RENDIMENTOS</th>
+                        <th colspan="4" class="table-dark">PARCELAS SALARIAIS</th>
                     </tr>
                     <tr id="soldo">
                       <td scope="row">SOLDO</td>
@@ -541,8 +541,8 @@
                       <td></td>
                       <td></td>
                     </tr>
-                    <tr class="font-weight-bold table-light" id="rendimento_bruto">
-                      <td scope="row">RENDIMENTO BRUTO</td>
+                    <tr class="font-weight-bold table-light" id="direitos_pecuniarios">
+                      <td scope="row">DIREITOS PECUNIÁRIOS</td>
                       <td></td>
                       <td></td>
                       <td></td>
@@ -554,7 +554,7 @@
                       <td></td>
                     </tr>
                     <tr class="font-weight-bold table-light text-success" id="rendimento_liquido">
-                      <td scope="row">RENDIMENTO LÍQUIDO</td>
+                      <td scope="row">LÍQUIDO</td>
                       <td></td>
                       <td></td>
                       <td></td>
@@ -565,7 +565,7 @@
                         <td colspan="4" style="padding:8rem"></td>
                     </tr>
                     <tr>
-                        <th colspan="4" class="table-dark">RENDIMENTOS EVENTUAIS</th>
+                        <th colspan="4" class="table-dark">PARCELAS EVENTUAIS</th>
                     </tr>
                     <tr id="decimo_terceiro">
                       <td scope="row">GRATIFICAÇÃO DE NATAL (DÉCIMO TERCEIRO)</td>
