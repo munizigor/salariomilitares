@@ -10,7 +10,7 @@
     <!-- Bloco de Estilos -->
 
     <meta charset="utf-8" >
-    <meta name="description" content="Cálculo Salarial dos militares do Corpo de Bombeiros Militar e da Polícia Militar do Distrito Federal. Autor: Igor Muniz da Silva, Ano: 2020">
+    <meta name="description" content="Página destinada ao cálculo do salário de militares do Corpo de Bombeiros Militar e da Polícia Militar do Distrito Federal. Página criada por Igor Muniz da Silva">
     <meta name="og:description" content="Página destinada ao cálculo do salário de militares do Corpo de Bombeiros Militar e da Polícia Militar do Distrito Federal.">
     <meta name="og:image" content="https://militaresdf.com.br/static/img/cbmpm.png">
     <meta name="keywords" content="salario, pagamento, remuneração, rendimento, militar, bombeiro, polícia, policial, militares, df, gdf, distrito federal, cbmdf, pmdf">
@@ -429,96 +429,117 @@
                     <tr>
                         <th colspan="4" class="table-dark">PARCELAS SALARIAIS</th>
                     </tr>
-                    <tr id="soldo" class="questao" data-label="SOLDO"
-                        data-title="
-                        <b>Descrição</b>: Parcela básica mensal da remuneração e dos proventos, inerentes ao
-                                            posto ou à graduação do militar e irredutível.
-                        <br/><br/>
-                        <b><a href='http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3i'
-                        target='_blank'>Base legal</a></b>: Art. 3º, I c/c Tabela I do Anexo I da Lei 10486/02"
+                    <tr id="soldo" class="questao" data-description="Parcela básica mensal da
+                        remuneração e dos proventos, inerentes ao posto ou à graduação do militar e irredutível."
+                        data-legal_base="Art. 3º, I c/c Tabela I do Anexo I da Lei 10486/2002"
+                        data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3i"
                     >
                       <td scope="row">SOLDO</td>
                       <td></td>
                       <td></td>
                       <td></td>
                     </tr>
-                    <tr id="apg" class="questao" data-label="ADICIONAL DE POSTO OU GRADUAÇÃO"
-                            data-title="
-                            <b>Descrição</b>: Parcela remuneratória mensal devida ao militar, inerente à cada
-                                            círculo hierárquico da carreira militar.
-                            <br/><br/>
-                            <b><a href='http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3ii'
-                            target='_blank'>Base legal</a></b>: Art. 3º, II c/c Tabela I do Anexo II da Lei 10486/02"
+                    <tr id="apg" class="questao" data-description="Parcela remuneratória mensal devida ao militar,
+                        inerente à cada círculo hierárquico da carreira militar."
+                        data-legal_base="Art. 3º, II c/c Tabela I do Anexo II da Lei 10486/2002"
+                        data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3ii"
                     >
                       <td scope="row">ADICIONAL DE POSTO OU GRADUAÇÃO</td>
                       <td></td>
                       <td></td>
                       <td></td>
                     </tr>
-                    <tr id="ats"class="questao" data-label="ADICIONAL DE TEMPO DE SERVIÇO"
-                            data-title="
-                            <b>Descrição</b>: Parcela remuneratória mensal devida ao militar, inerente ao tempo de
-                                                serviço contado até <b>05/09/2001</b>.
-                            <br/><br/>
-                            <b><a href='http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3v'
-                            target='_blank'>Base legal</a></b>: Art. 3º, III c/c Art. 62 e Tabela I do Anexo II da Lei
-                                                                10486/02"
+                    <tr id="ats"class="questao" data-description="Parcela remuneratória mensal devida ao militar,
+                        inerente ao tempo de serviço contado até <b>05/09/2001</b>."
+                        data-legal_base="Art. 3º, V c/c Art. 62 e Tabela I do Anexo II da Lei 10486/2002"
+                        data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3v"
                     >
                       <td scope="row">ADICIONAL DE TEMPO DE SERVIÇO</td>
                       <td></td>
                       <td></td>
                       <td></td>
                     </tr>
-                    <tr id="compl_soldo"class="questao" data-label="COMPLEMENTO DE SOLDO"
-                            data-title="
-                            <b>Descrição</b>: Diferença entre o salário mínimo vigente e o soldo, quotas de soldo ou
-                                                pensão militar.
-                            <br/><br/>
-                            <b><a href='http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art31'
-                            target='_blank'>Base legal</a></b>: Art. 31 da Lei 10486/02"
+                    <tr id="compl_soldo"class="questao" data-description="Diferença entre o salário mínimo vigente e o
+                        soldo, quotas de soldo ou pensão militar."
+                        data-legal_base="Art. 31 da Lei 10486/2002"
+                        data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art31"
                     >
                       <td scope="row">COMPLEMENTO DE SOLDO</td>
                       <td></td>
                       <td></td>
                       <td></td>
                     </tr>
-                    <tr id="aom">
+                    <tr id="aom" class="questao" data-description="Parcela remuneratória mensal devida ao militar pelo
+                        desempenho de operações militares e para compensação dos desgastes orgânicos e danos
+                        psicossomáticos decorrentes do desempenho das atividades técnico-profissionais nos respectivos
+                        Quadros."
+                        data-legal_base="Art. 3º, IV c/c Tabela III do Anexo II da Lei 10486/2002"
+                        data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3iv"
+                    >
                       <td scope="row">ADICIONAL DE OPERAÇÕES MILITARES</td>
                       <td></td>
                       <td></td>
                       <td></td>
                     </tr>
-                    <tr id="gfr">
+                    <tr id="gfr" class="questao" data-description="Parcela remuneratória mensal devida aos militares
+                        ativos e inativos, a título de representação"
+                        data-legal_base="Art. 3º, VI c/c Tabela I do Anexo III da Lei 10486/2002"
+                        data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3vi"
+                    >
                       <td scope="row">GRATIFICAÇÃO DE REPRESENTAÇÃO MILITAR</td>
                       <td></td>
                       <td></td>
                       <td></td>
                     </tr>
-                    <tr id="acp">
+                    <tr id="acp" class="questao" data-description="Somatório dos percentuais referentes a 1 (um) curso
+                        de formação, 1 (um) de especialização ou habilitação, 1 (um) de aperfeiçoamento e 1 (um) de
+                        altos estudos, inerente aos cursos realizados com aproveitamento"
+                        data-legal_base="Art. 3º, III c/c Tabela II do Anexo II da Lei 10486/2002"
+                        data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3iii"
+                    >
                       <td scope="row">ADICIONAL DE CERTIFICAÇÃO PROFISSIONAL</td>
                       <td></td>
                       <td></td>
                       <td></td>
                     </tr>
-                    <tr id="gcef">
+                    <tr id="gcef" class="questao" data-description="Gratificação devida mensal e regularmente aos
+                        militares da Polícia Militar do Distrito Federal e do Corpo de Bombeiros Militar do Distrito
+                        Federal"
+                        data-legal_base="Art. 1º-A, c/c Anexo I-A da Lei 11134/2005"
+                        data-legal_base_link="http://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2005/Lei/L11134.htm#art1a.."
+                    >
                       <td scope="row">GCEF-GRAT. COND. ESP. FUN. MILITAR</td>
                       <td></td>
                       <td></td>
                       <td></td>
                     </tr>
-                    <tr id="vpe">
+                    <tr id="vpe"class="questao" data-description="Parcela remuneratória devida mensal e regularmente aos
+                        militares da Polícia Militar do Distrito Federal e do Corpo de Bombeiros Militar do Distrito
+                        Federal, ativos e inativos e aos seus pensionistas"
+                        data-legal_base="Art. 1º, c/c Anexo I da Lei 11134/2005"
+                        data-legal_base_link="http://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2005/Lei/L11134.htm#art1"
+                    >
                       <td scope="row">VPE - VANTAGEM PECUNIÁRIA ESPECIAL</td>
                       <td></td>
                       <td></td>
                       <td></td>
                     </tr>
-                    <tr id="grv">
+                    <tr id="grv" class="questao" data-description="Gratificação mensal devida aos militares
+                        ativos e inativos"
+                        data-legal_base="Art. 117 c/c Anexo VI da Lei 12086/2012"
+                        data-legal_base_link="http://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2009/Lei/L12086.htm#art117"
+                    >
                       <td scope="row">GRV - GRATIFICAÇÃO POR RISCO DE VIDA</td>
                       <td></td>
                       <td></td>
                       <td></td>
                     </tr>
-                    <tr id="gfne">
+                    <tr id="gfne" class="questao" data-description="Parcela remuneratória mensal devida aos militares em
+                    cargo de função de natureza especial eventual, não podendo ser acumulável com a gratificação de
+                    serviço voluntário ou qualquer outra remuneração decorrente do exercício de função comissionada"
+                        data-legal_base="Art. 3º, VII c/c Tabela II do Anexo III da Lei 10486/2002"
+                        data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3vii"
+                    >
                       <td scope="row">GFNE</td>
                       <td></td>
                       <td></td>

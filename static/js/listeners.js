@@ -44,11 +44,24 @@ document.querySelectorAll('.questao').forEach(item => {
     item.innerHTML = '<p>&#10067</p>'
   }
   item.addEventListener('click', event => {
-//    alert(item.title)
+    if (item.tagName==="TR") {
+        document.getElementById('exampleModalLabel').innerHTML = item.getElementsByTagName("td")[0].innerHTML
+        descricao = ((item.dataset['description']===undefined) ? '':item.dataset['description'])
+        base_legal = ((item.dataset['legal_base']===undefined) ? '':item.dataset['legal_base'])
+        base_legal_link = ((item.dataset['legal_base_link']===undefined) ? '#':item.dataset['legal_base_link'])
+        document.getElementById('exampleModalBody').innerHTML = `
+                        <b>Descrição</b>: ${descricao}
+                        <br/><br/>
+                        <b><a href=${base_legal_link}
+                        target='_blank'>Base legal</a></b>: ${base_legal}
+        `
+    }
+    else {
     document.getElementById('exampleModalLabel').innerHTML = ((item.dataset['label']===undefined) ? '':item.dataset['label'])
     document.getElementById('exampleModalBody').innerHTML = item.dataset['title']
+    }
+//    alert(item.title)
     item.dataset['toggle']='modal'
     item.dataset['target']='#exampleModal'
   })
 })
-
