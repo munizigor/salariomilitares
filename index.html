@@ -247,7 +247,7 @@
                             <div class="card-body collapse" id="card_ats">
                               <label for="pct_ats">Tempo (em Anos)</label>
                                 <span class="questao" data-questionmark="true"
-                                title="Anos de Efetivo Serviço Militar (incluindo tempo de outras Forças) até
+                                data-title="Anos de Efetivo Serviço Militar (incluindo tempo de outras Forças) até
                                 <b>05/09/2001</b>. <br/><br/>Militares que ingressaram após essa data não precisam
                                 preencher."
                                 ></span>
@@ -296,7 +296,7 @@
                                 <div class="form-group col-md-12 align-self-end possui_pa" style="display:none;">
                                   <label for="tipo_pa">Tipo de Incidência</label>
                                     <span class="questao" data-questionmark="true" data-label="FÓRMULAS DE CÁLCULO"
-                                        title="
+                                        data-title="
                                             <table class=&quot;table table-striped&quot;>
                                               <thead>
                                                 <tr>
@@ -374,7 +374,7 @@
                                 <div class="form-group align-self-end">
                                   <label for="soma_reparacao_erario">Reparação ao Erário</label>
                                 <span class="questao" data-questionmark="true"
-                                title="Descontos obrigatórios de reparação ao erário.
+                                data-title="Descontos obrigatórios de reparação ao erário.
                                 <br/><br/>Identificados no contracheque como 'REP.ERARIO L.8112/90-10486/02'. "
                                 ></span>
                                     <input type="text" id="soma_reparacao_erario" class="form-control"
@@ -383,7 +383,7 @@
                                 <div class="form-group align-self-end">
                                   <label for="soma_descontos_dedutiveis">Descontos Dedutíveis</label>
                                 <span class="questao" data-questionmark="true"
-                                title="Descontos tributáveis efetuados em contracheque.
+                                data-title="Descontos tributáveis efetuados em contracheque.
                                 <br/><br/>Ex.: Previdência Privada, Plano de Saúde, Ressarcimentos ao Fundo de Saúde
                                 Adicional (Não inclui o valor mensal pago por dependente) etc."
                                 ></span>
@@ -393,7 +393,7 @@
                                 <div class="form-group align-self-end">
                                   <label for="soma_descontos_nao_dedutiveis">Descontos Não Dedutíveis</label>
                                 <span class="questao" data-questionmark="true"
-                                title="Descontos não tributáveis efetuados em contracheque.<br/><br/>
+                                data-title="Descontos não tributáveis efetuados em contracheque.<br/><br/>
                                 Ex.: Empréstimos, Clubes, Caixas Beneficentes etc."
                                 ></span>
                                     <input type="text" id="soma_descontos_nao_dedutiveis" class="form-control"
@@ -429,25 +429,54 @@
                     <tr>
                         <th colspan="4" class="table-dark">PARCELAS SALARIAIS</th>
                     </tr>
-                    <tr id="soldo">
+                    <tr id="soldo" class="questao" data-label="SOLDO"
+                        data-title="
+                        <b>Descrição</b>: Parcela básica mensal da remuneração e dos proventos, inerentes ao
+                                            posto ou à graduação do militar e irredutível.
+                        <br/><br/>
+                        <b><a href='http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3i'
+                        target='_blank'>Base legal</a></b>: Art. 3º, I c/c Tabela I do Anexo I da Lei 10486/02"
+                    >
                       <td scope="row">SOLDO</td>
                       <td></td>
                       <td></td>
                       <td></td>
                     </tr>
-                    <tr id="apg">
+                    <tr id="apg" class="questao" data-label="ADICIONAL DE POSTO OU GRADUAÇÃO"
+                            data-title="
+                            <b>Descrição</b>: Parcela remuneratória mensal devida ao militar, inerente à cada
+                                            círculo hierárquico da carreira militar.
+                            <br/><br/>
+                            <b><a href='http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3ii'
+                            target='_blank'>Base legal</a></b>: Art. 3º, II c/c Tabela I do Anexo II da Lei 10486/02"
+                    >
                       <td scope="row">ADICIONAL DE POSTO OU GRADUAÇÃO</td>
                       <td></td>
                       <td></td>
                       <td></td>
                     </tr>
-                    <tr id="ats">
+                    <tr id="ats"class="questao" data-label="ADICIONAL DE TEMPO DE SERVIÇO"
+                            data-title="
+                            <b>Descrição</b>: Parcela remuneratória mensal devida ao militar, inerente ao tempo de
+                                                serviço contado até <b>05/09/2001</b>.
+                            <br/><br/>
+                            <b><a href='http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3v'
+                            target='_blank'>Base legal</a></b>: Art. 3º, III c/c Art. 62 e Tabela I do Anexo II da Lei
+                                                                10486/02"
+                    >
                       <td scope="row">ADICIONAL DE TEMPO DE SERVIÇO</td>
                       <td></td>
                       <td></td>
                       <td></td>
                     </tr>
-                    <tr id="compl_soldo">
+                    <tr id="compl_soldo"class="questao" data-label="COMPLEMENTO DE SOLDO"
+                            data-title="
+                            <b>Descrição</b>: Diferença entre o salário mínimo vigente e o soldo, quotas de soldo ou
+                                                pensão militar.
+                            <br/><br/>
+                            <b><a href='http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art31'
+                            target='_blank'>Base legal</a></b>: Art. 31 da Lei 10486/02"
+                    >
                       <td scope="row">COMPLEMENTO DE SOLDO</td>
                       <td></td>
                       <td></td>

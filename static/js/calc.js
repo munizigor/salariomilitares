@@ -5,7 +5,6 @@ function Verbas(col){
 //  REMUNERAÇÃO FIXA
 
     this.valor_parcela = function (rubrica , corporacao) {
-//        try {
             if (!isNaN(remuneracao[rubrica])) {
                 valor = remuneracao[rubrica]
             }
@@ -14,10 +13,6 @@ function Verbas(col){
             }
             valor_final = (corporacao === undefined) ? valor : valor[corporacao]
             return valor_final
-//        }
-//        catch(err) {
-//            console.log(err.message);
-//        }
     }
     this.soldo = function() { return this.valor_parcela ("soldo")}
     this.gcef = function() { return this.valor_parcela ("gcef")}

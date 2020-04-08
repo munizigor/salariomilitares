@@ -39,19 +39,16 @@ document.addEventListener("DOMContentLoaded", load, false);
 
 
 document.querySelectorAll('.questao').forEach(item => {
-
+    item.title='Clique para obter mais informações'
   if (item.dataset["questionmark"] === 'true') {
     item.innerHTML = '<p>&#10067</p>'
   }
   item.addEventListener('click', event => {
 //    alert(item.title)
     document.getElementById('exampleModalLabel').innerHTML = ((item.dataset['label']===undefined) ? '':item.dataset['label'])
-    document.getElementById('exampleModalBody').innerHTML = item.title
+    document.getElementById('exampleModalBody').innerHTML = item.dataset['title']
     item.dataset['toggle']='modal'
     item.dataset['target']='#exampleModal'
   })
 })
-//Iniciar tooltips
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip({})
-})
+
