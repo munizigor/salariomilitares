@@ -47,6 +47,22 @@
 	</div>
     <div class="container-fluid" style="margin-top: 60px; margin-bottom: -16px">
         <div class="row">
+<!--            MODAL PADRÃO-->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body" id="exampleModalBody">
+                  </div>
+                </div>
+              </div>
+            </div>
+<!--            FIM MODAL PADRÃO-->
             <div class="col-12 col-lg-3 bd-links collapse show" id="dados">
 <!--                TODO: Fazer com que esse menu fique igual navbar collapse navbar-collapse-->
                     <div class="row" style="margin-top: 20px; margin-bottom: 10px;">
@@ -228,12 +244,14 @@
                         <button class="btn btn-link bg-light" data-toggle="collapse" data-target="#card_ats"
                                 aria-expanded="true" aria-controls="card_ats">
                                                                     Adicional de Tempo de Serviço</button>
-                            <div class="card-body collapse" id="card_ats" data-toggle="tooltip" data-html="true"
-                                 title="Anos de Efetivo Serviço Militar (incluindo tempo de outras Forças) até <b>05/09/2001</b>.
-                                 <br/><br/>Militares que ingressaram após essa data não precisam preencher.">
+                            <div class="card-body collapse" id="card_ats">
                               <label for="pct_ats">Tempo (em Anos)</label>
-                                <input type="text" id="pct_ats" name="calcular_rubricas" class="form-control"
->
+                                <span class="questao" data-questionmark="true"
+                                title="Anos de Efetivo Serviço Militar (incluindo tempo de outras Forças) até
+                                <b>05/09/2001</b>. <br/><br/>Militares que ingressaram após essa data não precisam
+                                preencher."
+                                ></span>
+                                <input type="text" id="pct_ats" name="calcular_rubricas" class="form-control">
             <!--                    TODO: Inserir sinal de % após o textbox-->
                             </div>
                         <button class="btn btn-link inativo bg-light" data-toggle="collapse" data-target="#card_pttc"
@@ -277,12 +295,50 @@
                                 </div>
                                 <div class="form-group col-md-12 align-self-end possui_pa" style="display:none;">
                                   <label for="tipo_pa">Tipo de Incidência</label>
+                                    <span class="questao" data-questionmark="true" data-label="FÓRMULAS DE CÁLCULO"
+                                        title="
+                                            <table class=&quot;table table-striped&quot;>
+                                              <thead>
+                                                <tr>
+                                                  <th scope=&quot;col&quot;>Tipo</th>
+                                                  <th scope=&quot;col&quot;>Base de Cálculo</th>
+                                                </tr>
+                                              </thead>
+                                              <tbody>
+                                                <tr>
+                                                  <th scope=&quot;row&quot;>ABATENDO DESCONTOS COMPULSÓRIOS E VERBAS
+                                                    INDENIZATÓRIAS</th>
+                                                  <td>(Remuneração) - (Contr. Pensão Militar) - (Imposto de Renda antes
+                                                    da Pensão) - (Rep. ao Erário)</td>
+                                                </tr>
+                                                <tr>
+                                                  <th scope=&quot;row&quot;>ABATENDO APENAS DESCONTOS COMPULSÓRIOS</th>
+                                                  <td>(Remuneração) + (Direitos Pecuniários) - (Contr. Pensão Militar) -
+                                                    (Imposto de Renda antes da Pensão) - (Rep. ao Erário)</td>
+                                                </tr>
+                                                <tr>
+                                                  <th scope=&quot;row&quot;>SEM ABATIMENTO DE DESCONTOS COMPULSÓRIOS OU
+                                                    VERBAS INDENIZATÓRIAS</th>
+                                                  <td>(Remuneração) + (Direitos Pecuniários)</td>
+                                                </tr>
+                                                <tr>
+                                                  <th scope=&quot;row&quot;>SOBRE SALÁRIO MÍNIMO</th>
+                                                  <td>(Salário Mínimo Vigente)</td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                            "
+                                    </span>
                                   <select class="form-control" name="calcular_rubricas" required id="tipo_pa">
+<!--                                  >-->
                                       <!--                    TODO: Explicar como se calcula cada tipo-->
                                      <option value=""></option>
-                                     <option value="liquido" selected>ABATENDO DESCONTOS COMPULSÓRIOS E VERBAS INDENIZATÓRIAS</option>
-                                     <option value="bruto_com_indenizacoes">ABATENDO APENAS DESCONTOS COMPULSÓRIOS</option>
-                                      <option value="bruto">SEM ABATIMENTO DE DESCONTOS COMPULSÓRIOS OU VERBAS INDENIZATÓRIAS</option>
+                                     <option value="liquido" selected>ABATENDO DESCONTOS COMPULSÓRIOS E VERBAS
+                                         INDENIZATÓRIAS</option>
+                                     <option value="bruto_com_indenizacoes">ABATENDO APENAS DESCONTOS COMPULSÓRIOS
+                                     </option>
+                                      <option value="bruto">SEM ABATIMENTO DE DESCONTOS COMPULSÓRIOS OU VERBAS
+                                          INDENIZATÓRIAS</option>
                                      <option value="sal_minimo">SOBRE SALÁRIO MÍNIMO</option>
                                   </select>
                                 </div>
@@ -315,21 +371,31 @@
                                 data-target="#card_outros_descontos" aria-expanded="true"
                                 aria-controls="card_outros_descontos">Outros Descontos</button>
                             <div class="card-body collapse" id="card_outros_descontos">
-                                <div class="form-group align-self-end" title="Descontos obrigatórios de reparação ao erário.
-                                &#013Identificados no contracheque como 'REP.ERARIO L.8112/90-10486/02'. ">
+                                <div class="form-group align-self-end">
                                   <label for="soma_reparacao_erario">Reparação ao Erário</label>
+                                <span class="questao" data-questionmark="true"
+                                title="Descontos obrigatórios de reparação ao erário.
+                                <br/><br/>Identificados no contracheque como 'REP.ERARIO L.8112/90-10486/02'. "
+                                ></span>
                                     <input type="text" id="soma_reparacao_erario" class="form-control"
                                            name="calcular_rubricas">
                                 </div>
-                                <div class="form-group align-self-end" title="Descontos tributáveis efetuados em contracheque.
-                                &#013Ex.: Previdência Privada, Plano de Saúde, Ressarcimentos ao Fundo de Saúde Adicional (Não inclui o valor mensal pago por dependente) etc.">
+                                <div class="form-group align-self-end">
                                   <label for="soma_descontos_dedutiveis">Descontos Dedutíveis</label>
+                                <span class="questao" data-questionmark="true"
+                                title="Descontos tributáveis efetuados em contracheque.
+                                <br/><br/>Ex.: Previdência Privada, Plano de Saúde, Ressarcimentos ao Fundo de Saúde
+                                Adicional (Não inclui o valor mensal pago por dependente) etc."
+                                ></span>
                                     <input type="text" id="soma_descontos_dedutiveis" class="form-control"
                                            name="calcular_rubricas">
                                 </div>
-                                <div class="form-group align-self-end" title="Descontos não tributáveis efetuados em contracheque.
-                                &#013Ex.: Empréstimos, Clubes, Caixas Beneficentes etc.">
+                                <div class="form-group align-self-end">
                                   <label for="soma_descontos_nao_dedutiveis">Descontos Não Dedutíveis</label>
+                                <span class="questao" data-questionmark="true"
+                                title="Descontos não tributáveis efetuados em contracheque.<br/><br/>
+                                Ex.: Empréstimos, Clubes, Caixas Beneficentes etc."
+                                ></span>
                                     <input type="text" id="soma_descontos_nao_dedutiveis" class="form-control"
                                            name="calcular_rubricas">
                                 </div>

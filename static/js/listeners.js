@@ -34,9 +34,24 @@ function load () {
     }
 
 }
+
 document.addEventListener("DOMContentLoaded", load, false);
 
+
+document.querySelectorAll('.questao').forEach(item => {
+
+  if (item.dataset["questionmark"] === 'true') {
+    item.innerHTML = '<p>&#10067</p>'
+  }
+  item.addEventListener('click', event => {
+//    alert(item.title)
+    document.getElementById('exampleModalLabel').innerHTML = ((item.dataset['label']===undefined) ? '':item.dataset['label'])
+    document.getElementById('exampleModalBody').innerHTML = item.title
+    item.dataset['toggle']='modal'
+    item.dataset['target']='#exampleModal'
+  })
+})
 //Iniciar tooltips
 $(function () {
-  $('[data-toggle="tooltip"]').tooltip({template:'<div class="tooltip" role="tooltip"><div class="arrow"></div><div class="tooltip-inner" data-html="true"></div></div>'})
+  $('[data-toggle="tooltip"]').tooltip({})
 })
