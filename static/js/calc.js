@@ -160,7 +160,6 @@ function Verbas(col){
         return valor_fsa
     }
     this.pensao_alim = function (tipo='pensao_alim') {
-//    TODO: Verificar em casos especificos e ver como se chega aos valores da ficha
         pct_pa = document.getElementById('percentual_pa').value.replace(/,/g, '.')
         if (isNaN(pct_pa)) {
             alert('Informe um valor numérico')

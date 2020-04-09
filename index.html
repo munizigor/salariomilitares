@@ -64,7 +64,6 @@
             </div>
 <!--            FIM MODAL PADRÃO-->
             <div class="col-12 col-lg-3 bd-links collapse show" id="dados">
-<!--                TODO: Fazer com que esse menu fique igual navbar collapse navbar-collapse-->
                     <div class="row" style="margin-top: 20px; margin-bottom: 10px;">
                     <div class="col-12 text-center">
                         <h2>Dados</h2>
@@ -224,12 +223,10 @@
                     <div class="accordion " id="opcionais">
                         <b><p style="text-align center;">OUTROS VALORES</p></b>
                     <div class="card rounded">
-<!--                        TODO: Mudar cores dos cards-->
                       <ul class="list-group list-group-flush">
                         <button class="btn btn-link bg-light" data-toggle="collapse" data-target="#card_gfne"
                                 aria-expanded="true" aria-controls="card_gfne">GFNE</button>
                             <div class="card-body collapse ativo" id="card_gfne">
-        <!--                        TODO Campos nao obrigatorios (GFNE, GSV, PA, ATS) ficam escondidos em um botao Collapse-->
                               <label for="tipo_gfne">Tipo</label>
                               <select class="form-control" name="calcular_rubricas" required id="tipo_gfne">
                                   <option value=""></option>
@@ -330,8 +327,6 @@
                                             "
                                     ></span>
                                   <select class="form-control" name="calcular_rubricas" required id="tipo_pa">
-<!--                                  >-->
-                                      <!--                    TODO: Explicar como se calcula cada tipo-->
                                      <option value=""></option>
                                      <option value="liquido" selected>ABATENDO DESCONTOS COMPULSÓRIOS E VERBAS
                                          INDENIZATÓRIAS</option>
@@ -535,8 +530,9 @@
                       <td></td>
                     </tr>
                     <tr id="gfne" class="questao" data-description="Parcela remuneratória mensal devida aos militares em
-                    cargo de função de natureza especial eventual, não podendo ser acumulável com a gratificação de
-                    serviço voluntário ou qualquer outra remuneração decorrente do exercício de função comissionada"
+                    cargo de função de natureza especial eventual, não podendo ser acumulável com a <b>gratificação de
+                    serviço voluntário</b> ou <b>qualquer outra remuneração decorrente do exercício de função
+                    comissionada</b>"
                         data-legal_base="Art. 3º, VII c/c Tabela II do Anexo III da Lei 10.486/2002"
                         data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3vii"
                     >
@@ -559,15 +555,22 @@
                       <td></td>
                       <td></td>
                     </tr>
-                    <tr id="gsv">
+                    <tr id="gsv" class="questao" data-description=" Parcela remuneratória devida ao militar que
+                        voluntariamente, durante seu período de folga, apresentar-se para o serviço de policiamento,
+                        prevenção de combate a incêndio e salvamento, atendimento pré-hospitalar ou segurança pública de
+                        grandes eventos ou sinistros, com jornada não inferior a 8 (oito) horas, na conveniência e
+                        necessidade da Administração."
+                        data-legal_base="Art. 3º, VII da <a
+                        href='http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3vii'
+                        target='_blank'>Lei 10.486/2002</a> c/c <a
+                        href='http://www.sinj.df.gov.br/sinj/Norma/ec3f26e7990f4512ba496aa628d235eb/
+                        Decreto_39627_11_01_2019.html' target='_blank'>Decreto Distrital 39.627/2019</a>"
+                    >
                       <td scope="row">GSV - GRATIFICAÇÃO DE SERVIÇO VOLUNTÁRIO</td>
                       <td></td>
                       <td></td>
                       <td></td>
                     </tr>
-    <!--                <tr>-->
-    <!--                    <th colspan="4" class="table-dark">DIREITOS PECUNIÁRIOS</th>-->
-    <!--                </tr>-->
                     <tr id="aux_mor" class="questao" data-description=" Direito Pecuniário mensal de natureza
                         <b>INDENIZATÓRIA</b> devido ao militar, na ativa e na inatividade, para auxiliar nas despesas
                         com habitação para si e seus dependentes."
@@ -682,7 +685,6 @@
                     </tr>
                     <tr class="text-success table-light" id="remuneracao_total">
                       <td scope="row">REMUNERAÇÃO</td>
-    <!--                    TODO: Explicar conforme a Lei 10.486/02 o que compõe a remuneração-->
                       <td></td>
                       <td></td>
                       <td></td>
@@ -768,4 +770,3 @@
 <script src="static/js/listeners.js"></script>
 </body>
 </html>
-<!--TODO: VER SE CABE RETIRAR REQUIRED DOS INPUTS, já que não tem submit form-->
