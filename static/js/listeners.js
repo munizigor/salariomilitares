@@ -48,12 +48,11 @@ document.querySelectorAll('.questao').forEach(item => {
         document.getElementById('exampleModalLabel').innerHTML = item.getElementsByTagName("td")[0].innerHTML
         descricao = ((item.dataset['description']===undefined) ? '':item.dataset['description'])
         base_legal = ((item.dataset['legal_base']===undefined) ? '':item.dataset['legal_base'])
-        base_legal_link = ((item.dataset['legal_base_link']===undefined) ? '#':item.dataset['legal_base_link'])
+        base_legal_link = ((item.dataset['legal_base_link']===undefined) ? '':('href=\''+item.dataset['legal_base_link']+'\' target=\'_blank\''))
         document.getElementById('exampleModalBody').innerHTML = `
                         <b>Descrição</b>: ${descricao}
                         <br/><br/>
-                        <b><a href=${base_legal_link}
-                        target='_blank'>Base legal</a></b>: ${base_legal}
+                        <b><a ${base_legal_link}>Base legal</a></b>: ${base_legal}
         `
     }
     else {
