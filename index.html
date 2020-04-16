@@ -292,7 +292,8 @@
                                 </div>
                                 <div class="form-group col-md-12 align-self-end possui_pa" style="display:none;">
                                   <label for="tipo_pa">Tipo de Incidência</label>
-                                    <span class="questao" data-questionmark="true" data-label="FÓRMULAS DE CÁLCULO"
+                                    <span class="questao" id="pa_forma_calculo" data-questionmark="true"
+                                          data-label="FÓRMULAS DE CÁLCULO"
                                         data-title="
                                             <table class=&quot;table table-striped&quot;>
                                               <thead>
@@ -596,8 +597,9 @@
                       <td></td>
                       <td></td>
                     </tr>
-                    <tr id="aux_pe"class="questao" data-description=" Direito Pecuniário mensal de natureza
-                        <b>INDENIZATÓRIA</b> devido ao militar para custear gastos com alimentação."
+                    <tr id="aux_pe" class="questao" data-description=" Direito Pecuniário mensal de natureza
+                        <b>INDENIZATÓRIA</b> devido ao militar para custear gastos com dependentes na faixa etária
+                        compreendida desde o <b>nascimento</b> até <b>cinco anos, onze meses e 29 dias</b> de idade."
                         data-legal_base="Art. 2º, II, a) da <a
                         href='www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art2'
                         target='_blank'>Lei 10.486/2002</a> c/c <a
@@ -614,13 +616,26 @@
                     <tr >
                         <th colspan="4" class="table-dark">DESCONTOS</th>
                     </tr>
-                    <tr id="cota_pe">
+                    <tr id="cota_pe" class="questao" data-description=" Desconto efetuado como forma de participação do
+                    servidor no custeio do benefício AUXÍLIO PRÉ-ESCOLAR."
+                        data-legal_base="Art. 9º do <a
+                        href='http://www.planalto.gov.br/ccivil_03/decreto/antigos/d0977.htm'
+                        target='_blank'>Decreto Federal 977/1993</a>"
+                    >
                       <td scope="row">COTA PRÉ ESCOLAR</td>
                       <td></td>
                       <td></td>
                       <td></td>
                     </tr>
-                    <tr id="pensao_alim">
+                    <tr id="pensao_alim" class="questao" data-description="Valor a título de alimentos pedido por
+                    parentes, cônjuge ou companheiro do servidor, necessário para viver de modo compatível com a
+                    condição social, fixados na proporção das necessidades do reclamante e dos recursos da pessoa
+                    obrigada."
+                        data-legal_base="Art. 1.694 e ss. do <a
+                        href='http://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm#art1694'
+                        target='_blank'>Código Civil</a> c/c <a href='http://www.planalto.gov.br/ccivil_03/LEIS/L5478.htm'
+                        target='_blank'>Lei 5.478/1968</a>"
+                        >
                       <td scope="row">PENSÃO ALIMENTÍCIA</td>
                       <td></td>
                       <td></td>

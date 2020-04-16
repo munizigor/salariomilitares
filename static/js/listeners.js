@@ -35,7 +35,13 @@ function load () {
 
 }
 
+function setNewAttributes () {
+    var calc_pa = document.getElementById('pa_forma_calculo').getAttribute('data-title')
+    document.getElementById('pensao_alim').setAttribute('data-calculo',String(calc_pa))
+}
+
 document.addEventListener("DOMContentLoaded", load, false);
+document.addEventListener("DOMContentLoaded", setNewAttributes, false);
 
 
 document.querySelectorAll('.questao').forEach(item => {
@@ -47,11 +53,14 @@ document.querySelectorAll('.questao').forEach(item => {
     if (item.tagName==="TR") {
         document.getElementById('exampleModalLabel').innerHTML = item.getElementsByTagName("td")[0].innerHTML
         descricao = ((item.dataset['description']===undefined) ? '':item.dataset['description'])
+        base_calculo = ((item.dataset['calculo']===undefined) ? '':'<br/><b>Valores</b>: ' + String(item.dataset['calculo']) + '<br/>')
         base_legal = ((item.dataset['legal_base']===undefined) ? '':item.dataset['legal_base'])
         base_legal_link = ((item.dataset['legal_base_link']===undefined) ? '':('href=\''+item.dataset['legal_base_link']+'\' target=\'_blank\''))
         document.getElementById('exampleModalBody').innerHTML = `
                         <b>Descrição</b>: ${descricao}
-                        <br/><br/>
+                        <br/>
+                        ${base_calculo}
+                        <br/>
                         <b><a ${base_legal_link}>Base legal</a></b>: ${base_legal}
         `
     }
