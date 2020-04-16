@@ -5,6 +5,10 @@ body {
 max-height: calc(100vh - 9rem);
 overflow-y: auto;
 }
+caption {
+    caption-side: top;
+    text-align: end;
+}
 footer {
     color: white;
     background: #343a40;
@@ -43,6 +47,7 @@ div.main-container {
  position: relative;
  padding-bottom: 100px; /* height of your footer */
 }
+
 .table td,th {
    text-align: center;
 }
