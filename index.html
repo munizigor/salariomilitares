@@ -846,19 +846,33 @@
                       <td></td>
                       <td></td>
                     </tr>
-                    <tr id="outros_descontos_dedutiveis">
+                    <tr id="outros_descontos_dedutiveis" class="questao" data-description="Descontos em folha que abatem
+                     a base de cálculo de Imposto de Renda. </br></br> <b>Exemplos:</b> Ressarcimento ao Fundo de Saúde
+                     por atendimento na rede credenciada, Planos de Saúde, Previdência Privada."
+                        data-legal_base="Art. 52, da <a
+                        href='http://normas.receita.fazenda.gov.br/sijut2consulta/link.action?visao=anotado&idAto=57670#1459120'
+                        target='_blank'> Instrução Normativa 1500/2014 - RFB </a>"
+                    >
                       <td scope="row">OUTROS DESCONTOS DEDUTÍVEIS</td>
                       <td></td>
                       <td></td>
                       <td></td>
                     </tr>
-                    <tr id="outros_descontos_nao_dedutiveis">
+                    <tr id="outros_descontos_nao_dedutiveis" class="questao" data-description="Demais descontos em folha.
+                    </br></br> <b>Exemplos:</b> Empréstimos, Caixas Beneficentes, Clubes etc."
+                    >
                       <td scope="row">OUTROS DESCONTOS NÃO DEDUTÍVEIS</td>
                       <td></td>
                       <td></td>
                       <td></td>
                     </tr>
-                    <tr id="irrf">
+                    <tr id="irrf" class="questao" data-description="Tributo Federal recolhido sobre a remuneração"
+                        data-calculo="Conforme <a href ='http://www26.receita.fazenda.gov.br/irpfsimulaliq/private/pages/simuladoraliquota.jsf'
+                        target='_blank'>Portal</a> da Receita Federal"
+                        data-legal_base="<a
+                        href='http://normas.receita.fazenda.gov.br/sijut2consulta/link.action?visao=anotado&idAto=57670#1459120'
+                        target='_blank'> Instrução Normativa 1500/2014 - RFB </a>"
+                    >
                       <td scope="row">IRRF - IMPOSTO DE RENDA RETIDO NA FONTE</td>
                       <td></td>
                       <td></td>
@@ -867,13 +881,43 @@
                     <tr>
                         <th colspan="4" class="table-dark">TOTAL</th>
                     </tr>
-                    <tr class="text-success table-light" id="remuneracao_total">
+                    <tr class="text-success table-light questao" id="remuneracao_total"
+                        data-description="Soma das seguintes parcelas: </br></br>
+                        <ul class=&quot;list-group&quot;>
+                            <li class=&quot;list-group-item&quot;>SOLDO</li>
+                            <li class=&quot;list-group-item&quot;>ADICIONAL DE POSTO OU GRADUAÇÃO</li>
+                            <li class=&quot;list-group-item&quot;>ADICIONAL DE TEMPO DE SERVIÇO</li>
+                            <li class=&quot;list-group-item&quot;>COMPLEMENTO DE SOLDO</li>
+                            <li class=&quot;list-group-item&quot;>ADICIONAL DE OPERAÇÕES MILITARES</li>
+                            <li class=&quot;list-group-item&quot;>GRATIFICAÇÃO DE REPRESENTAÇÃO MILITAR</li>
+                            <li class=&quot;list-group-item&quot;>ADICIONAL DE CERTIFICAÇÃO PROFISSIONAL</li>
+                            <li class=&quot;list-group-item&quot;>GCEF-GRAT. COND. ESP. FUN. MILITAR</li>
+                            <li class=&quot;list-group-item&quot;>VPE - VANTAGEM PECUNIÁRIA ESPECIAL</li>
+                            <li class=&quot;list-group-item&quot;>GRV - GRATIFICAÇÃO POR RISCO DE VIDA</li>
+                            <li class=&quot;list-group-item&quot;>GFNE</li>
+                            <li class=&quot;list-group-item&quot;>PTTC - PRESTAÇÃO DE TAREFA POR TEMPO CERTO</li>
+                            <li class=&quot;list-group-item&quot;>GSV - GRATIFICAÇÃO DE SERVIÇO VOLUNTÁRIO</li>
+                        </ul>
+                        "
+                        data-legal_base="Art. 1º da Lei 10.486/2002"
+                        data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art1"
+                    >
                       <td scope="row">REMUNERAÇÃO</td>
                       <td></td>
                       <td></td>
                       <td></td>
                     </tr>
-                    <tr class="font-weight-bold table-light" id="direitos_pecuniarios">
+                    <tr class="font-weight-bold table-light questao" id="direitos_pecuniarios"
+                        data-description="Soma das seguintes parcelas: </br></br>
+                        <ul class=&quot;list-group&quot;>
+                            <li class=&quot;list-group-item&quot;>AUXILIO MORADIA</li>
+                            <li class=&quot;list-group-item&quot;>ETAPA ALIMENTAÇÃO</li>
+                            <li class=&quot;list-group-item&quot;>AUXÍLIO PRÉ ESCOLAR</li>
+                        </ul>
+                        "
+                        data-legal_base="Art. 2º da Lei 10.486/2002"
+                        data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art2"
+                    >
                       <td scope="row">DIREITOS PECUNIÁRIOS</td>
                       <td></td>
                       <td></td>
@@ -885,7 +929,8 @@
                       <td></td>
                       <td></td>
                     </tr>
-                    <tr class="font-weight-bold table-light text-success" id="rendimento_liquido">
+                    <tr class="font-weight-bold table-light text-success questao" id="rendimento_liquido"
+                    data-description="<b>REMUNERAÇÃO</b> + <b>DIREITOS PECUNIÁRIOS</b> - <b>DESCONTOS</b>">
                       <td scope="row">LÍQUIDO</td>
                       <td></td>
                       <td></td>

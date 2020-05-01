@@ -54,14 +54,14 @@ document.querySelectorAll('.questao').forEach(item => {
         document.getElementById('exampleModalLabel').innerHTML = item.getElementsByTagName("td")[0].innerHTML
         descricao = ((item.dataset['description']===undefined) ? '':item.dataset['description'])
         base_calculo = ((item.dataset['calculo']===undefined) ? '':'<br/><b>Valores</b>: ' + String(item.dataset['calculo']) + '<br/>')
-        base_legal = ((item.dataset['legal_base']===undefined) ? '':item.dataset['legal_base'])
         base_legal_link = ((item.dataset['legal_base_link']===undefined) ? '':('href=\''+item.dataset['legal_base_link']+'\' target=\'_blank\''))
+        base_legal = ((item.dataset['legal_base']===undefined) ? '':'<b><a ' + base_legal_link + '>Base legal</a></b>: ' + item.dataset['legal_base'])
         document.getElementById('exampleModalBody').innerHTML = `
                         <b>Descrição</b>: ${descricao}
                         <br/>
                         ${base_calculo}
                         <br/>
-                        <b><a ${base_legal_link}>Base legal</a></b>: ${base_legal}
+                        ${base_legal}
         `
     }
     else {
