@@ -73,3 +73,8 @@ document.querySelectorAll('.questao').forEach(item => {
     item.dataset['target']='#exampleModal'
   })
 })
+
+//sumir com colunas indesejadas
+document.querySelectorAll('.abr2020').forEach(item => {
+    item.remove();
+})
