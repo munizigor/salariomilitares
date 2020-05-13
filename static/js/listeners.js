@@ -78,3 +78,9 @@ document.querySelectorAll('.questao').forEach(item => {
 document.querySelectorAll('.abr2020').forEach(item => {
     item.remove();
 })
+document.querySelectorAll('.jun2020').forEach(item => {
+    item.remove();
+})
+document.querySelectorAll('.jul2020').forEach(item => {
+    item.remove();
+})
