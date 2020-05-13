@@ -17,7 +17,6 @@ function Verbas(col){
     this.soldo = function() { return this.valor_parcela ("soldo")}
     this.gcef = function() { return this.valor_parcela ("gcef")}
     this.grv = function() { return this.valor_parcela ("grv")}
-    this.vpe = function() { return this.valor_parcela ("vpe")}
     this.apg = function() { return this.valor_parcela ("apg")}
     this.aom = function() { return this.valor_parcela ("aom")}
     this.gfr = function() { return this.valor_parcela ("gfr")}
@@ -54,6 +53,10 @@ function Verbas(col){
             ats = rounddown(this.soldo()*(parseInt(pct_ats)/100))
         }
         return ats
+    }
+    this.vpe = function() {
+        vpe = rounddown(this.valor_parcela ("vpe")*vpe_aliquota[mes]);
+        return vpe
     }
 
 //    REMUNERAÇÃO FLUTUANTE
