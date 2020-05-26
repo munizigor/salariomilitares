@@ -55,7 +55,8 @@ function Verbas(col){
         return ats
     }
     this.vpe = function() {
-        vpe = rounddown(this.valor_parcela ("vpe")*vpe_aliquota[mes]);
+//        vpe = rounddown(this.valor_parcela ("vpe")*vpe_aliquota[mes]);
+        vpe = Math.round((this.valor_parcela ("vpe")*vpe_aliquota[mes])*100)/100
         return vpe
     }
 
