@@ -81,6 +81,4 @@ document.querySelectorAll('.abr2020').forEach(item => {
 document.querySelectorAll('.jun2020').forEach(item => {
     item.remove();
 })
-document.querySelectorAll('.jul2020').forEach(item => {
-    item.remove();
-})
+//
