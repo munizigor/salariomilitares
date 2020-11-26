@@ -75,10 +75,10 @@ document.querySelectorAll('.questao').forEach(item => {
 })
 
 //sumir com colunas indesejadas
-document.querySelectorAll('.abr2020').forEach(item => {
-    item.remove();
-})
-document.querySelectorAll('.jun2020').forEach(item => {
-    item.remove();
-})
+//document.querySelectorAll('.abr2020').forEach(item => {
+//    item.remove();
+//})
+//document.querySelectorAll('.jun2020').forEach(item => {
+//    item.remove();
+//})
 //
