@@ -8,7 +8,7 @@
 
 >
 > Este sistema <i>open source</i> se dedica a fornecer aos militares e pensionistas do Corpo de Bombeiros Militar do 
->Distrito Federal e da Policia Militar do Distrito Federal o intrumento necessário para que entendam como funcionam suas 
+>Distrito Federal e da Policia Militar do Distrito Federal o instrumento necessário para que entendam como funcionam suas 
 >remunerações. Serve também para toda a comunidade interessada.
 >
 >O código se encontra sob a Licença MIT. Isso quer dizer que ele é livre pra uso comercial, modificação, distribuição e 
