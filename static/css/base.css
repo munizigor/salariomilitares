@@ -40,6 +40,9 @@ h2 {
 	text-align:center;
     padding-left: 15px;
 }
+h3,h6 {
+	text-align:center;
+    }
 div.main-container {
  min-height: 100vh; /* will cover the 100% of viewport */
  overflow: hidden;
