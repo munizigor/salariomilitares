@@ -266,9 +266,9 @@ function Verbas(col) {
         valores_irrf = Object.values(faixas_irrf);
         for (count = valores_irrf.length - 1; count >= 0; count--) {
             if (base_calculo > valores_irrf[count]["piso"]) {
+                deducao = valores_irrf[count]["deducao"];
                 valor_final_irrf =
-                    base_calculo * valores_irrf[count]["aliquota"] -
-                    valores_irrf[count]["deducao"];
+                    base_calculo * valores_irrf[count]["aliquota"] - deducao;
                 break;
             }
         }
