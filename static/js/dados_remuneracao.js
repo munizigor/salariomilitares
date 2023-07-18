@@ -236,8 +236,8 @@ remuneracao = {
         apg: 353.05,
         aom: 405.77,
         gfr: 7.06,
-        amcd: 1027.86,
-        amsd: 342.62,
+        amcd: 850.59,
+        amsd: 283.53,
         cotafsa: {
             pmdf: 6,
             cbmdf: 8,
@@ -267,6 +267,8 @@ salario_minimo = {
     "05/01/2020": 1045.0,
     "06/01/2020": 1045.0,
     "01/01/2021": 1320.0,
+    "01/07/2023": 1320.0,
+    "01/01/2024": 1320.0,
 };
 
 pensao_militar = {
@@ -299,23 +301,23 @@ gfne = {
 
 faixas_irrf = {
     1: {
-        piso: 1903.98,
+        piso: 2112.0,
         aliquota: 0.075,
-        deducao: 142.8,
+        deducao: 158.4,
     },
     2: {
         piso: 2826.65,
         aliquota: 0.15,
-        deducao: 354.8,
+        deducao: 370.4,
     },
     3: {
         piso: 3751.05,
         aliquota: 0.225,
-        deducao: 636.13,
+        deducao: 651.73,
     },
     4: {
         piso: 4664.68,
         aliquota: 0.275,
-        deducao: 869.36,
+        deducao: 884.96,
     },
 };
