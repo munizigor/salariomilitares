@@ -2,7 +2,8 @@ remuneracao = {
     alim: 850,
     gcef: 406.89,
     grv: 1000,
-    pre_escolar: 321,
+    pre_escolar: 484.90,
+    cota_pre_escolar: 24.24,
     CORONEL: {
         soldo: 3195.04,
         vpe: {
@@ -317,23 +318,23 @@ gfne = {
 
 faixas_irrf = {
     1: {
-        piso: 2112.0,
+        piso: 2259.20,
         aliquota: 0.075,
-        deducao: 158.4,
+        deducao: 169.44,
     },
     2: {
         piso: 2826.65,
         aliquota: 0.15,
-        deducao: 370.4,
+        deducao: 381.44,
     },
     3: {
         piso: 3751.05,
         aliquota: 0.225,
-        deducao: 651.73,
+        deducao: 662.77,
     },
     4: {
         piso: 4664.68,
         aliquota: 0.275,
-        deducao: 884.96,
+        deducao: 896.00,
     },
 };
