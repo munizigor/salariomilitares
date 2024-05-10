@@ -137,10 +137,10 @@ function Verbas(col) {
     };
     //    DESCONTOS
     this.cota_pe = function () {
-        if (document.getElementById("cota_pre_escolar").value == false) {
+        if (document.getElementById("pre_escolar").value == false) {
             valor_cota_pe = 0;
         } else {
-            qtde_cota_pe = document.getElementById("cota_pre_escolar").value;
+            qtde_cota_pe = document.getElementById("pre_escolar").value;
             valor_cota_pe = qtde_cota_pe * this.valor_parcela("cota_pre_escolar");
         }
         return valor_cota_pe;
