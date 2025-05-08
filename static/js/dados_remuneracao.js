@@ -318,23 +318,23 @@ gfne = {
 
 faixas_irrf = {
     1: {
-        piso: 2259.20,
+        piso: 2428.80,
         aliquota: 0.075,
-        deducao: 169.44,
+        deducao: 182.16,
     },
     2: {
         piso: 2826.65,
         aliquota: 0.15,
-        deducao: 381.44,
+        deducao: 394.16,
     },
     3: {
         piso: 3751.05,
         aliquota: 0.225,
-        deducao: 662.77,
+        deducao: 675.49,
     },
     4: {
         piso: 4664.68,
         aliquota: 0.275,
-        deducao: 896.00,
+        deducao: 908.73,
     },
 };
