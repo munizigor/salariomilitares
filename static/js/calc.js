@@ -4,40 +4,17 @@ function Verbas(col) {
   //  REMUNERAÇÃO FIXA
 
   this.valor_parcela = function (rubrica, corporacao) {
-    let valor;
-
     if (!isNaN(remuneracao[rubrica])) {
       valor = remuneracao[rubrica];
     } else if (document.getElementById('posto').value != false) {
       valor = remuneracao[document.getElementById('posto').value][rubrica];
     }
-
-    // Se o valor é um objeto com datas, pegar o valor da data específica
-    if (typeof valor === 'object' && valor !== null && !Array.isArray(valor)) {
-      const mes = getMes(col);
-      if (valor[mes] !== undefined) {
-        valor = valor[mes];
-      } else {
-        // Fallback para a data mais recente disponível
-        const datas = Object.keys(valor).sort();
-        valor = valor[datas[datas.length - 1]];
-      }
-    }
-
-    // Se ainda é um objeto (para cotafsa), pegar o valor da corporação
-    if (
-      typeof valor === 'object' &&
-      valor !== null &&
-      !Array.isArray(valor) &&
-      corporacao !== undefined
-    ) {
-      return valor[corporacao];
-    } else {
-      return valor;
-    }
+    valor_final = corporacao === undefined ? valor : valor[corporacao];
+    return valor_final;
   };
   this.soldo = function () {
-    return this.valor_parcela('soldo');
+    mes = getMes(col);
+    return remuneracao[document.getElementById('posto').value]['soldo'][mes];
   };
   this.gcef = function () {
     return this.valor_parcela('gcef');
@@ -46,16 +23,19 @@ function Verbas(col) {
     return this.valor_parcela('grv');
   };
   this.apg = function () {
-    return this.valor_parcela('apg');
+    mes = getMes(col);
+    return remuneracao[document.getElementById('posto').value]['apg'][mes];
   };
   this.aom = function () {
-    return this.valor_parcela('aom');
+    mes = getMes(col);
+    return remuneracao[document.getElementById('posto').value]['aom'][mes];
   };
   this.gfr = function () {
-    return this.valor_parcela('gfr');
+    mes = getMes(col);
+    return remuneracao[document.getElementById('posto').value]['gfr'][mes];
   };
   this.compl_soldo = function () {
-    const mes = getMes(col);
+    mes = getMes(col);
     if (salario_minimo[mes] > this.soldo()) {
       valor_compl_soldo = salario_minimo[mes] - this.soldo();
     } else {
@@ -87,24 +67,19 @@ function Verbas(col) {
     return ats;
   };
   this.vpe = function () {
-    return this.valor_parcela('vpe');
+    mes = getMes(col);
+    return remuneracao[document.getElementById('posto').value]['vpe'][mes];
   };
 
   //    REMUNERAÇÃO FLUTUANTE
 
   this.gfne = function () {
-    if (
-      document.getElementById('tipo_gfne').value == false ||
-      document.getElementById('tipo_gfne').value == ''
-    ) {
+    if (document.getElementById('tipo_gfne').value == false) {
       valor_gnfe = 0;
     } else {
       pct_gfne = gfne[document.getElementById('tipo_gfne').value];
-      const mes = getMes(col);
-      const soldo_coronel =
-        remuneracao['CORONEL']['soldo'][mes] ||
-        remuneracao['CORONEL']['soldo']['01/01/2024'];
-      valor_gnfe = soldo_coronel * pct_gfne;
+      mes = getMes(col);
+      valor_gnfe = remuneracao['CORONEL']['soldo'][mes] * pct_gfne;
     }
     return valor_gnfe;
   };
@@ -147,7 +122,9 @@ function Verbas(col) {
       valor_aux_mor = 0;
     } else {
       moradia = document.getElementById('aux_moradia_dependente').value;
-      valor_aux_mor = this.valor_parcela(moradia);
+      mes = getMes(col);
+      valor_aux_mor =
+        remuneracao[document.getElementById('posto').value][moradia][mes];
     }
     return valor_aux_mor;
   };
@@ -171,8 +148,7 @@ function Verbas(col) {
     return valor_cota_pe;
   };
   this.contr_pensao_militar = function () {
-    const mes = getMes(col);
-    if (mes == '03/01/2020') {
+    if (getMes(col) == '03/01/2020') {
       valor_pmil =
         Math.round(this.remuneracao_fixa() * pensao_militar[mes] * 100) / 100;
     } else {
@@ -220,7 +196,6 @@ function Verbas(col) {
       }
       tipo_pa = document.getElementById('tipo_pa').value;
       if (tipo_pa == 'sal_minimo') {
-        const mes = getMes(col);
         base_calculo = salario_minimo[mes];
       } else if (tipo_pa == 'liquido') {
         //              console.log(this.irrf(tipo))
@@ -327,7 +302,7 @@ function Verbas(col) {
 
   //    SOMAS
   this.remuneracao_fixa = function () {
-    soma =
+    let soma =
       this.soldo() +
       this.apg() +
       this.ats() +
@@ -341,19 +316,19 @@ function Verbas(col) {
     return soma;
   };
   this.remuneracao_total = function (variavelqualqer = 0) {
-    soma = this.remuneracao_fixa() + this.gfne() + this.pttc() + this.gsv();
+    let soma = this.remuneracao_fixa() + this.gfne() + this.pttc() + this.gsv();
     return soma;
   };
   this.direitos_pecuniarios = function () {
-    soma = this.aux_mor() + this.alim() + this.aux_pe();
+    let soma = this.aux_mor() + this.alim() + this.aux_pe();
     return soma;
   };
   this.rendimento_bruto = function () {
-    soma = this.remuneracao_total() + this.direitos_pecuniarios();
+    let soma = this.remuneracao_total() + this.direitos_pecuniarios();
     return soma;
   };
   this.descontos_total = function () {
-    soma =
+    let soma =
       this.cota_pe() +
       this.pensao_alim() +
       this.pensao_alim_pe() +
@@ -374,7 +349,7 @@ function Verbas(col) {
 
   //    RENDIMENTOS EVENTUAIS
   this.decimo_terceiro = function () {
-    soma =
+    let soma =
       this.soldo() +
       this.apg() +
       this.ats() +
