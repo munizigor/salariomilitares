@@ -1,79 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Salário PMDF e CBMDF</title>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Salário PMDF e CBMDF</title>
 
-        <!-- Favicon -->
-        <link
-            rel="shortcut icon"
-            type="image/vnd.microsoft.icon"
-            href="static/img/favicon.ico"
-        />
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      type="image/vnd.microsoft.icon"
+      href="static/img/favicon.ico"
+    />
 
-        <!-- Bloco de Estilos -->
+    <!-- Bloco de Estilos -->
 
-        <meta charset="utf-8" />
-        <meta name="description" content="Cálculo de salário da PMDF e CBMDF" />
-        <meta
-            name="og:description"
-            content="Cálculo de salário da PMDF e CBMDF"
-        />
-        <meta
-            name="og:image"
-            content="https://militaresdf.com.br/static/img/cbmpm.png"
-        />
-        <meta
-            name="keywords"
-            content="salario, pmdf, pm, df, cbmdf, cbm, policia, bombeiro, militar, brasilia, distrito federal, pagamento, remuneração"
-        />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-        <meta
-            name="google-site-verification"
-            content="mw204L5t67rAZIESKy-hIYxF1AqOG9IWf9k_yecNaJ4"
-        />
-        <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-            crossorigin="anonymous"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
-            type="text/css"
-            media="all"
-        />
-        <link rel="stylesheet" href="static/css/base.css" />
+    <meta charset="utf-8" />
+    <meta name="description" content="Cálculo de salário da PMDF e CBMDF" />
+    <meta name="og:description" content="Cálculo de salário da PMDF e CBMDF" />
+    <meta
+      name="og:image"
+      content="https://militaresdf.com.br/static/img/cbmpm.png"
+    />
+    <meta
+      name="keywords"
+      content="salario, pmdf, pm, df, cbmdf, cbm, policia, bombeiro, militar, brasilia, distrito federal, pagamento, remuneração"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="google-site-verification"
+      content="mw204L5t67rAZIESKy-hIYxF1AqOG9IWf9k_yecNaJ4"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
+      type="text/css"
+      media="all"
+    />
+    <link rel="stylesheet" href="static/css/base.css" />
 
-        <!-- Bloco de Scripts -->
-        <script
-            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"
-        ></script>
-        <!--    <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"> </script>-->
-        <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>-->
-        <script src="static/js/calc.js"></script>
-        <script src="static/js/dados_remuneracao.js"></script>
-        <!--    <script data-ad-client="ca-pub-6699075156846587" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Bloco de Scripts -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <!--    <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"> </script>-->
+    <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>-->
+    <script src="static/js/calc.js"></script>
+    <script src="static/js/dados_remuneracao.js"></script>
+    <!--    <script data-ad-client="ca-pub-6699075156846587" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
  Global site tag (gtag.js) - Google Analytics
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VPCN76JFSY"></script>
 <script>
@@ -84,528 +81,463 @@
   gtag('config', 'G-VPCN76JFSY');
 </script>
 -->
-    </head>
-    <body>
-        <div class="main-container">
-            <div class="navbar navbar-dark bg-dark fixed-top topo-ini">
-                <div class="col-3">
-                    <button
-                        class="navbar-toggler d-block d-lg-none"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#dados"
-                        aria-controls="dados"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="navbar navbar-dark bg-dark fixed-top topo-ini">
+        <div class="col-3">
+          <button
+            class="navbar-toggler d-block d-lg-none"
+            type="button"
+            data-toggle="collapse"
+            data-target="#dados"
+            aria-controls="dados"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class="col-9" style="text-align: right">
+          <b
+            ><p>
+              CÁLCULO SALARIAL DOS MILITARES DO DISTRITO FEDERAL - ATUALIZADO
+              CONFORME MEDIDA PROVISÓRIA Nº 1.181, DE 18 DE JULHO DE 2023
+            </p></b
+          >
+        </div>
+      </div>
+      <div
+        class="container-fluid"
+        style="margin-top: 80px; margin-bottom: -36px"
+      >
+        <div class="row">
+          <!--            MODAL PADRÃO-->
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel"></h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
-                <div class="col-9" style="text-align: right">
-                    <b
-                        ><p>
-                            CÁLCULO SALARIAL DOS MILITARES DO DISTRITO FEDERAL -
-                            ATUALIZADO CONFORME MEDIDA PROVISÓRIA Nº 1.181, DE
-                            18 DE JULHO DE 2023
-                        </p></b
-                    >
-                </div>
+                <div class="modal-body" id="exampleModalBody"></div>
+              </div>
             </div>
-            <div
-                class="container-fluid"
-                style="margin-top: 80px; margin-bottom: -36px"
-            >
-                <div class="row">
-                    <!--            MODAL PADRÃO-->
-                    <div
-                        class="modal fade"
-                        id="exampleModal"
-                        tabindex="-1"
-                        role="dialog"
-                        aria-labelledby="exampleModalLabel"
-                        aria-hidden="true"
+          </div>
+          <!--            FIM MODAL PADRÃO-->
+          <div class="col-12 col-lg-3 bd-links collapse show" id="dados">
+            <div class="row" style="margin-top: 20px; margin-bottom: 10px">
+              <div class="col-12 text-center">
+                <h2>Dados</h2>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md align-self-end">
+                <label for="posto">Posto/Graduação</label>
+                <select
+                  class="form-control"
+                  name="calcular_rubricas"
+                  required
+                  id="posto"
+                >
+                  <option value=""></option>
+                  <option value="CORONEL">CORONEL</option>
+                  <option value="TENENTE-CORONEL">TENENTE-CORONEL</option>
+                  <option value="MAJOR">MAJOR</option>
+                  <option value="CAPITAO">CAPITAO</option>
+                  <option value="PRIMEIRO TENENTE">PRIMEIRO TENENTE</option>
+                  <option value="SEGUNDO TENENTE">SEGUNDO TENENTE</option>
+                  <option value="ASPIRANTE">ASPIRANTE</option>
+                  <option value="SUBTENENTE">SUBTENENTE</option>
+                  <option value="PRIMEIRO SARGENTO">PRIMEIRO SARGENTO</option>
+                  <option value="SEGUNDO SARGENTO">SEGUNDO SARGENTO</option>
+                  <option value="TERCEIRO SARGENTO">TERCEIRO SARGENTO</option>
+                  <option value="CABO">CABO</option>
+                  <option value="SOLDADO PRIMEIRA CLASSE">
+                    SOLDADO PRIMEIRA CLASSE
+                  </option>
+                  <option value="SOLDADO SEGUNDA CLASSE">
+                    SOLDADO SEGUNDA CLASSE
+                  </option>
+                  <option value="CADETE ULTIMO ANO">CADETE ULTIMO ANO</option>
+                  <option value="CADETE DEMAIS ANOS">CADETE DEMAIS ANOS</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md align-self-end">
+                <label for="corporacao">Corporação</label>
+                <select
+                  class="form-control"
+                  name="calcular_rubricas"
+                  required
+                  id="corporacao"
+                >
+                  <option value=""></option>
+                  <option value="pmdf">PMDF</option>
+                  <option value="cbmdf">CBMDF</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md align-self-end">
+                <label for="situacao_funcional">Situação Funcional</label>
+                <select
+                  class="form-control"
+                  name="calcular_rubricas"
+                  required
+                  id="situacao_funcional"
+                  onchange="mostrar_campos(event,'inativo')"
+                >
+                  <option value=""></option>
+                  <option value="ativo">ATIVO</option>
+                  <option value="inativo">INATIVO</option>
+                  <!--                              TODO: Inserir o campo abaixo logo que fechada logica de calculo-->
+                  <!--                             <option value="pensionista">FALECIDO (INSTITUIDOR DE PENSÃO)</option>-->
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md align-self-end">
+                <label for="aux_moradia_dependente"
+                  >Tipo de Auxílio Moradia</label
+                >
+                <select
+                  class="form-control"
+                  name="calcular_rubricas"
+                  required
+                  id="aux_moradia_dependente"
+                >
+                  <option value=""></option>
+                  <option value="amcd">COM DEPENDENTE</option>
+                  <option value="amsd">SEM DEPENDENTE</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row border rounded">
+              <div class="col-md-6">
+                <p><b>CAPACITAÇÕES:</b></p>
+              </div>
+              <div class="form-group col-md-auto align-self-end">
+                <div class="form-check">
+                  <input
+                    class="form-check-input acp"
+                    name="calcular_rubricas"
+                    type="checkbox"
+                    id="acp_10"
+                    value="10"
+                  />
+                  <label class="form-check-label" for="acp_10"
+                    >Formação (CFSD, CFO, CHO)</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input acp"
+                    name="calcular_rubricas"
+                    type="checkbox"
+                    id="acp_15"
+                    value="15"
+                  />
+                  <label class="form-check-label" for="acp_15"
+                    >Especialização (CESEI, CMAUT, SCI...)</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input acp"
+                    name="calcular_rubricas"
+                    type="checkbox"
+                    id="acp_20"
+                    value="20"
+                  />
+                  <label class="form-check-label" for="acp_20"
+                    >Aperfeiçoamento (CAP, CAO)</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input acp"
+                    name="calcular_rubricas"
+                    type="checkbox"
+                    id="acp_30"
+                    value="30"
+                  />
+                  <label class="form-check-label" for="acp_30"
+                    >Altos Estudos (CAEP, CAEO)</label
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="form-row border rounded">
+              <div class="col-md-12">
+                <p><b>QUANTIDADE DE DEPENDENTES PARA:</b></p>
+              </div>
+              <div class="form-group col-md align-self-end">
+                <label for="dep_ir">Imposto de Renda</label>
+                <select
+                  class="form-control"
+                  name="calcular_rubricas"
+                  required
+                  id="dep_ir"
+                >
+                  <option value=""></option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                </select>
+              </div>
+              <div class="form-group col-md align-self-end">
+                <label for="dep_fs">Fundo de Saúde</label>
+                <select
+                  class="form-control"
+                  name="calcular_rubricas"
+                  required
+                  id="dep_fs"
+                >
+                  <option value=""></option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                </select>
+              </div>
+              <div class="form-group col-md align-self-end">
+                <label for="pre_escolar">Auxílio Pré-Escolar</label>
+                <select
+                  class="form-control"
+                  name="calcular_rubricas"
+                  required
+                  id="pre_escolar"
+                >
+                  <option value=""></option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                </select>
+              </div>
+            </div>
+            <div class="accordion" id="opcionais">
+              <b><p style="text-align: center">OUTROS VALORES</p></b>
+              <div class="card rounded">
+                <ul class="list-group list-group-flush">
+                  <button
+                    class="btn btn-link bg-light"
+                    data-toggle="collapse"
+                    data-target="#card_gfne"
+                    aria-expanded="true"
+                    aria-controls="card_gfne"
+                  >
+                    GFNE
+                  </button>
+                  <div class="card-body collapse ativo" id="card_gfne">
+                    <label for="tipo_gfne">Tipo</label>
+                    <select
+                      class="form-control"
+                      name="calcular_rubricas"
+                      required
+                      id="tipo_gfne"
                     >
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5
-                                        class="modal-title"
-                                        id="exampleModalLabel"
-                                    ></h5>
-                                    <button
-                                        type="button"
-                                        class="close"
-                                        data-dismiss="modal"
-                                        aria-label="Close"
-                                    >
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div
-                                    class="modal-body"
-                                    id="exampleModalBody"
-                                ></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--            FIM MODAL PADRÃO-->
-                    <div
-                        class="col-12 col-lg-3 bd-links collapse show"
-                        id="dados"
-                    >
-                        <div
-                            class="row"
-                            style="margin-top: 20px; margin-bottom: 10px"
-                        >
-                            <div class="col-12 text-center">
-                                <h2>Dados</h2>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md align-self-end">
-                                <label for="posto">Posto/Graduação</label>
-                                <select
-                                    class="form-control"
-                                    name="calcular_rubricas"
-                                    required
-                                    id="posto"
-                                >
-                                    <option value=""></option>
-                                    <option value="CORONEL">CORONEL</option>
-                                    <option value="TENENTE-CORONEL">
-                                        TENENTE-CORONEL
-                                    </option>
-                                    <option value="MAJOR">MAJOR</option>
-                                    <option value="CAPITAO">CAPITAO</option>
-                                    <option value="PRIMEIRO TENENTE">
-                                        PRIMEIRO TENENTE
-                                    </option>
-                                    <option value="SEGUNDO TENENTE">
-                                        SEGUNDO TENENTE
-                                    </option>
-                                    <option value="ASPIRANTE">ASPIRANTE</option>
-                                    <option value="SUBTENENTE">
-                                        SUBTENENTE
-                                    </option>
-                                    <option value="PRIMEIRO SARGENTO">
-                                        PRIMEIRO SARGENTO
-                                    </option>
-                                    <option value="SEGUNDO SARGENTO">
-                                        SEGUNDO SARGENTO
-                                    </option>
-                                    <option value="TERCEIRO SARGENTO">
-                                        TERCEIRO SARGENTO
-                                    </option>
-                                    <option value="CABO">CABO</option>
-                                    <option value="SOLDADO PRIMEIRA CLASSE">
-                                        SOLDADO PRIMEIRA CLASSE
-                                    </option>
-                                    <option value="SOLDADO SEGUNDA CLASSE">
-                                        SOLDADO SEGUNDA CLASSE
-                                    </option>
-                                    <option value="CADETE ULTIMO ANO">
-                                        CADETE ULTIMO ANO
-                                    </option>
-                                    <option value="CADETE DEMAIS ANOS">
-                                        CADETE DEMAIS ANOS
-                                    </option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md align-self-end">
-                                <label for="corporacao">Corporação</label>
-                                <select
-                                    class="form-control"
-                                    name="calcular_rubricas"
-                                    required
-                                    id="corporacao"
-                                >
-                                    <option value=""></option>
-                                    <option value="pmdf">PMDF</option>
-                                    <option value="cbmdf">CBMDF</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md align-self-end">
-                                <label for="situacao_funcional"
-                                    >Situação Funcional</label
-                                >
-                                <select
-                                    class="form-control"
-                                    name="calcular_rubricas"
-                                    required
-                                    id="situacao_funcional"
-                                    onchange="mostrar_campos(event,'inativo')"
-                                >
-                                    <option value=""></option>
-                                    <option value="ativo">ATIVO</option>
-                                    <option value="inativo">INATIVO</option>
-                                    <!--                              TODO: Inserir o campo abaixo logo que fechada logica de calculo-->
-                                    <!--                             <option value="pensionista">FALECIDO (INSTITUIDOR DE PENSÃO)</option>-->
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md align-self-end">
-                                <label for="aux_moradia_dependente"
-                                    >Tipo de Auxílio Moradia</label
-                                >
-                                <select
-                                    class="form-control"
-                                    name="calcular_rubricas"
-                                    required
-                                    id="aux_moradia_dependente"
-                                >
-                                    <option value=""></option>
-                                    <option value="amcd">COM DEPENDENTE</option>
-                                    <option value="amsd">SEM DEPENDENTE</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-row border rounded">
-                            <div class="col-md-6">
-                                <p><b>CAPACITAÇÕES:</b></p>
-                            </div>
-                            <div class="form-group col-md-auto align-self-end">
-                                <div class="form-check">
-                                    <input
-                                        class="form-check-input acp"
-                                        name="calcular_rubricas"
-                                        type="checkbox"
-                                        id="acp_10"
-                                        value="10"
-                                    />
-                                    <label class="form-check-label" for="acp_10"
-                                        >Formação (CFSD, CFO, CHO)</label
-                                    >
-                                </div>
-                                <div class="form-check">
-                                    <input
-                                        class="form-check-input acp"
-                                        name="calcular_rubricas"
-                                        type="checkbox"
-                                        id="acp_15"
-                                        value="15"
-                                    />
-                                    <label class="form-check-label" for="acp_15"
-                                        >Especialização (CESEI, CMAUT,
-                                        SCI...)</label
-                                    >
-                                </div>
-                                <div class="form-check">
-                                    <input
-                                        class="form-check-input acp"
-                                        name="calcular_rubricas"
-                                        type="checkbox"
-                                        id="acp_20"
-                                        value="20"
-                                    />
-                                    <label class="form-check-label" for="acp_20"
-                                        >Aperfeiçoamento (CAP, CAO)</label
-                                    >
-                                </div>
-                                <div class="form-check">
-                                    <input
-                                        class="form-check-input acp"
-                                        name="calcular_rubricas"
-                                        type="checkbox"
-                                        id="acp_30"
-                                        value="30"
-                                    />
-                                    <label class="form-check-label" for="acp_30"
-                                        >Altos Estudos (CAEP, CAEO)</label
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row border rounded">
-                            <div class="col-md-12">
-                                <p><b>QUANTIDADE DE DEPENDENTES PARA:</b></p>
-                            </div>
-                            <div class="form-group col-md align-self-end">
-                                <label for="dep_ir">Imposto de Renda</label>
-                                <select
-                                    class="form-control"
-                                    name="calcular_rubricas"
-                                    required
-                                    id="dep_ir"
-                                >
-                                    <option value=""></option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-md align-self-end">
-                                <label for="dep_fs">Fundo de Saúde</label>
-                                <select
-                                    class="form-control"
-                                    name="calcular_rubricas"
-                                    required
-                                    id="dep_fs"
-                                >
-                                    <option value=""></option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-md align-self-end">
-                                <label for="pre_escolar"
-                                    >Auxílio Pré-Escolar</label
-                                >
-                                <select
-                                    class="form-control"
-                                    name="calcular_rubricas"
-                                    required
-                                    id="pre_escolar"
-                                >
-                                    <option value=""></option>
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="accordion" id="opcionais">
-                            <b
-                                ><p style="text-align: center">
-                                    OUTROS VALORES
-                                </p></b
-                            >
-                            <div class="card rounded">
-                                <ul class="list-group list-group-flush">
-                                    <button
-                                        class="btn btn-link bg-light"
-                                        data-toggle="collapse"
-                                        data-target="#card_gfne"
-                                        aria-expanded="true"
-                                        aria-controls="card_gfne"
-                                    >
-                                        GFNE
-                                    </button>
-                                    <div
-                                        class="card-body collapse ativo"
-                                        id="card_gfne"
-                                    >
-                                        <label for="tipo_gfne">Tipo</label>
-                                        <select
-                                            class="form-control"
-                                            name="calcular_rubricas"
-                                            required
-                                            id="tipo_gfne"
-                                        >
-                                            <option value=""></option>
-                                            <option value="0">
-                                                NÃO RECEBE
-                                            </option>
-                                            <option value="1">I</option>
-                                            <option value="2">II</option>
-                                            <option value="3">III</option>
-                                            <option value="4">IV</option>
-                                            <option value="5">V</option>
-                                        </select>
-                                    </div>
-                                    <button
-                                        class="btn btn-link bg-light"
-                                        data-toggle="collapse"
-                                        data-target="#card_ats"
-                                        aria-expanded="true"
-                                        aria-controls="card_ats"
-                                    >
-                                        Adicional de Tempo de Serviço
-                                    </button>
-                                    <div
-                                        class="card-body collapse"
-                                        id="card_ats"
-                                    >
-                                        <label for="pct_ats"
-                                            >Tempo (em Anos)</label
-                                        >
-                                        <span
-                                            class="questao"
-                                            data-questionmark="true"
-                                            data-title="Anos de Efetivo Serviço Militar (incluindo tempo de outras Forças) até
+                      <option value=""></option>
+                      <option value="0">NÃO RECEBE</option>
+                      <option value="1">I</option>
+                      <option value="2">II</option>
+                      <option value="3">III</option>
+                      <option value="4">IV</option>
+                      <option value="5">V</option>
+                    </select>
+                  </div>
+                  <button
+                    class="btn btn-link bg-light"
+                    data-toggle="collapse"
+                    data-target="#card_ats"
+                    aria-expanded="true"
+                    aria-controls="card_ats"
+                  >
+                    Adicional de Tempo de Serviço
+                  </button>
+                  <div class="card-body collapse" id="card_ats">
+                    <label for="pct_ats">Tempo (em Anos)</label>
+                    <span
+                      class="questao"
+                      data-questionmark="true"
+                      data-title="Anos de Efetivo Serviço Militar (incluindo tempo de outras Forças) até
                                 <b>05/09/2001</b>. <br/><br/>Militares que ingressaram após essa data não precisam
                                 preencher."
-                                        ></span>
-                                        <input
-                                            type="text"
-                                            id="pct_ats"
-                                            name="calcular_rubricas"
-                                            class="form-control"
-                                        />
-                                        <!--                    TODO: Inserir sinal de % após o textbox-->
-                                    </div>
-                                    <button
-                                        class="btn btn-link inativo bg-light"
-                                        data-toggle="collapse"
-                                        data-target="#card_pttc"
-                                        aria-expanded="true"
-                                        aria-controls="card_pttc"
-                                        style="display: none"
-                                    >
-                                        PTTC
-                                    </button>
-                                    <div
-                                        class="card-body collapse"
-                                        id="card_pttc"
-                                    >
-                                        <label for="bool_pttc"
-                                            >Está no PTTC?</label
-                                        >
-                                        <select
-                                            class="form-control"
-                                            name="calcular_rubricas"
-                                            required
-                                            id="bool_pttc"
-                                        >
-                                            <option value=""></option>
-                                            <option value="sim">SIM</option>
-                                            <option value="nao">NÃO</option>
-                                        </select>
-                                    </div>
-                                    <button
-                                        class="btn btn-link bg-light"
-                                        data-toggle="collapse"
-                                        data-target="#card_pensao_militar_adicional"
-                                        aria-expanded="true"
-                                        aria-controls="card_pensao_militar_adicional"
-                                    >
-                                        Pensão Militar Adicional
-                                    </button>
-                                    <div
-                                        class="card-body collapse"
-                                        id="card_pensao_militar_adicional"
-                                    >
-                                        <label for="pensao_militar_adicional"
-                                            >Paga Pensão Militar
-                                            Adicional?</label
-                                        >
-                                        <span
-                                            class="questao"
-                                            data-questionmark="true"
-                                            data-title="Aqueles militares que entraram na Corporação até <b>29/12/2000</b> e optaram por manter
+                    ></span>
+                    <input
+                      type="text"
+                      id="pct_ats"
+                      name="calcular_rubricas"
+                      class="form-control"
+                    />
+                    <!--                    TODO: Inserir sinal de % após o textbox-->
+                  </div>
+                  <button
+                    class="btn btn-link inativo bg-light"
+                    data-toggle="collapse"
+                    data-target="#card_pttc"
+                    aria-expanded="true"
+                    aria-controls="card_pttc"
+                    style="display: none"
+                  >
+                    PTTC
+                  </button>
+                  <div class="card-body collapse" id="card_pttc">
+                    <label for="bool_pttc">Está no PTTC?</label>
+                    <select
+                      class="form-control"
+                      name="calcular_rubricas"
+                      required
+                      id="bool_pttc"
+                    >
+                      <option value=""></option>
+                      <option value="sim">SIM</option>
+                      <option value="nao">NÃO</option>
+                    </select>
+                  </div>
+                  <button
+                    class="btn btn-link bg-light"
+                    data-toggle="collapse"
+                    data-target="#card_pensao_militar_adicional"
+                    aria-expanded="true"
+                    aria-controls="card_pensao_militar_adicional"
+                  >
+                    Pensão Militar Adicional
+                  </button>
+                  <div
+                    class="card-body collapse"
+                    id="card_pensao_militar_adicional"
+                  >
+                    <label for="pensao_militar_adicional"
+                      >Paga Pensão Militar Adicional?</label
+                    >
+                    <span
+                      class="questao"
+                      data-questionmark="true"
+                      data-title="Aqueles militares que entraram na Corporação até <b>29/12/2000</b> e optaram por manter
 					    os benefícios da <b>Lei 3.765/1960</b> inclusive para filhas solteiras maiores e capazes. 
 					    <br/>
 					    <br/>
 					    Militares que ingressaram após essa data não precisam preencher."
-                                        ></span>
-                                        <select
-                                            class="form-control"
-                                            name="calcular_rubricas"
-                                            required
-                                            id="pensao_militar_adicional"
-                                        >
-                                            <option value=""></option>
-                                            <option value="sim">SIM</option>
-                                            <option value="nao">NÃO</option>
-                                        </select>
-                                    </div>
-                                    <button
-                                        class="btn btn-link bg-light"
-                                        data-toggle="collapse"
-                                        data-target="#card_horas_gsv"
-                                        aria-expanded="true"
-                                        aria-controls="card_horas_gsv"
-                                    >
-                                        Serviço Voluntário
-                                    </button>
-                                    <div
-                                        class="card-body collapse ativo"
-                                        id="card_horas_gsv"
-                                    >
-                                        <label for="horas_gsv">Horas</label>
-                                        <!--                    TODO: style.display=none se for INATIVO-->
-                                        <input
-                                            type="text"
-                                            id="horas_gsv"
-                                            name="calcular_rubricas"
-                                            class="form-control"
-                                        />
-                                    </div>
-                                    <button
-                                        class="btn btn-link bg-light"
-                                        data-toggle="collapse"
-                                        data-target="#card_pensao_alimenticia"
-                                        aria-expanded="true"
-                                        aria-controls="card_pensao_alimenticia"
-                                    >
-                                        Pensão Alimentícia
-                                    </button>
-                                    <div
-                                        class="card-body collapse ativo"
-                                        id="card_pensao_alimenticia"
-                                    >
-                                        <div
-                                            class="form-group col-md-12 align-self-end"
-                                        >
-                                            <label for="percentual_pa"
-                                                >Percentual de Pensão</label
-                                            >
-                                            <input
-                                                type="text"
-                                                id="percentual_pa"
-                                                class="form-control"
-                                                name="calcular_rubricas"
-                                                onblur="mostrar_campos(event,'possui_pa')"
-                                            />
-                                            <!--                     TODO: Inserir sinal de % após o textbox-->
-                                        </div>
-                                        <div
-                                            class="form-group col-md-12 align-self-end possui_pa"
-                                            style="display: none"
-                                        >
-                                            <label for="tipo_pa"
-                                                >Tipo de Incidência</label
-                                            >
-                                            <span
-                                                class="questao"
-                                                id="pa_forma_calculo"
-                                                data-questionmark="true"
-                                                data-label="FÓRMULAS DE CÁLCULO"
-                                                data-title='
+                    ></span>
+                    <select
+                      class="form-control"
+                      name="calcular_rubricas"
+                      required
+                      id="pensao_militar_adicional"
+                    >
+                      <option value=""></option>
+                      <option value="sim">SIM</option>
+                      <option value="nao">NÃO</option>
+                    </select>
+                  </div>
+                  <button
+                    class="btn btn-link bg-light"
+                    data-toggle="collapse"
+                    data-target="#card_horas_gsv"
+                    aria-expanded="true"
+                    aria-controls="card_horas_gsv"
+                  >
+                    Serviço Voluntário
+                  </button>
+                  <div class="card-body collapse ativo" id="card_horas_gsv">
+                    <label for="horas_gsv">Horas</label>
+                    <!--                    TODO: style.display=none se for INATIVO-->
+                    <input
+                      type="text"
+                      id="horas_gsv"
+                      name="calcular_rubricas"
+                      class="form-control"
+                    />
+                  </div>
+                  <button
+                    class="btn btn-link bg-light"
+                    data-toggle="collapse"
+                    data-target="#card_pensao_alimenticia"
+                    aria-expanded="true"
+                    aria-controls="card_pensao_alimenticia"
+                  >
+                    Pensão Alimentícia
+                  </button>
+                  <div
+                    class="card-body collapse ativo"
+                    id="card_pensao_alimenticia"
+                  >
+                    <div class="form-group col-md-12 align-self-end">
+                      <label for="percentual_pa">Percentual de Pensão</label>
+                      <input
+                        type="text"
+                        id="percentual_pa"
+                        class="form-control"
+                        name="calcular_rubricas"
+                        onblur="mostrar_campos(event,'possui_pa')"
+                      />
+                      <!--                     TODO: Inserir sinal de % após o textbox-->
+                    </div>
+                    <div
+                      class="form-group col-md-12 align-self-end possui_pa"
+                      style="display: none"
+                    >
+                      <label for="tipo_pa">Tipo de Incidência</label>
+                      <span
+                        class="questao"
+                        id="pa_forma_calculo"
+                        data-questionmark="true"
+                        data-label="FÓRMULAS DE CÁLCULO"
+                        data-title='
                                             <table class="table table-striped">
                                               <thead>
                                                 <tr>
@@ -637,510 +569,478 @@
                                               </tbody>
                                             </table>
                                             '
-                                            ></span>
-                                            <select
-                                                class="form-control"
-                                                name="calcular_rubricas"
-                                                required
-                                                id="tipo_pa"
-                                            >
-                                                <option value=""></option>
-                                                <option
-                                                    value="liquido"
-                                                    selected
-                                                >
-                                                    ABATENDO DESCONTOS
-                                                    COMPULSÓRIOS E VERBAS
-                                                    INDENIZATÓRIAS
-                                                </option>
-                                                <option
-                                                    value="bruto_com_indenizacoes"
-                                                >
-                                                    ABATENDO APENAS DESCONTOS
-                                                    COMPULSÓRIOS
-                                                </option>
-                                                <option value="bruto">
-                                                    SEM ABATIMENTO DE DESCONTOS
-                                                    COMPULSÓRIOS OU VERBAS
-                                                    INDENIZATÓRIAS
-                                                </option>
-                                                <option value="sal_minimo">
-                                                    SOBRE SALÁRIO MÍNIMO
-                                                </option>
-                                            </select>
-                                        </div>
-                                        <div
-                                            class="form-group col-md-12 align-self-end possui_pa"
-                                            style="display: none"
-                                        >
-                                            <label for="pre_escolar_pensao">
-                                                Quantidade de Auxílio
-                                                Pré-Escolar revertido em Pensão
-                                                Alimentícia</label
-                                            >
-                                            <select
-                                                class="form-control"
-                                                name="calcular_rubricas"
-                                                required
-                                                id="pre_escolar_pensao"
-                                            >
-                                                <option value=""></option>
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                                <option value="9">9</option>
-                                                <option value="10">10</option>
-                                                <option value="11">11</option>
-                                                <option value="12">12</option>
-                                                <option value="13">13</option>
-                                                <option value="14">14</option>
-                                                <option value="15">15</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <button
-                                        class="btn btn-link bg-light"
-                                        data-toggle="collapse"
-                                        data-target="#card_outros_descontos"
-                                        aria-expanded="true"
-                                        aria-controls="card_outros_descontos"
-                                    >
-                                        Outros Descontos
-                                    </button>
-                                    <div
-                                        class="card-body collapse"
-                                        id="card_outros_descontos"
-                                    >
-                                        <div class="form-group align-self-end">
-                                            <label for="soma_reparacao_erario"
-                                                >Reparação ao Erário</label
-                                            >
-                                            <span
-                                                class="questao"
-                                                data-questionmark="true"
-                                                data-title="Descontos obrigatórios de reparação ao erário.
+                      ></span>
+                      <select
+                        class="form-control"
+                        name="calcular_rubricas"
+                        required
+                        id="tipo_pa"
+                      >
+                        <option value=""></option>
+                        <option value="liquido" selected>
+                          ABATENDO DESCONTOS COMPULSÓRIOS E VERBAS
+                          INDENIZATÓRIAS
+                        </option>
+                        <option value="bruto_com_indenizacoes">
+                          ABATENDO APENAS DESCONTOS COMPULSÓRIOS
+                        </option>
+                        <option value="bruto">
+                          SEM ABATIMENTO DE DESCONTOS COMPULSÓRIOS OU VERBAS
+                          INDENIZATÓRIAS
+                        </option>
+                        <option value="sal_minimo">SOBRE SALÁRIO MÍNIMO</option>
+                      </select>
+                    </div>
+                    <div
+                      class="form-group col-md-12 align-self-end possui_pa"
+                      style="display: none"
+                    >
+                      <label for="pre_escolar_pensao">
+                        Quantidade de Auxílio Pré-Escolar revertido em Pensão
+                        Alimentícia</label
+                      >
+                      <select
+                        class="form-control"
+                        name="calcular_rubricas"
+                        required
+                        id="pre_escolar_pensao"
+                      >
+                        <option value=""></option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                      </select>
+                    </div>
+                  </div>
+                  <button
+                    class="btn btn-link bg-light"
+                    data-toggle="collapse"
+                    data-target="#card_outros_descontos"
+                    aria-expanded="true"
+                    aria-controls="card_outros_descontos"
+                  >
+                    Outros Descontos
+                  </button>
+                  <div class="card-body collapse" id="card_outros_descontos">
+                    <div class="form-group align-self-end">
+                      <label for="soma_reparacao_erario"
+                        >Reparação ao Erário</label
+                      >
+                      <span
+                        class="questao"
+                        data-questionmark="true"
+                        data-title="Descontos obrigatórios de reparação ao erário.
                                 <br/><br/>Identificados no contracheque como 'REP.ERARIO L.8112/90-10.486/02'. "
-                                            ></span>
-                                            <input
-                                                type="text"
-                                                id="soma_reparacao_erario"
-                                                class="form-control"
-                                                name="calcular_rubricas"
-                                            />
-                                        </div>
-                                        <div class="form-group align-self-end">
-                                            <label
-                                                for="soma_descontos_dedutiveis"
-                                                >Descontos Dedutíveis</label
-                                            >
-                                            <span
-                                                class="questao"
-                                                data-questionmark="true"
-                                                data-title="Descontos tributáveis efetuados em contracheque.
+                      ></span>
+                      <input
+                        type="text"
+                        id="soma_reparacao_erario"
+                        class="form-control"
+                        name="calcular_rubricas"
+                      />
+                    </div>
+                    <div class="form-group align-self-end">
+                      <label for="soma_descontos_dedutiveis"
+                        >Descontos Dedutíveis</label
+                      >
+                      <span
+                        class="questao"
+                        data-questionmark="true"
+                        data-title="Descontos tributáveis efetuados em contracheque.
                                 <br/><br/>Ex.: Previdência Privada, Plano de Saúde, Ressarcimentos ao Fundo de Saúde
                                 Adicional (Não inclui o valor mensal pago por dependente) etc."
-                                            ></span>
-                                            <input
-                                                type="text"
-                                                id="soma_descontos_dedutiveis"
-                                                class="form-control"
-                                                name="calcular_rubricas"
-                                            />
-                                        </div>
-                                        <div class="form-group align-self-end">
-                                            <label
-                                                for="soma_descontos_nao_dedutiveis"
-                                                >Descontos Não Dedutíveis</label
-                                            >
-                                            <span
-                                                class="questao"
-                                                data-questionmark="true"
-                                                data-title="Descontos não tributáveis efetuados em contracheque.<br/><br/>
-                                Ex.: Empréstimos, Clubes, Caixas Beneficentes etc."
-                                            ></span>
-                                            <input
-                                                type="text"
-                                                id="soma_descontos_nao_dedutiveis"
-                                                class="form-control"
-                                                name="calcular_rubricas"
-                                            />
-                                        </div>
-                                    </div>
-                                </ul>
-                            </div>
-                        </div>
+                      ></span>
+                      <input
+                        type="text"
+                        id="soma_descontos_dedutiveis"
+                        class="form-control"
+                        name="calcular_rubricas"
+                      />
                     </div>
-                    <div class="col-12 col-lg-9 bd-links">
-                        <div
-                            class="row"
-                            style="margin-top: 20px; margin-bottom: 20px"
-                        >
-                            <div class="col-10 text-center">
-                                <h2>Cálculo</h2>
-                            </div>
-                            <div class="col-2 text-right">
-                                <a
-                                    id="imprimir"
-                                    title="Clique para Imprimir ou Gerar PDF"
-                                    href="#"
-                                    onclick="imprimir();return false;"
-                                    ><img src="static/img/picture_as_pdf.png"
-                                /></a>
-                            </div>
-                        </div>
+                    <div class="form-group align-self-end">
+                      <label for="soma_descontos_nao_dedutiveis"
+                        >Descontos Não Dedutíveis</label
+                      >
+                      <span
+                        class="questao"
+                        data-questionmark="true"
+                        data-title="Descontos não tributáveis efetuados em contracheque.<br/><br/>
+                                Ex.: Empréstimos, Clubes, Caixas Beneficentes etc."
+                      ></span>
+                      <input
+                        type="text"
+                        id="soma_descontos_nao_dedutiveis"
+                        class="form-control"
+                        name="calcular_rubricas"
+                      />
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-9 bd-links">
+            <div class="row" style="margin-top: 20px; margin-bottom: 20px">
+              <div class="col-10 text-center">
+                <h2>Cálculo</h2>
+              </div>
+              <div class="col-2 text-right">
+                <a
+                  id="imprimir"
+                  title="Clique para Imprimir ou Gerar PDF"
+                  href="#"
+                  onclick="imprimir();return false;"
+                  ><img src="static/img/picture_as_pdf.png"
+                /></a>
+              </div>
+            </div>
 
-                        <table
-                            id="salario"
-                            class="table table-bordered table-hover table-sm"
-                        >
-                            <caption>
-                                Clique sobre a parcela para maiores informações
-                            </caption>
-                            <thead>
-                                <tr id="mes">
-                                    <th scope="col"></th>
-
-                                    <!-- <th
-                                        scope="col"
-                                        class="jul2023"
-                                        headers="01/07/2023"
-                                    >
-                                        Atual
-                                    </th> -->
-                                    <th
-                                        scope="col"
-                                        class="jan2024"
-                                        headers="01/01/2024"
-                                    >
-                                        Valor
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th colspan="5" class="table-dark">
-                                        PARCELAS SALARIAIS
-                                    </th>
-                                </tr>
-                                <tr
-                                    id="soldo"
-                                    class="questao"
-                                    data-description="Parcela básica mensal da
+            <table
+              id="salario"
+              class="table table-bordered table-hover table-sm"
+            >
+              <caption>
+                Clique sobre a parcela para maiores informações
+              </caption>
+              <thead>
+                <tr id="mes">
+                  <th scope="col"></th>
+                  <th scope="col" class="jan2024" headers="01/01/2024">
+                    Atual (Jan/2024)
+                  </th>
+                  <th scope="col" class="dez2025" headers="01/12/2025">
+                    Dez/2025
+                  </th>
+                  <th scope="col" class="jan2026" headers="01/01/2026">
+                    Jan/2026
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th colspan="4" class="table-dark">PARCELAS SALARIAIS</th>
+                </tr>
+                <tr
+                  id="soldo"
+                  class="questao"
+                  data-description="Parcela básica mensal da
                         remuneração e dos proventos, inerentes ao posto ou à graduação do militar e irredutível."
-                                    data-legal_base="Art. 3º, I c/c Tabela I do Anexo I da Lei 10.486/2002"
-                                    data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3i"
-                                >
-                                    <td scope="row">SOLDO</td>
-
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    id="apg"
-                                    class="questao"
-                                    data-description="Parcela remuneratória mensal devida ao militar,
+                  data-legal_base="Art. 3º, I c/c Tabela I do Anexo I da Lei 10.486/2002"
+                  data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3i"
+                >
+                  <td scope="row">SOLDO</td>
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  id="apg"
+                  class="questao"
+                  data-description="Parcela remuneratória mensal devida ao militar,
                         inerente à cada círculo hierárquico da carreira militar."
-                                    data-legal_base="Art. 3º, II c/c Tabela I do Anexo II da Lei 10.486/2002"
-                                    data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3ii"
-                                >
-                                    <td scope="row">
-                                        ADICIONAL DE POSTO OU GRADUAÇÃO
-                                    </td>
+                  data-legal_base="Art. 3º, II c/c Tabela I do Anexo II da Lei 10.486/2002"
+                  data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3ii"
+                >
+                  <td scope="row">ADICIONAL DE POSTO OU GRADUAÇÃO</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    id="ats"
-                                    class="questao"
-                                    data-description="Parcela remuneratória mensal devida ao militar,
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  id="ats"
+                  class="questao"
+                  data-description="Parcela remuneratória mensal devida ao militar,
                         inerente ao tempo de serviço contado até <b>05/09/2001</b>."
-                                    data-legal_base="Art. 3º, V c/c Art. 62 e Tabela I do Anexo II da Lei 10.486/2002"
-                                    data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3v"
-                                >
-                                    <td scope="row">
-                                        ADICIONAL DE TEMPO DE SERVIÇO
-                                    </td>
+                  data-legal_base="Art. 3º, V c/c Art. 62 e Tabela I do Anexo II da Lei 10.486/2002"
+                  data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3v"
+                >
+                  <td scope="row">ADICIONAL DE TEMPO DE SERVIÇO</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    id="compl_soldo"
-                                    class="questao"
-                                    data-description="Diferença entre o salário mínimo vigente e o
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  id="compl_soldo"
+                  class="questao"
+                  data-description="Diferença entre o salário mínimo vigente e o
                         soldo, quotas de soldo ou pensão militar."
-                                    data-legal_base="Art. 31 da Lei 10.486/2002"
-                                    data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art31"
-                                >
-                                    <td scope="row">COMPLEMENTO DE SOLDO</td>
+                  data-legal_base="Art. 31 da Lei 10.486/2002"
+                  data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art31"
+                >
+                  <td scope="row">COMPLEMENTO DE SOLDO</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    id="aom"
-                                    class="questao"
-                                    data-description="Parcela remuneratória mensal devida ao militar pelo
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  id="aom"
+                  class="questao"
+                  data-description="Parcela remuneratória mensal devida ao militar pelo
                         desempenho de operações militares e para compensação dos desgastes orgânicos e danos
                         psicossomáticos decorrentes do desempenho das atividades técnico-profissionais nos respectivos
                         Quadros."
-                                    data-legal_base="Art. 3º, IV c/c Tabela III do Anexo II da Lei 10.486/2002"
-                                    data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3iv"
-                                >
-                                    <td scope="row">
-                                        ADICIONAL DE OPERAÇÕES MILITARES
-                                    </td>
+                  data-legal_base="Art. 3º, IV c/c Tabela III do Anexo II da Lei 10.486/2002"
+                  data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3iv"
+                >
+                  <td scope="row">ADICIONAL DE OPERAÇÕES MILITARES</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    id="gfr"
-                                    class="questao"
-                                    data-description="Parcela remuneratória mensal devida aos militares
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  id="gfr"
+                  class="questao"
+                  data-description="Parcela remuneratória mensal devida aos militares
                         ativos e inativos, a título de representação"
-                                    data-legal_base="Art. 3º, VI c/c Tabela I do Anexo III da Lei 10.486/2002"
-                                    data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3vi"
-                                >
-                                    <td scope="row">
-                                        GRATIFICAÇÃO DE REPRESENTAÇÃO MILITAR
-                                    </td>
+                  data-legal_base="Art. 3º, VI c/c Tabela I do Anexo III da Lei 10.486/2002"
+                  data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3vi"
+                >
+                  <td scope="row">GRATIFICAÇÃO DE REPRESENTAÇÃO MILITAR</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    id="acp"
-                                    class="questao"
-                                    data-description="Somatório dos percentuais referentes a 1 (um) curso
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  id="acp"
+                  class="questao"
+                  data-description="Somatório dos percentuais referentes a 1 (um) curso
                         de formação, 1 (um) de especialização ou habilitação, 1 (um) de aperfeiçoamento e 1 (um) de
                         altos estudos, inerente aos cursos realizados com aproveitamento"
-                                    data-legal_base="Art. 3º, III c/c Tabela II do Anexo II da Lei 10.486/2002"
-                                    data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3iii"
-                                >
-                                    <td scope="row">
-                                        ADICIONAL DE CERTIFICAÇÃO PROFISSIONAL
-                                    </td>
+                  data-legal_base="Art. 3º, III c/c Tabela II do Anexo II da Lei 10.486/2002"
+                  data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3iii"
+                >
+                  <td scope="row">ADICIONAL DE CERTIFICAÇÃO PROFISSIONAL</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    id="gcef"
-                                    class="questao"
-                                    data-description="Gratificação devida mensal e regularmente aos
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  id="gcef"
+                  class="questao"
+                  data-description="Gratificação devida mensal e regularmente aos
                         militares da Polícia Militar do Distrito Federal e do Corpo de Bombeiros Militar do Distrito
                         Federal"
-                                    data-legal_base="Art. 1º-A, c/c Anexo I-A da Lei 11134/2005"
-                                    data-legal_base_link="http://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2005/Lei/L11134.htm#art1a.."
-                                >
-                                    <td scope="row">
-                                        GCEF-GRAT. COND. ESP. FUN. MILITAR
-                                    </td>
+                  data-legal_base="Art. 1º-A, c/c Anexo I-A da Lei 11134/2005"
+                  data-legal_base_link="http://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2005/Lei/L11134.htm#art1a.."
+                >
+                  <td scope="row">GCEF-GRAT. COND. ESP. FUN. MILITAR</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    id="vpe"
-                                    class="questao"
-                                    data-description="Parcela remuneratória devida mensal e regularmente aos
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  id="vpe"
+                  class="questao"
+                  data-description="Parcela remuneratória devida mensal e regularmente aos
                         militares da Polícia Militar do Distrito Federal e do Corpo de Bombeiros Militar do Distrito
                         Federal, ativos e inativos e aos seus pensionistas"
-                                    data-legal_base="Art. 1º, c/c Anexo I da Lei 11134/2005"
-                                    data-legal_base_link="http://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2005/Lei/L11134.htm#art1"
-                                >
-                                    <td scope="row">
-                                        VPE - VANTAGEM PECUNIÁRIA ESPECIAL
-                                    </td>
+                  data-legal_base="Art. 1º, c/c Anexo I da Lei 11134/2005"
+                  data-legal_base_link="http://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2005/Lei/L11134.htm#art1"
+                >
+                  <td scope="row">VPE - VANTAGEM PECUNIÁRIA ESPECIAL</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    id="grv"
-                                    class="questao"
-                                    data-description="Gratificação mensal devida aos militares
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  id="grv"
+                  class="questao"
+                  data-description="Gratificação mensal devida aos militares
                         ativos e inativos"
-                                    data-legal_base="Art. 117 c/c Anexo VI da Lei 12086/2012"
-                                    data-legal_base_link="http://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2009/Lei/L12086.htm#art117"
-                                >
-                                    <td scope="row">
-                                        GRV - GRATIFICAÇÃO POR RISCO DE VIDA
-                                    </td>
+                  data-legal_base="Art. 117 c/c Anexo VI da Lei 12086/2012"
+                  data-legal_base_link="http://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2009/Lei/L12086.htm#art117"
+                >
+                  <td scope="row">GRV - GRATIFICAÇÃO POR RISCO DE VIDA</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    id="gfne"
-                                    class="questao"
-                                    data-description="Parcela remuneratória mensal devida aos militares em
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  id="gfne"
+                  class="questao"
+                  data-description="Parcela remuneratória mensal devida aos militares em
                     cargo de função de natureza especial eventual, não podendo ser acumulável com a <b>gratificação de
                     serviço voluntário</b> ou <b>qualquer outra remuneração decorrente do exercício de função
                     comissionada</b>"
-                                    data-legal_base="Art. 3º, VII c/c Tabela II do Anexo III da Lei 10.486/2002"
-                                    data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3vii"
-                                >
-                                    <td scope="row">GFNE</td>
+                  data-legal_base="Art. 3º, VII c/c Tabela II do Anexo III da Lei 10.486/2002"
+                  data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3vii"
+                >
+                  <td scope="row">GFNE</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    id="pttc"
-                                    class="questao"
-                                    data-description=" Execução de encargo, incumbência, tarefa ou missão
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  id="pttc"
+                  class="questao"
+                  data-description=" Execução de encargo, incumbência, tarefa ou missão
                     de caráter voluntário e temporário, em organizações do Corpo de Bombeiros Militar do Distrito
                     Federal, pelo bombeiro militar da inatividade que se encontre na reserva remunerada e, em caráter
                     excepcional, reformado."
-                                    data-legal_base="Art. 114 da <a
+                  data-legal_base="Art. 114 da <a
                         href='http://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2009/Lei/L12086.htm#art114'
                         target='_blank'>Lei 12086/2009</a> c/c <a href='http://www.sinj.df.gov.br/sinj/Norma/63309/
                         Decreto_31856_30_06_2010.html' target='_blank'>Decreto Distrital 31.856/2010</a>"
-                                >
-                                    <td scope="row">
-                                        PTTC - PRESTAÇÃO DE TAREFA POR TEMPO
-                                        CERTO
-                                    </td>
+                >
+                  <td scope="row">
+                    PTTC - PRESTAÇÃO DE TAREFA POR TEMPO CERTO
+                  </td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    id="gsv"
-                                    class="questao"
-                                    data-description=" Parcela remuneratória devida ao militar que
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  id="gsv"
+                  class="questao"
+                  data-description=" Parcela remuneratória devida ao militar que
                         voluntariamente, durante seu período de folga, apresentar-se para o serviço de policiamento,
                         prevenção de combate a incêndio e salvamento, atendimento pré-hospitalar ou segurança pública de
                         grandes eventos ou sinistros, com jornada não inferior a 8 (oito) horas, na conveniência e
                         necessidade da Administração."
-                                    data-legal_base="Art. 3º, VII da <a
+                  data-legal_base="Art. 3º, VII da <a
                         href='http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3vii'
                         target='_blank'>Lei 10.486/2002</a> c/c <a
                         href='http://www.sinj.df.gov.br/sinj/Norma/ec3f26e7990f4512ba496aa628d235eb/
                         Decreto_39627_11_01_2019.html' target='_blank'>Decreto Distrital 39.627/2019</a>"
-                                >
-                                    <td scope="row">
-                                        GSV - GRATIFICAÇÃO DE SERVIÇO VOLUNTÁRIO
-                                    </td>
+                >
+                  <td scope="row">GSV - GRATIFICAÇÃO DE SERVIÇO VOLUNTÁRIO</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    id="aux_mor"
-                                    class="questao"
-                                    data-description=" Direito Pecuniário mensal de natureza
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  id="aux_mor"
+                  class="questao"
+                  data-description=" Direito Pecuniário mensal de natureza
                         <b>INDENIZATÓRIA</b> devido ao militar, na ativa e na inatividade, para auxiliar nas despesas
                         com habitação para si e seus dependentes."
-                                    data-legal_base="Art. 3º, XIV da <a
+                  data-legal_base="Art. 3º, XIV da <a
                         href='http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3xiv'
                         target='_blank'>Lei 10.486/2002</a>, alterada pelo art. 21, § 2º da <a href='https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2023/Lei/L14724.htm#art21%C2%A72' target='_blank'>Lei 14.724/2023</a>"
-                                >
-                                    <td scope="row">AUXILIO MORADIA</td>
+                >
+                  <td scope="row">AUXILIO MORADIA</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    id="alim"
-                                    class="questao"
-                                    data-description=" Direito Pecuniário mensal de natureza
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  id="alim"
+                  class="questao"
+                  data-description=" Direito Pecuniário mensal de natureza
                         <b>INDENIZATÓRIA</b> devido ao militar para custear gastos com alimentação."
-                                    data-legal_base="Art. 3º, XIII da <a
+                  data-legal_base="Art. 3º, XIII da <a
                         href='http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3xiii'
                         target='_blank'>Lei 10.486/2002</a> c/c <a href='https://www.sinj.df.gov.br/sinj/Norma/76239/Decreto_35182_18_02_2014.html' 
 					target='_blank'>Decreto Distrital 35.182/2014</a>"
-                                >
-                                    <td scope="row">ETAPA ALIMENTAÇÃO</td>
+                >
+                  <td scope="row">ETAPA ALIMENTAÇÃO</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    id="aux_pe"
-                                    class="questao"
-                                    data-description=" Direito Pecuniário mensal de natureza
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  id="aux_pe"
+                  class="questao"
+                  data-description=" Direito Pecuniário mensal de natureza
                         <b>INDENIZATÓRIA</b> devido ao militar para custear gastos com dependentes na faixa etária
                         compreendida desde o <b>nascimento</b> até <b>cinco anos, onze meses e 29 dias</b> de idade."
-                                    data-legal_base="Art. 2º, II, a) da <a
+                  data-legal_base="Art. 2º, II, a) da <a
                         href='www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art2'
                         target='_blank'>Lei 10.486/2002</a> c/c <a
                         href='https://www.planalto.gov.br/ccivil_03/decreto/antigos/d0977.htm'
                         target='_blank'>Decreto Federal 977/1993</a> c/c <a
                         href='http://www.in.gov.br/materia/-/asset_publisher/Kujrw0TZC2Mb/content/id/22312468/do1-2016-02-18-portaria-interministerial-n-10-de-13-de-janeiro-de-2016--22312433'
                         target='_blank'>Portaria Interministerial 10/2016</a>"
-                                >
-                                    <td scope="row">AUXÍLIO PRÉ ESCOLAR</td>
+                >
+                  <td scope="row">AUXÍLIO PRÉ ESCOLAR</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr>
-                                    <th colspan="5" class="table-dark">
-                                        DESCONTOS
-                                    </th>
-                                </tr>
-                                <tr
-                                    id="cota_pe"
-                                    class="questao"
-                                    data-description=" Desconto efetuado como forma de participação do
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr>
+                  <th colspan="4" class="table-dark">DESCONTOS</th>
+                </tr>
+                <tr
+                  id="cota_pe"
+                  class="questao"
+                  data-description=" Desconto efetuado como forma de participação do
                     servidor no custeio do benefício AUXÍLIO PRÉ-ESCOLAR."
-                                    data-legal_base="Art. 9º do <a
+                  data-legal_base="Art. 9º do <a
                         href='http://www.planalto.gov.br/ccivil_03/decreto/antigos/d0977.htm'
                         target='_blank'>Decreto Federal 977/1993</a>"
-                                >
-                                    <td scope="row">COTA PRÉ ESCOLAR</td>
+                >
+                  <td scope="row">COTA PRÉ ESCOLAR</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    id="pensao_alim"
-                                    class="questao"
-                                    data-description="Valor a título de alimentos pedido por
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  id="pensao_alim"
+                  class="questao"
+                  data-description="Valor a título de alimentos pedido por
                     parentes, cônjuge ou companheiro do servidor, necessário para viver de modo compatível com a
                     condição social, fixados na proporção das necessidades do reclamante e dos recursos da pessoa
                     obrigada."
-                                    data-legal_base="Art. 1.694 e ss. do <a
+                  data-legal_base="Art. 1.694 e ss. do <a
                         href='http://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm#art1694'
                         target='_blank'>Código Civil</a> c/c <a href='http://www.planalto.gov.br/ccivil_03/LEIS/L5478.htm'
                         target='_blank'>Lei 5.478/1968</a>"
-                                >
-                                    <td scope="row">PENSÃO ALIMENTÍCIA</td>
+                >
+                  <td scope="row">PENSÃO ALIMENTÍCIA</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    id="pensao_alim_pe"
-                                    class="questao"
-                                    data-description="Reversão do Auxílio Pré Escolar em prol da
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  id="pensao_alim_pe"
+                  class="questao"
+                  data-description="Reversão do Auxílio Pré Escolar em prol da
                     criança beneficiária da Pensão Alimentícia"
-                                    data-legal_base="Decisão Judicial"
-                                >
-                                    <td scope="row">
-                                        PENSÃO ALIMENTÍCIA SOBRE PRÉ ESCOLAR
-                                    </td>
+                  data-legal_base="Decisão Judicial"
+                >
+                  <td scope="row">PENSÃO ALIMENTÍCIA SOBRE PRÉ ESCOLAR</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    id="contr_pensao_militar"
-                                    class="questao"
-                                    data-description="Desconto mensal em folha de
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  id="contr_pensao_militar"
+                  class="questao"
+                  data-description="Desconto mensal em folha de
                     pagamento dos militares e seus pensionistas destinado destinada ao custeio das pensões militares e
                     da inatividade dos militares"
-                                    data-calculo='
+                  data-calculo='
                                        <table class="table table-striped">
                                               <thead>
                                                 <tr>
@@ -1168,25 +1068,26 @@
                                               </tbody>
                                             </table>
 '
-                                    data-legal_base="Art. 24-C do <a
+                  data-legal_base="Art. 24-C do <a
                         href='http://www.planalto.gov.br/ccivil_03/Decreto-Lei/Del0667.htm#art24c'
                         target='_blank'>Decreto-Lei 667/1969</a> c/c Art. 3º-A da <a
                         href='http://www.planalto.gov.br/ccivil_03/LEIS/L3765.htm#art3a.'
                         target='_blank'>Lei 3.765/1960</a> c/c Art. 14, I da <a
                         href='http://www.in.gov.br/en/web/dou/-/instrucao-normativa-n-5-de-15-de-janeiro-de-2020-238382288'
                         target='_blank'>Instrução Normativa 5/2020</a>"
-                                >
-                                    <td scope="row">CONTR. PENSÃO MILITAR</td>
+                >
+                  <td scope="row">CONTR. PENSÃO MILITAR</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    id="contr_pensao_militar_adic"
-                                    class="questao"
-                                    data-description="Desconto mensal extraordinário
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  id="contr_pensao_militar_adic"
+                  class="questao"
+                  data-description="Desconto mensal extraordinário
                     em folha de pagamento dos militares e seus pensionistas"
-                                    data-calculo='
+                  data-calculo='
                                        <table class="table table-striped">
                                               <thead>
                                                 <tr>
@@ -1224,7 +1125,7 @@
                                               </tbody>
                                             </table>
 '
-                                    data-legal_base="Art. 36, § 3º da <a
+                  data-legal_base="Art. 36, § 3º da <a
                         href='http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art36§3.' target='_blank'>
                         Lei 10.486/2002</a> e Art. 24-C do <a
                         href='http://www.planalto.gov.br/ccivil_03/Decreto-Lei/Del0667.htm#art24c'
@@ -1233,41 +1134,41 @@
                         target='_blank'>Lei 3.765/1960</a> c/c Art. 14, § 1º da <a
                         href='http://www.in.gov.br/en/web/dou/-/instrucao-normativa-n-5-de-15-de-janeiro-de-2020-238382288'
                         target='_blank'>Instrução Normativa 5/2020</a>"
-                                >
-                                    <td scope="row">
-                                        CONTR. PENSÃO MILITAR ADICIONAL
-                                    </td>
+                >
+                  <td scope="row">CONTR. PENSÃO MILITAR ADICIONAL</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    id="fundo_saude"
-                                    class="questao"
-                                    data-description="Contribuição mensal para a assistência
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  id="fundo_saude"
+                  class="questao"
+                  data-description="Contribuição mensal para a assistência
                     médico-hospitalar, médico-domiciliar, odontológica, psicológica e social ao militar e seus
                     dependentes. </br> </br> A contribuição é <b>facultativa</b> aos militares inativos do Distrito
                     Federal e pensionistas militares, <u>desde que residentes fora do Distrito Federal</u> e a
                     <u>Corporação não proporcione a assistência</u> médica, hospitalar e domiciliar adequada nos locais
                     onde residam"
-                                    data-calculo="<b>2%</b> sobre o sobre o soldo, quotas de soldo ou a quota-tronco da pensão
+                  data-calculo="<b>2%</b> sobre o sobre o soldo, quotas de soldo ou a quota-tronco da pensão
                         militar"
-                                    data-legal_base="Art. 33 e ss. da<a
+                  data-legal_base="Art. 33 e ss. da<a
                         href='http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art33'
                         target='_blank'>Lei 10.486/2002</a>"
-                                >
-                                    <td scope="row">FUNDO DE SAÚDE</td>
+                >
+                  <td scope="row">FUNDO DE SAÚDE</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    id="fundo_saude_adicional"
-                                    class="questao"
-                                    data-description="Contribuição mensal adicional <b>
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  id="fundo_saude_adicional"
+                  class="questao"
+                  data-description="Contribuição mensal adicional <b>
                     por dependente</b> para a assistência médico-hospitalar, médico-domiciliar, odontológica, psicológica e
                     social"
-                                    data-calculo='
+                  data-calculo='
                                        <table class="table table-striped">
                                               <thead>
                                                 <tr>
@@ -1315,26 +1216,25 @@
                                               </tbody>
                                             </table>
 '
-                                    data-legal_base="Art. 33, § 2º da <a
+                  data-legal_base="Art. 33, § 2º da <a
                         href='http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art33§2'
                         target='_blank'>Lei 10.486/2002</a> c/c art. 4º, § 2º da Portaria 025/2006-CBMDF e art. 5º da
                         Portaria 371/2003-PMDF"
-                                >
-                                    <td scope="row">
-                                        FUNDO DE SAÚDE ADICIONAL
-                                    </td>
+                >
+                  <td scope="row">FUNDO DE SAÚDE ADICIONAL</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    id="reparacao_erario"
-                                    class="questao"
-                                    data-description="Descontos obrigatórios realizados em
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  id="reparacao_erario"
+                  class="questao"
+                  data-description="Descontos obrigatórios realizados em
                     folha de pagamento com o fim de devolver ao erário valores <b>tributáveis</b> indevidamente recebidos"
-                                    data-calculo="10% sobre a remuneração (Decisão TCDF 4463/2004) ou pela mesma quantidade
+                  data-calculo="10% sobre a remuneração (Decisão TCDF 4463/2004) ou pela mesma quantidade
                         de parcelas quantas corresponderam aos pagamentos indevidos (Decisão TCDF 6806/2007)"
-                                    data-legal_base="Art. 28, V da <a
+                  data-legal_base="Art. 28, V da <a
                         href='http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art28v'
                         target='_blank'>Lei 10.486/2002</a> c/c <a
                         href='https://etcdf.tc.df.gov.br/?a=documento&f=downloadPDF&iddocumento=106187'
@@ -1342,70 +1242,64 @@
                         href='https://etcdf.tc.df.gov.br/?a=documento&f=downloadPDF&iddocumento=128183'
                         target='_blank'> Decisão TCDF 6806/2007</a>
                         "
-                                >
-                                    <td scope="row">
-                                        REP. ERARIO L.8112/90-10.486/02
-                                    </td>
+                >
+                  <td scope="row">REP. ERARIO L.8112/90-10.486/02</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    id="outros_descontos_dedutiveis"
-                                    class="questao"
-                                    data-description="Descontos em folha que abatem
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  id="outros_descontos_dedutiveis"
+                  class="questao"
+                  data-description="Descontos em folha que abatem
                      a base de cálculo de Imposto de Renda. </br></br> <b>Exemplos:</b> Ressarcimento ao Fundo de Saúde
                      por atendimento na rede credenciada, Planos de Saúde, Previdência Privada."
-                                    data-legal_base="Art. 52, da <a
+                  data-legal_base="Art. 52, da <a
                         href='http://normas.receita.fazenda.gov.br/sijut2consulta/link.action?visao=anotado&idAto=57670#1459120'
                         target='_blank'> Instrução Normativa 1500/2014 - RFB </a>"
-                                >
-                                    <td scope="row">
-                                        OUTROS DESCONTOS DEDUTÍVEIS
-                                    </td>
+                >
+                  <td scope="row">OUTROS DESCONTOS DEDUTÍVEIS</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    id="outros_descontos_nao_dedutiveis"
-                                    class="questao"
-                                    data-description="Demais descontos em folha.
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  id="outros_descontos_nao_dedutiveis"
+                  class="questao"
+                  data-description="Demais descontos em folha.
                     </br></br> <b>Exemplos:</b> Empréstimos, Caixas Beneficentes, Clubes etc."
-                                >
-                                    <td scope="row">
-                                        OUTROS DESCONTOS NÃO DEDUTÍVEIS
-                                    </td>
+                >
+                  <td scope="row">OUTROS DESCONTOS NÃO DEDUTÍVEIS</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    id="irrf"
-                                    class="questao"
-                                    data-description="Tributo Federal recolhido sobre a remuneração"
-                                    data-calculo="Conforme <a href ='http://www26.receita.fazenda.gov.br/irpfsimulaliq/private/pages/simuladoraliquota.jsf'
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  id="irrf"
+                  class="questao"
+                  data-description="Tributo Federal recolhido sobre a remuneração"
+                  data-calculo="Conforme <a href ='http://www26.receita.fazenda.gov.br/irpfsimulaliq/private/pages/simuladoraliquota.jsf'
                         target='_blank'>Portal</a> da Receita Federal"
-                                    data-legal_base="<a
+                  data-legal_base="<a
                         href='http://normas.receita.fazenda.gov.br/sijut2consulta/link.action?visao=anotado&idAto=57670#1459120'
                         target='_blank'> Instrução Normativa 1500/2014 - RFB </a>"
-                                >
-                                    <td scope="row">
-                                        IRRF - IMPOSTO DE RENDA RETIDO NA FONTE
-                                    </td>
+                >
+                  <td scope="row">IRRF - IMPOSTO DE RENDA RETIDO NA FONTE</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr>
-                                    <th colspan="5" class="table-dark">
-                                        TOTAL
-                                    </th>
-                                </tr>
-                                <tr
-                                    class="text-success table-light questao"
-                                    id="remuneracao_total"
-                                    data-description='Soma das seguintes parcelas: </br></br>
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr>
+                  <th colspan="4" class="table-dark">TOTAL</th>
+                </tr>
+                <tr
+                  class="text-success table-light questao"
+                  id="remuneracao_total"
+                  data-description='Soma das seguintes parcelas: </br></br>
                         <ul class="list-group">
                             <li class="list-group-item">SOLDO</li>
                             <li class="list-group-item">ADICIONAL DE POSTO OU GRADUAÇÃO</li>
@@ -1422,135 +1316,132 @@
                             <li class="list-group-item">GSV - GRATIFICAÇÃO DE SERVIÇO VOLUNTÁRIO</li>
                         </ul>
                         '
-                                    data-legal_base="Art. 1º da Lei 10.486/2002"
-                                    data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art1"
-                                >
-                                    <td scope="row">REMUNERAÇÃO</td>
+                  data-legal_base="Art. 1º da Lei 10.486/2002"
+                  data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art1"
+                >
+                  <td scope="row">REMUNERAÇÃO</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    class="font-weight-bold table-light text-secondary questao"
-                                    id="direitos_pecuniarios"
-                                    data-description='Soma das seguintes parcelas: </br></br>
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  class="font-weight-bold table-light text-secondary questao"
+                  id="direitos_pecuniarios"
+                  data-description='Soma das seguintes parcelas: </br></br>
                         <ul class="list-group">
                             <li class="list-group-item">AUXILIO MORADIA</li>
                             <li class="list-group-item">ETAPA ALIMENTAÇÃO</li>
                             <li class="list-group-item">AUXÍLIO PRÉ ESCOLAR</li>
                         </ul>
                         '
-                                    data-legal_base="Art. 2º da Lei 10.486/2002"
-                                    data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art2"
-                                >
-                                    <td scope="row">DIREITOS PECUNIÁRIOS</td>
+                  data-legal_base="Art. 2º da Lei 10.486/2002"
+                  data-legal_base_link="http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art2"
+                >
+                  <td scope="row">DIREITOS PECUNIÁRIOS</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <!--                    <tr class="font-weight-bold table-light" id="rendimento_bruto">-->
-                                <!--                      <td scope="row">BRUTO</td>-->
-                                <!--&lt;!&ndash;                       <td class="jul2023"></td> &ndash;&gt;-->
-                                <!--                      -->
-                                <!--                    </tr>-->
-                                <tr
-                                    class="font-weight-bold table-light text-danger"
-                                    id="descontos_total"
-                                >
-                                    <td scope="row">DESCONTOS</td>
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <!--                    <tr class="font-weight-bold table-light" id="rendimento_bruto">-->
+                <!--                      <td scope="row">BRUTO</td>-->
+                <!--&lt;!&ndash;                       <td class="jul2023"></td> &ndash;&gt;-->
+                <!--                      -->
+                <!--                    </tr>-->
+                <tr
+                  class="font-weight-bold table-light text-danger"
+                  id="descontos_total"
+                >
+                  <td scope="row">DESCONTOS</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr
-                                    class="font-weight-bold table-light text-success questao"
-                                    id="rendimento_liquido"
-                                    data-description="<b>REMUNERAÇÃO</b> + <b>DIREITOS PECUNIÁRIOS</b> - <b>DESCONTOS</b>"
-                                >
-                                    <td scope="row">LÍQUIDO</td>
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr
+                  class="font-weight-bold table-light text-success questao"
+                  id="rendimento_liquido"
+                  data-description="<b>REMUNERAÇÃO</b> + <b>DIREITOS PECUNIÁRIOS</b> - <b>DESCONTOS</b>"
+                >
+                  <td scope="row">LÍQUIDO</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                            </tbody>
-                            <tbody
-                                style="
-                                    border-collapse: separate;
-                                    border-spacing: 0 20px;
-                                "
-                            >
-                                <!-- <tr class="bg-white">
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+              </tbody>
+              <tbody style="border-collapse: separate; border-spacing: 0 20px">
+                <!-- <tr class="bg-white">
                                     <td colspan="5" style="padding: 8rem"></td>
                                 </tr> -->
-                                <tr>
-                                    <th colspan="5" class="table-dark">
-                                        PARCELAS EVENTUAIS
-                                    </th>
-                                </tr>
-                                <tr id="decimo_terceiro">
-                                    <td scope="row">
-                                        GRATIFICAÇÃO DE NATAL (DÉCIMO TERCEIRO)
-                                    </td>
+                <tr>
+                  <th colspan="4" class="table-dark">PARCELAS EVENTUAIS</th>
+                </tr>
+                <tr id="decimo_terceiro">
+                  <td scope="row">GRATIFICAÇÃO DE NATAL (DÉCIMO TERCEIRO)</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr id="ferias">
-                                    <td scope="row">FÉRIAS</td>
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr id="ferias">
+                  <td scope="row">FÉRIAS</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr id="auxilio_fardamento">
-                                    <td scope="row">AUXÍLIO FARDAMENTO</td>
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr id="auxilio_fardamento">
+                  <td scope="row">AUXÍLIO FARDAMENTO</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
 
-                                <tr>
-                                    <th colspan="5" class="table-dark">
-                                        DESCONTOS EVENTUAIS
-                                    </th>
-                                </tr>
-                                <tr id="irrf_decimo_terceiro">
-                                    <td scope="row">IRRF - DÉCIMO TERCEIRO</td>
+                <tr>
+                  <th colspan="4" class="table-dark">DESCONTOS EVENTUAIS</th>
+                </tr>
+                <tr id="irrf_decimo_terceiro">
+                  <td scope="row">IRRF - DÉCIMO TERCEIRO</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr id="irrf_ferias">
-                                    <td scope="row">IRRF - FÉRIAS</td>
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr id="irrf_ferias">
+                  <td scope="row">IRRF - FÉRIAS</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                                <tr id="pa_decimo_terceiro">
-                                    <td scope="row">
-                                        PENSÃO ALIMENTÍCIA - DÉCIMO TERCEIRO
-                                    </td>
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+                <tr id="pa_decimo_terceiro">
+                  <td scope="row">PENSÃO ALIMENTÍCIA - DÉCIMO TERCEIRO</td>
 
-                                    <!-- <td class="jul2023"></td> -->
-                                    <td class="jan2024"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <footer>
-                <p>Versão 1.4.5</p>
-                <p>Desenvolvimento: Ten-Cel QOBM/Comb. Igor MUNIZ da Silva</p>
-                <p>
-                    Github:
-                    <a
-                        href="https://github.com/munizigor/salariomilitares"
-                        target="_blank"
-                        >@munizigor</a
-                    >
-                </p>
-            </footer>
+                  <td class="jan2024"></td>
+                  <td class="dez2025"></td>
+                  <td class="jan2026"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        <script src="static/js/listeners.js"></script>
-    </body>
+      </div>
+      <footer>
+        <p>Versão 1.4.4</p>
+        <p>Desenvolvimento: Ten-Cel QOBM/Comb. Igor MUNIZ da Silva</p>
+        <p>
+          Github:
+          <a
+            href="https://github.com/munizigor/salariomilitares"
+            target="_blank"
+            >@munizigor</a
+          >
+        </p>
+      </footer>
+    </div>
+    <script src="static/js/listeners.js"></script>
+  </body>
 </html>
