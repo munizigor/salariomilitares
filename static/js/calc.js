@@ -93,7 +93,10 @@ function Verbas(col) {
   //    REMUNERAÇÃO FLUTUANTE
 
   this.gfne = function () {
-    if (document.getElementById('tipo_gfne').value == false) {
+    if (
+      document.getElementById('tipo_gfne').value == false ||
+      document.getElementById('tipo_gfne').value == ''
+    ) {
       valor_gnfe = 0;
     } else {
       pct_gfne = gfne[document.getElementById('tipo_gfne').value];
