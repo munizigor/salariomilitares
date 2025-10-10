@@ -172,7 +172,7 @@ function Verbas(col) {
   };
   this.contr_pensao_militar = function () {
     const mes = getMes(col);
-    if (getMes(col) == '03/01/2020') {
+    if (mes == '03/01/2020') {
       valor_pmil =
         Math.round(this.remuneracao_fixa() * pensao_militar[mes] * 100) / 100;
     } else {
@@ -426,7 +426,8 @@ function getMes(coluna) {
 function parseMoney(x, format = true) {
   if (isNaN(x)) {
     return '';
-  } else if ((format = false)) {
+  } else if (format == false) {
+    return x;
   } else {
     return (
       'R$ ' +
