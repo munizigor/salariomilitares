@@ -99,7 +99,7 @@ function Verbas(col) {
     } else if (horas_gsv == '') {
       gsv = 0;
     } else {
-      gsv = (400 / 8) * Math.round(horas_gsv);
+      gsv = (760 / 8) * Math.round(horas_gsv);
     }
     return gsv;
   };
