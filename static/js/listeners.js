@@ -68,6 +68,17 @@ document.querySelectorAll('.questao').forEach(item => {
     document.getElementById('exampleModalLabel').innerHTML = ((item.dataset['label']===undefined) ? '':item.dataset['label'])
     document.getElementById('exampleModalBody').innerHTML = item.dataset['title']
     }
-    bootstrap.Modal.getOrCreateInstance(document.getElementById('exampleModal')).show()
+//    alert(item.title)
+    item.dataset['toggle']='modal'
+    item.dataset['target']='#exampleModal'
   })
 })
+
+//sumir com colunas indesejadas
+//document.querySelectorAll('.abr2020').forEach(item => {
+//    item.remove();
+//})
+//document.querySelectorAll('.jun2020').forEach(item => {
+//    item.remove();
+//})
+//
