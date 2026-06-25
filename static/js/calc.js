@@ -453,7 +453,7 @@ function mostrar_campos(event, classe) {
       elementos[i].style.display = 'none';
       elementos[i].required = false;
       entradas = elementos[i].querySelectorAll(
-        '.form-control,.form-check-input'
+        '.form-control,.form-select,.form-check-input'
       );
       for (j = 0; j < entradas.length; j++) {
         if (entradas[j].classList.contains('form-check-input')) {
