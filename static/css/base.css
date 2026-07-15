@@ -1,62 +1,382 @@
-body {
- font-size: .9rem;
-}
-.bd-links {
-max-height: calc(100vh - 9rem);
-overflow-y: auto;
-}
-caption {
-    caption-side: top;
-    text-align: end;
-}
-footer {
-    color: white;
-    background: #343a40;
-    width: 100%;
-    font-size: 12px;
-    position: absolute;
-    bottom: 0;
-    text-align:center;
-}
-footer p {
-    line-height: 1.0;
-    height: 4px;
-}
-.form-row {
-margin-bottom: 15px;
-}
-.input-holder:after {
-/*TODO Ajustar para o sinal caber dentro do col-md*/
-  content: '%';
-}
-h1 {
-	margin-bottom: 50px;
-	text-align:center;
-    padding-left: 25px;
-    margin-top: 15px;
-}
-h2 {
-	margin-bottom: 10px;
-	text-align:center;
-    padding-left: 15px;
-}
-h3,h6 {
-	text-align:center;
-    }
-div.main-container {
- min-height: 100vh; /* will cover the 100% of viewport */
- overflow: hidden;
- display: block;
- position: relative;
- padding-bottom: 100px; /* height of your footer */
+/* ── Custom Properties ─────────────────────────────────────── */
+:root {
+  --clr-primary:       #18181B;
+  --clr-primary-dark:  #09090B;
+  --clr-primary-light: #f4f4f5;
+  --clr-success:       #1a7a4a;
+  --clr-success-bg:    #eaf7ef;
+  --clr-danger:        #b91c1c;
+  --clr-danger-bg:     #fef2f2;
+  --clr-pecun-bg:      #fffbeb;
+  --clr-text:          #1e293b;
+  --clr-muted:         #64748b;
+  --clr-border:        #cbd5e1;
+  --navbar-height:     56px;
 }
 
-.table td,th {
-   text-align: center;
+/* ── Base ──────────────────────────────────────────────────── */
+body {
+  font-size: 0.875rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  background-color: #f1f5f9;
+  color: var(--clr-text);
 }
-div.topo-ini {
-	color: white;
+
+/* ── Navbar ────────────────────────────────────────────────── */
+.navbar-main {
+  background-color: var(--clr-primary-dark) !important;
+  border-bottom: 2px solid var(--clr-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  min-height: var(--navbar-height);
+  padding: 0.5rem 1rem;
 }
-p span{
-display: inline-block;
+
+.navbar-brand-text {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* ── Layout ────────────────────────────────────────────────── */
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - var(--navbar-height));
+  margin-top: var(--navbar-height);
+}
+
+/* ── Sidebar ───────────────────────────────────────────────── */
+.sidebar-panel {
+  background: #fff;
+  border-right: 1px solid #dde3ee;
+  padding: 1.25rem 1rem 4rem;
+}
+
+@media (min-width: 992px) {
+  .sidebar-panel {
+    position: sticky;
+    top: var(--navbar-height);
+    max-height: calc(100vh - var(--navbar-height));
+    overflow-y: auto;
+  }
+}
+
+/* ── Section titles ────────────────────────────────────────── */
+.section-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--clr-primary);
+  border-bottom: 2px solid var(--clr-primary-light);
+  padding-bottom: 0.35rem;
+  margin-bottom: 0.85rem;
+}
+
+/* ── Form labels & controls ────────────────────────────────── */
+.form-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--clr-muted);
+  margin-bottom: 0.2rem;
+}
+
+.form-control,
+.form-select {
+  font-size: 0.8rem;
+  border-color: var(--clr-border);
+  border-radius: 0.375rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--clr-primary);
+  box-shadow: 0 0 0 0.2rem rgba(24, 24, 27, 0.18);
+}
+
+.form-check-label {
+  font-size: 0.78rem;
+}
+
+.form-check-input {
+  accent-color: var(--clr-primary);
+}
+
+/* ── Info boxes (Capacitações / Dependentes) ───────────────── */
+.info-box {
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid transparent;
+}
+
+.box-legend {
+  width: auto;
+  max-width: 100%;
+  padding: 0 0.3rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.qualifications-box {
+  background-color: var(--clr-primary-light);
+  border-color: #d4d4d8;
+}
+
+.qualifications-box .box-legend {
+  color: var(--clr-primary-dark);
+}
+
+.dependents-box {
+  background-color: var(--clr-primary-light);
+  border-color: #d4d4d8;
+}
+
+.dependents-box .box-legend {
+  color: var(--clr-primary-dark);
+}
+
+/* ── Accordion ─────────────────────────────────────────────── */
+.accordion-button {
+  position: relative;
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 0;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--clr-primary-dark);
+  background-color: #f7f7f8;
+  padding: 0.6rem 1.75rem 0.6rem 0.85rem;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.accordion-button:focus {
+  outline: 2px solid var(--clr-primary);
+  outline-offset: -2px;
+}
+
+.accordion-button.collapsed:hover {
+  background-color: #ececed;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #fff;
+  background-color: var(--clr-primary);
+  box-shadow: none;
+}
+
+.accordion-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0.9rem;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.accordion-button:not(.collapsed)::after {
+  transform: translateY(-30%) rotate(-135deg);
+}
+
+.accordion-body {
+  background-color: #fff;
+  padding: 0.75rem 0.85rem;
+}
+
+.accordion-item {
+  border: 1px solid #dde3ee;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Main content area ─────────────────────────────────────── */
+.content-panel {
+  padding: 1.5rem 1.25rem 2rem;
+}
+
+/* ── Salary table ──────────────────────────────────────────── */
+.table-responsive {
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 12px rgba(0, 0, 0, 0.05);
+}
+
+#salario {
+  font-size: 0.78rem;
+  background: #fff;
+  border-radius: 0.375rem;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+#salario caption {
+  caption-side: top;
+  text-align: end;
+  font-size: 0.7rem;
+  color: var(--clr-muted);
+  padding-bottom: 0.3rem;
+}
+
+#salario thead th {
+  background-color: #eeeeef;
+  color: var(--clr-primary-dark);
+  border-bottom-width: 1px;
+}
+
+#salario th,
+#salario td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+#salario td:first-child {
+  text-align: left;
+  font-size: 0.72rem;
+}
+
+#salario tbody tr:nth-of-type(odd) {
+  background-color: #f8fafc;
+}
+
+/* Section header rows */
+.table-section-header {
+  background-color: var(--clr-primary) !important;
+  color: #fff !important;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Total rows */
+.row-remuneracao {
+  background-color: var(--clr-success-bg) !important;
+  font-weight: 700;
+  color: var(--clr-success) !important;
+}
+
+.row-descontos {
+  background-color: var(--clr-danger-bg) !important;
+  font-weight: 700;
+  color: var(--clr-danger) !important;
+}
+
+.row-pecuniarios {
+  background-color: var(--clr-pecun-bg) !important;
+  font-weight: 600;
+  color: #92400e !important;
+}
+
+.row-liquido {
+  background-color: var(--clr-success) !important;
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* Clickable rows */
+.questao {
+  cursor: pointer;
+}
+
+.questao:hover td {
+  background-color: #f1f1f2;
+}
+
+.row-liquido.questao:hover td {
+  background-color: #27272a;
+}
+
+/* ── PDF / Print button ────────────────────────────────────── */
+.btn-pdf {
+  display: inline-flex;
+  align-items: center;
+  color: var(--clr-primary);
+  text-decoration: none;
+  padding: 0.2rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s;
+}
+
+.btn-pdf:hover {
+  color: var(--clr-primary-dark);
+}
+
+/* ── Modal ─────────────────────────────────────────────────── */
+.modal-header {
+  background-color: var(--clr-primary);
+  color: #fff;
+}
+
+.modal-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* ── Footer ────────────────────────────────────────────────── */
+footer {
+  background-color: var(--clr-primary-dark);
+  color: #94a3b8;
+  padding: 1.25rem;
+  font-size: 0.72rem;
+  text-align: center;
+}
+
+footer p {
+  margin-bottom: 0.2rem;
+  line-height: 1.4;
+}
+
+footer a {
+  color: #d4d4d8;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #f4f4f5;
+  text-decoration: underline;
+}
+
+/* ── Questão (inline help icons) ───────────────────────────── */
+p span,
+label span {
+  display: inline-block;
+  cursor: help;
+}
+
+/* ── Mobile ────────────────────────────────────────────────── */
+@media (max-width: 991px) {
+  .navbar-toggler {
+    padding: 0.4rem 0.55rem;
+  }
+
+  .content-panel {
+    padding-top: 1rem;
+  }
+
+  .accordion-button {
+    padding: 0.8rem 2rem 0.8rem 0.85rem;
+  }
+}
+
+/* ── Print ─────────────────────────────────────────────────── */
+@media print {
+  .navbar-main,
+  .sidebar-panel,
+  .btn-pdf { display: none !important; }
+  .content-panel { padding: 0; }
+  #salario,
+  .table-responsive { box-shadow: none; }
 }
