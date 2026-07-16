@@ -1047,6 +1047,33 @@ gfne = {
   5: 0.0881,
 };
 
+cargosGDF = {
+  "nao_recebe": { repr: 0, remun: 0 },
+  // --- CNP - CARGOS DE NATUREZA POLÍTICA ---
+  // "CNP-03": { repr: 18038.12, remun: 22547.65 },
+  // "CNP-04": { repr: 14430.49, remun: 18038.11 },
+  
+  // --- CNE / CPE (Cargos de Natureza Especial e de Direção Pública) ---
+  "CPE-01": { repr: 13930.00, remun: 17413.00 },
+  "CPE-02": { repr: 12010.00, remun: 15013.00 },
+  "CPE-03": { repr: 10355.00, remun: 12944.00 },
+  "CPE-04": { repr: 8925.00,  remun: 11156.00 },
+  "CPE-05": { repr: 6510.00,  remun: 8138.00 },
+  "CPE-06": { repr: 5860.00,  remun: 7325.00 },
+  "CPE-07": { repr: 4685.00,  remun: 5856.00 },
+  "CPE-08": { repr: 3915.00,  remun: 4894.00 },
+
+  // --- CC / CPC (Cargos em Comissão e de Assessoria) ---
+  "CPC-08": { repr: 2940.00,  remun: 3675.00 },
+  "CPC-07": { repr: 2555.00,  remun: 3194.00 },
+  "CPC-06": { repr: 2245.00,  remun: 2806.00 },
+  "CPC-05": { repr: 1930.00,  remun: 2413.00 },
+  "CPC-04": { repr: 1620.00,  remun: 2025.00 },
+  "CPC-03": { repr: 1450.00,  remun: 1813.00 },
+  "CPC-02": { repr: 1280.00,  remun: 1600.00 },
+  "CPC-01": { repr: 1110.00,  remun: 1388.00 }
+};
+
 faixas_irrf = {
   1: {
     piso: 2428.8,

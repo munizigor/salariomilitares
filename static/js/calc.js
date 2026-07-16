@@ -83,6 +83,37 @@ function Verbas(col) {
     }
     return valor_gnfe;
   };
+
+  this.gratGDF = function () {
+    // 1. Captura os valores dos elementos do DOM
+    const tipoGrat = document.getElementById('tipo_gratGDF').value;
+    const situacao = document.getElementById('situacao_funcional').value;
+    
+    let valor_gratGDF = 0;
+
+    // 2. Verifica se um cargo válido foi selecionado no objeto cargosGDF
+    if (tipoGrat && cargosGDF[tipoGrat]) {
+      
+      if (situacao === 'ativo') {
+        // Se ativo, recebe o Vencimento
+        valor_gratGDF = cargosGDF[tipoGrat]["repr"]; 
+      } else if (situacao === 'inativo') {
+        // Se inativo, recebe a Representação
+        valor_gratGDF = cargosGDF[tipoGrat]["remun"];
+      } else {
+        // Caso não seja ativo nem inativo (ex: campo vazio)
+        valor_gratGDF = 0;
+      }
+
+    } else {
+      // Se o tipo da gratificação for inválido ou não selecionado
+      valor_gratGDF = 0;
+    }
+
+    console.log("Valor Gratificação GDF: " + valor_gratGDF);
+    return valor_gratGDF;
+  };
+
   this.pttc = function () {
     if (document.getElementById('bool_pttc').value == 'sim') {
       valor_pttc = rounddown(window['verbas' + col].remuneracao_fixa() * 0.3);
@@ -316,7 +347,7 @@ function Verbas(col) {
     return soma;
   };
   this.remuneracao_total = function (variavelqualqer = 0) {
-    let soma = this.remuneracao_fixa() + this.gfne() + this.pttc() + this.gsv();
+    let soma = this.remuneracao_fixa() + this.gfne() + this.gratGDF() + this.pttc() + this.gsv();
     return soma;
   };
   this.direitos_pecuniarios = function () {
@@ -360,6 +391,7 @@ function Verbas(col) {
       this.vpe() +
       this.grv() +
       this.gfne() +
+      this.gratGDF() +
       this.pttc();
     return soma;
   };

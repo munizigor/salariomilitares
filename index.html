@@ -392,6 +392,49 @@
                 class="accordion-button collapsed"
                 type="button"
                 data-toggle="collapse"
+                data-target="#card_gratGDF"
+                aria-expanded="false"
+                aria-controls="card_gratGDF"
+              >
+                GRATIFICAÇÃO GDF
+              </button>
+              <div class="collapse accordion-body" id="card_gratGDF">
+                <label class="form-label" for="tipo_gratGDF">Tipo</label>
+                <select
+                  class="form-control"
+                  name="calcular_rubricas"
+                  required
+                  id="tipo_gratGDF"
+                >
+                  <option value=""></option>
+                  <option value="nao_recebe">NÃO RECEBE</option>
+                  <option value="CNP-03">CNP-03</option>
+                  <option value="CNP-04">CNP-04</option>
+                  <option value="CPE-01">CPE-01</option>
+                  <option value="CPE-02">CPE-02</option>
+                  <option value="CPE-03">CPE-03</option>
+                  <option value="CPE-04">CPE-04</option>
+                  <option value="CPE-05">CPE-05</option>
+                  <option value="CPE-06">CPE-06</option>
+                  <option value="CPE-07">CPE-07</option>
+                  <option value="CPE-08">CPE-08</option>
+                  <option value="CPC-08">CPC-08</option>
+                  <option value="CPC-07">CPC-07</option>
+                  <option value="CPC-06">CPC-06</option>
+                  <option value="CPC-05">CPC-05</option>
+                  <option value="CPC-04">CPC-04</option>
+                  <option value="CPC-03">CPC-03</option>
+                  <option value="CPC-02">CPC-02</option>
+                  <option value="CPC-01">CPC-01</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-toggle="collapse"
                 data-target="#card_ats"
                 aria-expanded="false"
                 aria-controls="card_ats"
@@ -922,6 +965,22 @@
                 <td class="jan2026"></td>
               </tr>
               <tr
+                id="gratGDF"
+                class="questao"
+                data-description="Gratificação mensal devida a militares (ativos e inativos) em Cargos 
+                de Natureza Política (CNP), Natureza Especial (CNE) ou em Comissão (CC). Para os 
+                militares da ativa, o pagamento restringe-se ao valor de representação; para os 
+                inativos, engloba o valor de representação somado ao vencimento do cargo."
+                data-legal_base="Lei Distrital nº 7.254/2023 e outras"
+                data-legal_base_link="https://www.economia.df.gov.br/tabela-cargos-comissionados/"
+              >
+                <td scope="row">GRATIFICAÇÃO GDF</td>
+
+                <!-- <td class="jan2024"></td> -->
+                <!-- <td class="dez2025"></td> -->
+                <td class="jan2026"></td>
+              </tr>
+              <tr
                 id="pttc"
                 class="questao"
                 data-description=" Execução de encargo, incumbência, tarefa ou missão
@@ -1340,6 +1399,7 @@
                           <li class="list-group-item">VPE - VANTAGEM PECUNIÁRIA ESPECIAL</li>
                           <li class="list-group-item">GRV - GRATIFICAÇÃO POR RISCO DE VIDA</li>
                           <li class="list-group-item">GFNE</li>
+                          <li class="list-group-item">GRATIFICAÇÃO GDF</li>
                           <li class="list-group-item">PTTC - PRESTAÇÃO DE TAREFA POR TEMPO CERTO</li>
                           <li class="list-group-item">GSV - GRATIFICAÇÃO DE SERVIÇO VOLUNTÁRIO</li>
                       </ul>
@@ -1471,7 +1531,7 @@
           Colaboração e Atualização: Ten QOBM/Comb. MARCOS Paulo Maciel
           Bezerra DINIZ
         </p>
-        <p>Versão 1.6.0</p>
+        <p>Versão 1.7.0</p>
       </footer>
     </div>
     <script src="static/js/listeners.js"></script>
