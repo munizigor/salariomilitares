@@ -110,7 +110,6 @@ function Verbas(col) {
       valor_gratGDF = 0;
     }
 
-    console.log("Valor Gratificação GDF: " + valor_gratGDF);
     return valor_gratGDF;
   };
 
@@ -229,7 +228,6 @@ function Verbas(col) {
       if (tipo_pa == 'sal_minimo') {
         base_calculo = salario_minimo[mes];
       } else if (tipo_pa == 'liquido') {
-        //              console.log(this.irrf(tipo))
         base_calculo = parcela_base;
       } else if (tipo_pa == 'bruto') {
         base_calculo = this.remuneracao_total() + this.alim() + this.aux_mor();
