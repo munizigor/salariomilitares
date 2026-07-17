@@ -2,8 +2,8 @@ remuneracao = {
   alim: 850,
   gcef: 406.89,
   grv: 1000,
-  pre_escolar: 484.9,
-  cota_pre_escolar: 24.24,
+  pre_escolar: 526.64,
+  cota_pre_escolar: 26.33,
   CORONEL: {
     soldo: {
       '01/07/2023': 3195.04,

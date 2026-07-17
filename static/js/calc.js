@@ -405,7 +405,7 @@ function Verbas(col) {
   };
   this.auxilio_fardamento = function () {
     if (document.getElementById('situacao_funcional').value == 'ativo') {
-      valor_fardamento = rounddown(this.decimo_terceiro() / 4);
+      valor_fardamento = rounddown((this.decimo_terceiro() - this.gratGDF()) / 4);
     } else {
       valor_fardamento = 0;
     }
