@@ -76,17 +76,30 @@
     <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>-->
     <script src="static/js/calc.js"></script>
     <script src="static/js/dados_remuneracao.js"></script>
-    <!--    <script data-ad-client="ca-pub-6699075156846587" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
- Global site tag (gtag.js) - Google Analytics
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VPCN76JFSY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-VPCN76JFSY');
-</script>
--->
+    <!-- Google Analytics e AdSense com modo de consentimento (LGPD) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      (function () {
+        var escolha = null;
+        try { escolha = localStorage.getItem('consentimento_cookies'); } catch (e) {}
+        var estado = escolha === 'aceito' ? 'granted' : 'denied';
+        gtag('consent', 'default', {
+          ad_storage: estado,
+          ad_user_data: estado,
+          ad_personalization: estado,
+          analytics_storage: estado
+        });
+      })();
+      gtag('js', new Date());
+      gtag('config', 'G-VPCN76JFSY');
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VPCN76JFSY"></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6699075156846587"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <!-- ── Barra de navegação ── -->
@@ -1532,8 +1545,13 @@
           Bezerra DINIZ
         </p>
         <p>Versão 1.7.0</p>
+        <p>
+          <a href="privacidade.html">Política de Privacidade</a> ·
+          <a href="#" id="gerenciar-cookies">Preferências de cookies</a>
+        </p>
       </footer>
     </div>
     <script src="static/js/listeners.js"></script>
+    <script src="static/js/consentimento.js"></script>
   </body>
 </html>
