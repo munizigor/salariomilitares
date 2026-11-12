@@ -76,17 +76,30 @@
     <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>-->
     <script src="static/js/calc.js"></script>
     <script src="static/js/dados_remuneracao.js"></script>
-    <!--    <script data-ad-client="ca-pub-6699075156846587" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
- Global site tag (gtag.js) - Google Analytics
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VPCN76JFSY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-VPCN76JFSY');
-</script>
--->
+    <!-- Google Analytics e AdSense com modo de consentimento (LGPD) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      (function () {
+        var escolha = null;
+        try { escolha = localStorage.getItem('consentimento_cookies'); } catch (e) {}
+        var estado = escolha === 'aceito' ? 'granted' : 'denied';
+        gtag('consent', 'default', {
+          ad_storage: estado,
+          ad_user_data: estado,
+          ad_personalization: estado,
+          analytics_storage: estado
+        });
+      })();
+      gtag('js', new Date());
+      gtag('config', 'G-VPCN76JFSY');
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VPCN76JFSY"></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6699075156846587"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <!-- ── Barra de navegação ── -->
@@ -1515,6 +1528,133 @@
             </tbody>
           </table>
           </div>
+
+          <article class="guia" id="como-funciona">
+            <h2>Como funciona o cálculo do salário dos militares do DF</h2>
+            <p>
+              A remuneração dos policiais militares e bombeiros militares do
+              Distrito Federal é paga pela União, por meio do Fundo
+              Constitucional do Distrito Federal, e segue principalmente a
+              Lei nº 10.486/2002, com alterações e complementos de leis
+              posteriores. Esta calculadora reúne as tabelas dessas normas e
+              aplica as regras de cada parcela a partir dos dados que você
+              informa: posto ou graduação, corporação, situação funcional,
+              cursos realizados, dependentes e valores eventuais. Todo o
+              cálculo acontece no seu navegador, e nada do que você digita é
+              enviado para servidores.
+            </p>
+            <p>
+              Os valores exibidos correspondem às tabelas vigentes em janeiro
+              de 2026, com salário mínimo de referência de R$&nbsp;1.621,00. A
+              tabela de resultado mostra primeiro as parcelas mensais, depois
+              os descontos e os totais de remuneração, direitos pecuniários,
+              descontos e valor líquido. Em seguida aparecem as parcelas
+              eventuais, como o 13º salário, as férias e o auxílio
+              fardamento, com o imposto de renda correspondente. Clicar em
+              qualquer linha da tabela abre a descrição da parcela e a sua
+              base legal.
+            </p>
+
+            <h3>Parcelas que compõem a remuneração</h3>
+            <p>
+              O <strong>soldo</strong> é a parcela básica e irredutível,
+              fixada para cada posto ou graduação. Sobre ele se somam o
+              <strong>adicional de posto ou graduação</strong>, ligado ao
+              círculo hierárquico, o <strong>adicional de operações
+              militares</strong>, que compensa o desgaste da atividade, e a
+              <strong>gratificação de representação militar</strong>. Quando
+              o soldo fica abaixo do salário mínimo, como pode ocorrer com
+              alunos e cadetes, é pago o <strong>complemento de soldo</strong>
+              para cobrir a diferença.
+            </p>
+            <p>
+              O <strong>adicional de certificação profissional</strong> é um
+              percentual do soldo que depende dos cursos concluídos: 10% para
+              formação (CFSD, CFO ou CHO), 15% para especialização ou
+              habilitação, 20% para aperfeiçoamento (CAP ou CAO) e 30% para
+              altos estudos (CAEP ou CAEO). Os percentuais se somam, contando
+              um curso de cada nível. O <strong>adicional de tempo de
+              serviço</strong> só existe para quem tinha tempo de serviço
+              militar até 5 de setembro de 2001, e é calculado como um
+              percentual do soldo igual ao número de anos contados até essa
+              data.
+            </p>
+            <p>
+              Completam a remuneração fixa três parcelas criadas por leis
+              posteriores: a <strong>gratificação de condição especial de
+              função militar (GCEF)</strong> e a <strong>vantagem pecuniária
+              especial (VPE)</strong>, previstas na Lei nº 11.134/2005, e a
+              <strong>gratificação por risco de vida (GRV)</strong>, da Lei
+              nº 12.086/2009.
+            </p>
+
+            <h3>Gratificações por função e serviço extra</h3>
+            <p>
+              Algumas parcelas dependem da situação de cada militar. A
+              <strong>GFNE</strong> é paga a quem ocupa função de natureza
+              especial e corresponde a um percentual do soldo de coronel,
+              conforme o nível da função. A <strong>gratificação do
+              GDF</strong> é devida a quem ocupa cargo em comissão ou de
+              natureza especial no governo distrital. A <strong>gratificação
+              de serviço voluntário</strong> remunera as horas trabalhadas na
+              folga em escalas extras, e a <strong>PTTC</strong> (prestação
+              de tarefa por tempo certo) corresponde a 30% da remuneração
+              fixa do militar da reserva que volta a prestar serviço
+              temporário.
+            </p>
+
+            <h3>Direitos pecuniários indenizatórios</h3>
+            <p>
+              O <strong>auxílio-moradia</strong>, o <strong>auxílio-alimentação</strong>
+              e o <strong>auxílio pré-escolar</strong> têm natureza
+              indenizatória. O auxílio-moradia varia conforme o posto e a
+              existência de dependentes. O auxílio-alimentação é pago a quem
+              está na ativa ou na PTTC. O auxílio pré-escolar é devido por
+              dependente de até cinco anos, onze meses e 29 dias, com um
+              desconto de participação no custeio (cota pré-escolar).
+            </p>
+
+            <h3>Descontos</h3>
+            <p>
+              A <strong>contribuição para a pensão militar</strong> é de
+              10,5% da remuneração fixa desde janeiro de 2021. Militares que
+              ingressaram até 29 de dezembro de 2000 e mantiveram o direito de
+              deixar pensão para filhas maiores pagam ainda a
+              <strong>contribuição adicional</strong>. O <strong>fundo de
+              saúde</strong> desconta 2% do soldo do titular, mais um valor
+              fixo por dependente que varia conforme o posto ou a graduação.
+              Também podem entrar no cálculo a pensão alimentícia, nas
+              diferentes formas de cálculo usadas em decisões judiciais, os
+              descontos de reparação ao erário e outros descontos
+              informados por você.
+            </p>
+            <p>
+              O <strong>imposto de renda retido na fonte</strong> é
+              calculado sobre a remuneração tributável, depois de deduzidas
+              a contribuição para a pensão militar, o fundo de saúde, os
+              dependentes declarados e a pensão alimentícia, aplicando a
+              tabela progressiva da Receita Federal. As parcelas
+              indenizatórias não entram na base do imposto.
+            </p>
+
+            <h3>Limitações</h3>
+            <p>
+              A calculadora não substitui o contracheque nem a orientação do
+              setor de pagamento da sua corporação. Situações específicas,
+              como pensionistas, decisões judiciais individuais, exercícios
+              anteriores e consignações, podem alterar os valores. Se
+              encontrar diferença em relação ao seu contracheque, entre em
+              contato pelo e-mail informado no rodapé.
+            </p>
+
+            <h3>Principais normas</h3>
+            <ul>
+              <li><a href="https://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm" target="_blank" rel="noopener">Lei nº 10.486/2002</a>, que trata da remuneração dos militares do DF</li>
+              <li><a href="https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2005/Lei/L11134.htm" target="_blank" rel="noopener">Lei nº 11.134/2005</a>, que institui a GCEF e a VPE</li>
+              <li><a href="https://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2009/Lei/L12086.htm" target="_blank" rel="noopener">Lei nº 12.086/2009</a>, que trata da GRV e da PTTC</li>
+              <li><a href="https://www.planalto.gov.br/ccivil_03/LEIS/L3765.htm" target="_blank" rel="noopener">Lei nº 3.765/1960</a> e <a href="https://www.planalto.gov.br/ccivil_03/Decreto-Lei/Del0667.htm" target="_blank" rel="noopener">Decreto-Lei nº 667/1969</a>, sobre a pensão militar</li>
+            </ul>
+          </article>
         </main>
       </div>
 
@@ -1532,8 +1672,18 @@
           Bezerra DINIZ
         </p>
         <p>Versão 1.7.0</p>
+        <p>
+          Site independente, sem vínculo com a PMDF, o CBMDF ou o GDF.
+          Valores estimados, sem caráter oficial.
+        </p>
+        <p>
+          <a href="sobre.html">Sobre</a> ·
+          <a href="privacidade.html">Política de Privacidade</a> ·
+          <a href="#" id="gerenciar-cookies">Preferências de cookies</a>
+        </p>
       </footer>
     </div>
     <script src="static/js/listeners.js"></script>
+    <script src="static/js/consentimento.js"></script>
   </body>
 </html>

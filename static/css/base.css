@@ -380,3 +380,76 @@ label span {
   #salario,
   .table-responsive { box-shadow: none; }
 }
+/* ── Banner de cookies ─────────────────────────────────────── */
+#banner-cookies {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 2000;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  background-color: var(--clr-primary-dark);
+  color: #e4e4e7;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  font-size: 0.8rem;
+}
+
+#banner-cookies p {
+  flex: 1 1 320px;
+  margin: 0;
+  line-height: 1.45;
+}
+
+#banner-cookies a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.banner-cookies-botoes {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+/* ── Texto explicativo ─────────────────────────────────────── */
+.guia {
+  margin-top: 2rem;
+  padding: 1.5rem 1.25rem;
+  background-color: #fff;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 12px rgba(0, 0, 0, 0.05);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  max-width: 860px;
+}
+
+.guia h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--clr-primary-dark);
+}
+
+.guia h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--clr-primary-dark);
+}
+
+.guia a {
+  color: #1d4ed8;
+}
+
+@media print {
+  .guia,
+  #banner-cookies { display: none !important; }
+}

@@ -554,6 +554,11 @@ function imprimir() {
   mywindow.document.write(cabecalho);
   h = document.getElementById('salario').outerHTML;
   mywindow.document.write(h);
+  mywindow.document.write(
+    '<p style="font-size:0.75rem;color:#64748b;margin-top:1rem">' +
+      'Simulação gerada em militaresdf.com.br, site independente e sem vínculo ' +
+      'com a PMDF, o CBMDF ou o GDF. Valores estimados, sem caráter oficial.</p>'
+  );
   mywindow.document.write('</div>');
   mywindow.document.write('</body></html>');
   mywindow.focus();
