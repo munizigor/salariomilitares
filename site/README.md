@@ -3,6 +3,20 @@
 Site em [Astro](https://astro.build) com as calculadoras de salário e de diárias da PMDF e do CBMDF. Ainda não está
 publicado: o site no ar continua sendo o `index.html` da raiz do repositório.
 
+## Publicação
+
+O site vai para o Cloudflare Pages. Configuração do projeto:
+
+| Campo | Valor |
+| --- | --- |
+| Pasta raiz | `site` |
+| Comando de build | `npm run build` |
+| Pasta de saída | `dist` |
+
+Cada push gera um endereço de teste em `.pages.dev`. Os redirecionamentos
+permanentes ficam em `public/_redirects`. A pasta `migracao/` não é publicada:
+guarda o conteúdo do repositório sisdiarias recriado no lançamento.
+
 ## Comandos
 
 ```sh
@@ -23,6 +37,8 @@ npm run build    # gera o site em dist/
 | `src/lib/diarias/tabelas/` | Valores de diárias por destino e posto |
 | `src/styles/global.css` | Design system (cores, tipos, componentes) |
 | `src/pages/` | Páginas do site |
+| `src/lib/dados-estruturados.ts` | Marcação schema.org das páginas |
+| `src/lib/medicao.ts` | Eventos de simulação no Google Analytics |
 | `tests/referencias/` | Casos gerados a partir das calculadoras antigas |
 
 ## Reajuste de tabelas

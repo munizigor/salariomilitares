@@ -1,0 +1,5 @@
+# Redirecionamentos permanentes do Cloudflare Pages.
+# /sobre.html → /sobre e afins o Cloudflare já faz sozinho.
+
+# Sitemap antigo, que pode estar cadastrado no Search Console.
+/sitemap.xml  /sitemap-index.xml  301

@@ -4,17 +4,21 @@ import Anuncio from '../components/Anuncio.astro';
 import FormularioSalario from '../components/salario/FormularioSalario.astro';
 import FolhaSalario from '../components/salario/FolhaSalario.astro';
 import { tabelasAtuais } from '../lib/salario/tabelas';
+import { calculadora } from '../lib/dados-estruturados';
 
 const t = tabelasAtuais();
 const [ano, mes] = t.competencia.split('-');
 const MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
 const competencia = `${MESES[Number(mes) - 1]} de ${ano}`;
+const descricao =
+  'Simule o contracheque de policiais e bombeiros militares do DF: soldo, gratificações, auxílios, descontos e imposto de renda, rubrica por rubrica.';
 const reais = (x: number) => x.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
 ---
 
 <Base
   title="Calculadora de salário PMDF e CBMDF"
-  description="Simule o contracheque de policiais e bombeiros militares do DF: soldo, gratificações, auxílios, descontos e imposto de renda, rubrica por rubrica."
+  description={descricao}
+  dadosEstruturados={[calculadora('Calculadora de salário da PMDF e do CBMDF', '/', descricao)]}
 >
   <div class="abertura">
     <h1>Calculadora de salário da PMDF e do CBMDF</h1>
@@ -107,6 +111,7 @@ const reais = (x: number) => x.toLocaleString('pt-BR', { minimumFractionDigits: 
   import { camposDe, formatarReais, lerEntrada, type Campos } from '../lib/salario/formulario';
   import { RUBRICAS } from '../lib/salario/rubricas';
   import { NOME_POSTO, tabelasAtuais } from '../lib/salario/tabelas';
+  import { registrarSimulacao } from '../lib/medicao';
 
   const CHAVE = 'militaresdf:salario';
   const tabelas = tabelasAtuais();
@@ -173,6 +178,11 @@ const reais = (x: number) => x.toLocaleString('pt-BR', { minimumFractionDigits: 
     if (!entrada) return;
 
     const resultado = calcularSalario(entrada, tabelas);
+    registrarSimulacao('simulacao_salario', {
+      posto: entrada.posto,
+      corporacao: entrada.corporacao,
+      situacao: entrada.situacao,
+    });
     const porCampo = new Map(RUBRICAS.map((r) => [r.campo as string, r]));
     preencher(resultado, (campo) => porCampo.get(campo)?.referencia?.(entrada, tabelas) ?? '');
   }

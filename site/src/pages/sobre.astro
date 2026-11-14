@@ -1,8 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
+import { trilha } from '../lib/dados-estruturados';
 ---
 
 <Base
+  dadosEstruturados={[trilha([{ nome: 'Sobre', caminho: '/sobre' }])]}
   title="Sobre o militaresdf"
   description="Quem mantém a calculadora de salário da PMDF e do CBMDF, como ela é atualizada e como falar com a gente."
 >

@@ -1,8 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
+import { trilha } from '../lib/dados-estruturados';
 ---
 
 <Base
+  dadosEstruturados={[trilha([{ nome: 'Política de privacidade', caminho: '/privacidade' }])]}
   title="Política de privacidade do militaresdf"
   description="Como o militaresdf.com.br trata os dados dos visitantes, os cookies do Google Analytics e do AdSense e os direitos garantidos pela LGPD."
 >

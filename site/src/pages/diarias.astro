@@ -3,11 +3,19 @@ import Base from '../layouts/Base.astro';
 import Anuncio from '../components/Anuncio.astro';
 import { DESTINOS, TABELA_DIARIAS } from '../lib/diarias/calculo';
 import { NOME_POSTO, POSTOS } from '../lib/salario/tabelas';
+import { calculadora, trilha } from '../lib/dados-estruturados';
+
+const descricao =
+  'Simule diárias nacionais e ajuda de custo de bombeiros militares do DF pelo Decreto 12.324/2024: quantidade de diárias, desconto do auxílio-alimentação e ajuda de custo de ida e volta.';
 ---
 
 <Base
   title="Calculadora de diárias e ajuda de custo do CBMDF"
-  description="Simule diárias nacionais e ajuda de custo de bombeiros militares do DF pelo Decreto 12.324/2024: quantidade de diárias, desconto do auxílio-alimentação e ajuda de custo de ida e volta."
+  description={descricao}
+  dadosEstruturados={[
+    calculadora('Calculadora de diárias e ajuda de custo do CBMDF', '/diarias', descricao),
+    trilha([{ nome: 'Diárias', caminho: '/diarias' }]),
+  ]}
 >
   <div class="abertura">
     <h1>Calculadora de diárias e ajuda de custo</h1>
@@ -176,6 +184,7 @@ import { NOME_POSTO, POSTOS } from '../lib/salario/tabelas';
   import type { Curso } from '../lib/salario/calculo';
   import { formatarReais, lerDecimal } from '../lib/salario/formulario';
   import { tabelasAtuais } from '../lib/salario/tabelas';
+  import { faixaDias, registrarSimulacao } from '../lib/medicao';
 
   const CHAVE = 'militaresdf:diarias';
   const salario = tabelasAtuais();
@@ -221,6 +230,12 @@ import { NOME_POSTO, POSTOS } from '../lib/salario/tabelas';
     if (!pronto || !destino || !posto || !periodo) return;
 
     const di = calcularDiarias(destino, posto, periodo.quantidadeDiarias, salario.etapaAlimentacao);
+    registrarSimulacao('simulacao_diarias', {
+      destino,
+      posto,
+      dias: faixaDias(periodo.dias),
+      missao: periodo.missaoEventual ? 'eventual' : 'nao_eventual',
+    });
     const cursos = d.getAll('cursos').map(Number) as Curso[];
     const ajuda = calcularAjudaCusto(
       posto, cursos, lerDecimal(String(d.get('anosATS') ?? '')),

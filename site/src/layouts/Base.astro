@@ -14,18 +14,31 @@ interface Props {
   description: string;
   /** Imagem de compartilhamento relativa à raiz do site. */
   imagem?: string;
+  /** Objetos schema.org da página (além do WebSite, que vai em todas). */
+  dadosEstruturados?: Record<string, unknown>[];
 }
 
-const { title, description, imagem = '/compartilhamento.png' } = Astro.props;
-const url = new URL(Astro.url.pathname, Astro.site);
+const { title, description, imagem = '/compartilhamento.png', dadosEstruturados = [] } = Astro.props;
+// O Cloudflare Pages serve /sobre e redireciona /sobre.html para lá; o
+// endereço canônico segue o mesmo formato.
+const caminhoLimpo = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '/');
+const url = new URL(caminhoLimpo, Astro.site);
 const imagemUrl = new URL(imagem, Astro.site);
-const caminho = Astro.url.pathname.replace(/\/$/, '') || '/';
+const caminho = caminhoLimpo.replace(/\/$/, '') || '/';
 const links = [
   { href: '/', texto: 'Salário' },
   { href: '/diarias', texto: 'Diárias' },
   { href: '/sobre', texto: 'Sobre' },
 ];
 const producao = import.meta.env.PROD;
+const site = Astro.site!.toString();
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'WebSite', '@id': `${site}#site`, url: site, name: 'militaresdf', inLanguage: 'pt-BR' },
+    ...dadosEstruturados,
+  ],
+};
 ---
 
 <!doctype html>
@@ -48,6 +61,7 @@ const producao = import.meta.env.PROD;
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="google-site-verification" content="mw204L5t67rAZIESKy-hIYxF1AqOG9IWf9k_yecNaJ4" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     <Consentimento producao={producao} />
   </head>
   <body>
