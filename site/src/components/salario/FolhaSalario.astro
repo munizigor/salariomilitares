@@ -1,0 +1,143 @@
+---
+// Folha de contracheque da calculadora. Todas as linhas são geradas no
+// servidor, com a explicação de cada rubrica; o script da página preenche os
+// valores e esconde as linhas zeradas, como num contracheque de verdade.
+import { GRUPOS, RUBRICAS, explicacao, type Rubrica } from '../../lib/salario/rubricas';
+import { tabelasAtuais } from '../../lib/salario/tabelas';
+
+const [ano, mes] = tabelasAtuais().competencia.split('-');
+const MESES = ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'];
+const referencia = `${MESES[Number(mes) - 1]}/${ano}`;
+const eventuais = RUBRICAS.filter((r) => r.grupo === 'eventuais');
+
+function linhaExplicacao(r: Rubrica) {
+  const ex = explicacao(r);
+  if (!ex) return null;
+  const partes: string[] = [];
+  if (ex.descricao) partes.push(`<p>${ex.descricao}</p>`);
+  if (ex.calculo) partes.push(`<div><b>Valores:</b> ${ex.calculo}</div>`);
+  if (ex.baseLegal) {
+    const titulo = ex.baseLegalLink
+      ? `<a href="${ex.baseLegalLink}" target="_blank" rel="noopener">Base legal</a>`
+      : 'Base legal';
+    partes.push(`<p><b>${titulo}:</b> ${ex.baseLegal}</p>`);
+  }
+  return partes.join('');
+}
+---
+
+<section class="folha" id="folha" aria-label="Resultado da simulação" aria-live="polite">
+  <div class="folha-cabeca">
+    <div><span class="rotulo">Referência</span><b class="num">{referencia}</b></div>
+    <div><span class="rotulo">Posto</span><b data-cabeca="posto">–</b></div>
+    <div><span class="rotulo">Corporação</span><b data-cabeca="corporacao">–</b></div>
+    <div><span class="rotulo">Situação</span><b data-cabeca="situacao">–</b></div>
+  </div>
+
+  <p class="folha-vazia" data-vazio>
+    Escolha posto ou graduação, corporação e situação para ver o contracheque simulado.
+  </p>
+
+  <div data-conteudo hidden>
+    <div class="folha-rolagem">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Rubrica</th>
+            <th scope="col">Ref.</th>
+            <th scope="col" class="valor">Vantagens</th>
+            <th scope="col" class="valor">Descontos</th>
+          </tr>
+        </thead>
+        {
+          GRUPOS.map((g) => (
+            <tbody data-grupo={g.id}>
+              <tr class="grupo">
+                <th colspan="4" scope="colgroup">
+                  {g.titulo}
+                </th>
+              </tr>
+              {RUBRICAS.filter((r) => r.grupo === g.id).map((r) => {
+                const html = linhaExplicacao(r);
+                return (
+                  <>
+                    <tr data-rubrica={r.campo}>
+                      <td>
+                        {html ? (
+                          <button type="button" class="nome-rubrica" aria-expanded="false" aria-controls={`ex-${r.campo}`}>
+                            {r.rotulo}
+                          </button>
+                        ) : (
+                          r.rotulo
+                        )}
+                      </td>
+                      <td class="ref" data-ref />
+                      <td class="valor credito" data-credito />
+                      <td class="valor debito" data-debito />
+                    </tr>
+                    {html && (
+                      <tr class="detalhe" id={`ex-${r.campo}`} hidden>
+                        <td colspan="4">
+                          <div class="bloco" set:html={html} />
+                        </td>
+                      </tr>
+                    )}
+                  </>
+                );
+              })}
+            </tbody>
+          ))
+        }
+        <tbody>
+          <tr class="totais">
+            <td>Totais</td>
+            <td></td>
+            <td class="valor credito" data-total="vantagens"></td>
+            <td class="valor debito" data-total="descontos"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="folha-pe">
+      <div class="resumo">
+        <span>Remuneração</span><span data-total="remuneracao"></span>
+        <span>Direitos pecuniários</span><span data-total="direitosPecuniarios"></span>
+      </div>
+      <div class="liquido">
+        <span class="rotulo">Líquido a receber</span>
+        <b data-total="liquido">R$ 0,00</b>
+      </div>
+    </div>
+
+    <p class="folha-nota">
+      Simulação com as tabelas de {referencia.toLowerCase()}. Site independente, sem vínculo com a PMDF, o CBMDF ou o
+      GDF; confira sempre com o setor de pagamento.
+    </p>
+  </div>
+</section>
+
+<section class="folha" id="folha-eventuais" aria-label="Parcelas eventuais" data-conteudo hidden>
+  <div class="folha-rolagem">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Parcelas eventuais</th>
+          <th scope="col" class="valor">Vantagens</th>
+          <th scope="col" class="valor">Descontos</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          eventuais.map((r) => (
+            <tr data-rubrica={r.campo} data-eventual>
+              <td>{r.rotulo}</td>
+              <td class="valor credito" data-credito />
+              <td class="valor debito" data-debito />
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</section>

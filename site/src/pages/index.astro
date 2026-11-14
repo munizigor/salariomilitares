@@ -1,0 +1,227 @@
+---
+import Base from '../layouts/Base.astro';
+import Anuncio from '../components/Anuncio.astro';
+import FormularioSalario from '../components/salario/FormularioSalario.astro';
+import FolhaSalario from '../components/salario/FolhaSalario.astro';
+import { tabelasAtuais } from '../lib/salario/tabelas';
+
+const t = tabelasAtuais();
+const [ano, mes] = t.competencia.split('-');
+const MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+const competencia = `${MESES[Number(mes) - 1]} de ${ano}`;
+const reais = (x: number) => x.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+---
+
+<Base
+  title="Calculadora de salário PMDF e CBMDF"
+  description="Simule o contracheque de policiais e bombeiros militares do DF: soldo, gratificações, auxílios, descontos e imposto de renda, rubrica por rubrica."
+>
+  <div class="abertura">
+    <h1>Calculadora de salário da PMDF e do CBMDF</h1>
+    <p>Preencha os dados e veja o contracheque simulado, com as tabelas de {competencia}.</p>
+  </div>
+
+  <div class="so-impressao">
+    <h1>Simulação de remuneração</h1>
+    <p>militaresdf.com.br · gerado em <span data-data-impressao></span></p>
+  </div>
+
+  <div class="calculadora">
+    <FormularioSalario />
+    <div class="resultado">
+      <FolhaSalario />
+      <div class="acoes" data-conteudo hidden>
+        <button type="button" class="botao" id="imprimir">Imprimir ou salvar PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <Anuncio />
+
+  <article class="texto" id="como-funciona">
+    <h2>Como o cálculo é feito</h2>
+    <p>
+      A remuneração dos militares do DF segue a Lei nº 10.486/2002 e as leis que vieram depois dela. É paga pela
+      União, pelo Fundo Constitucional do Distrito Federal. A calculadora aplica as tabelas de {competencia} e as regras
+      de cada parcela aos dados que você informa. Nada do que você digita sai do seu navegador.
+    </p>
+    <p>
+      Toque no nome de qualquer rubrica do contracheque simulado para ver o que ela é, como é calculada e em que lei
+      está.
+    </p>
+
+    <h3>Remuneração</h3>
+    <p>
+      O soldo é fixo para cada posto ou graduação. Em cima dele vêm o adicional de posto ou graduação, o adicional de
+      operações militares e a gratificação de representação. Quando o soldo fica abaixo do salário mínimo
+      (R$ {reais(t.salarioMinimo)}), como acontece com cadetes e soldados de 2ª classe, entra o complemento de soldo.
+    </p>
+    <p>
+      O adicional de certificação profissional é um percentual do soldo: 10% pela formação, 15% pela especialização,
+      20% pelo aperfeiçoamento e 30% pelos altos estudos, somando um curso de cada nível. O adicional de tempo de
+      serviço só existe para quem tinha tempo de serviço até 5 de setembro de 2001: 1% do soldo por ano contado até
+      essa data.
+    </p>
+    <p>
+      GCEF e VPE vêm da Lei nº 11.134/2005, e a gratificação por risco de vida, da Lei nº 12.086/2009. GFNE, cargo no
+      GDF, serviço voluntário e PTTC dependem da situação de cada um e ficam em "Gratificações e adicionais".
+    </p>
+
+    <h3>Direitos pecuniários</h3>
+    <p>
+      Auxílio-moradia, etapa alimentação e auxílio pré-escolar são indenizações e não entram na base do imposto de
+      renda. O auxílio-moradia varia com o posto e com a existência de dependentes. A etapa alimentação é paga a quem
+      está na ativa ou no PTTC.
+    </p>
+
+    <h3>Descontos</h3>
+    <p>
+      A contribuição para a pensão militar é de {(t.aliquotaPensaoMilitar * 100).toLocaleString('pt-BR')}% da
+      remuneração fixa. O fundo de saúde desconta {(t.aliquotaFundoSaude * 100).toLocaleString('pt-BR')}% do soldo,
+      mais um valor fixo por dependente que muda com o posto e a corporação.
+    </p>
+    <p>
+      O imposto de renda incide sobre a remuneração depois de tirar pensão militar, fundo de saúde, descontos
+      dedutíveis, pensão alimentícia e R$ {reais(t.irrf.deducaoPorDependente)} por dependente, pela tabela progressiva
+      da Receita Federal.
+    </p>
+
+    <h3>O que a calculadora não cobre</h3>
+    <p>
+      Pensionistas, decisões judiciais individuais, exercícios anteriores e consignações podem mudar os valores. Se o
+      resultado não bater com o seu contracheque, escreva para contato@igormuniz.com.
+    </p>
+
+    <h3>Leis usadas no cálculo</h3>
+    <ul>
+      <li><a href="https://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm" rel="noopener">Lei nº 10.486/2002</a>, remuneração dos militares do DF</li>
+      <li><a href="https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2005/Lei/L11134.htm" rel="noopener">Lei nº 11.134/2005</a>, GCEF e VPE</li>
+      <li><a href="https://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2009/Lei/L12086.htm" rel="noopener">Lei nº 12.086/2009</a>, GRV e PTTC</li>
+      <li><a href="https://www.planalto.gov.br/ccivil_03/LEIS/L3765.htm" rel="noopener">Lei nº 3.765/1960</a> e <a href="https://www.planalto.gov.br/ccivil_03/Decreto-Lei/Del0667.htm" rel="noopener">Decreto-Lei nº 667/1969</a>, pensão militar</li>
+    </ul>
+  </article>
+</Base>
+
+<script>
+  import { calcularSalario, type ResultadoSalario } from '../lib/salario/calculo';
+  import { camposDe, formatarReais, lerEntrada, type Campos } from '../lib/salario/formulario';
+  import { RUBRICAS } from '../lib/salario/rubricas';
+  import { NOME_POSTO, tabelasAtuais } from '../lib/salario/tabelas';
+
+  const CHAVE = 'militaresdf:salario';
+  const tabelas = tabelasAtuais();
+  const form = document.getElementById('form-salario') as HTMLFormElement;
+  const vazio = document.querySelector<HTMLElement>('[data-vazio]')!;
+  const blocos = document.querySelectorAll<HTMLElement>('[data-conteudo]');
+  const soInativo = document.querySelectorAll<HTMLElement>('[data-so-inativo]');
+
+  const celula = (tr: Element, nome: string) => tr.querySelector<HTMLElement>(`[data-${nome}]`);
+  const total = (nome: string) => document.querySelector<HTMLElement>(`[data-total="${nome}"]`)!;
+
+  function preencher(r: ResultadoSalario, ref: (campo: string) => string) {
+    let vantagens = 0;
+    let descontos = 0;
+    for (const rubrica of RUBRICAS) {
+      const valor = r[rubrica.campo] as number;
+      document.querySelectorAll(`[data-rubrica="${rubrica.campo}"]`).forEach((tr) => {
+        const visivel = Math.abs(valor) >= 0.005;
+        (tr as HTMLElement).hidden = !visivel;
+        if (!visivel) {
+          const detalhe = tr.nextElementSibling as HTMLElement | null;
+          if (detalhe?.classList.contains('detalhe')) detalhe.hidden = true;
+          tr.querySelector('.nome-rubrica')?.setAttribute('aria-expanded', 'false');
+        }
+        const credito = celula(tr, 'credito');
+        const debito = celula(tr, 'debito');
+        if (credito) credito.textContent = rubrica.natureza === 'credito' ? formatarReais(valor) : '';
+        if (debito) debito.textContent = rubrica.natureza === 'debito' ? formatarReais(valor) : '';
+        const refCel = celula(tr, 'ref');
+        if (refCel) refCel.textContent = ref(rubrica.campo);
+      });
+      if (rubrica.grupo === 'eventuais') continue;
+      if (rubrica.natureza === 'credito') vantagens += valor;
+      else descontos += valor;
+    }
+    // Esconde o cabeçalho de grupo quando o grupo inteiro está zerado.
+    document.querySelectorAll<HTMLElement>('tbody[data-grupo]').forEach((tb) => {
+      const algum = Array.from(tb.querySelectorAll<HTMLElement>('tr[data-rubrica]')).some((tr) => !tr.hidden);
+      tb.hidden = !algum;
+    });
+    total('vantagens').textContent = formatarReais(vantagens);
+    total('descontos').textContent = formatarReais(descontos);
+    total('remuneracao').textContent = formatarReais(r.remuneracao);
+    total('direitosPecuniarios').textContent = formatarReais(r.direitosPecuniarios);
+    total('liquido').textContent = `R$ ${formatarReais(r.liquido)}`;
+  }
+
+  function atualizar() {
+    const campos = camposDe(form);
+    salvar(campos);
+    const situacao = campos.situacao;
+    soInativo.forEach((el) => (el.hidden = situacao !== 'inativo'));
+
+    const entrada = lerEntrada(campos);
+    const cabeca = (nome: string, texto: string) => {
+      document.querySelector(`[data-cabeca="${nome}"]`)!.textContent = texto || '–';
+    };
+    cabeca('posto', entrada ? NOME_POSTO[entrada.posto] : '');
+    cabeca('corporacao', entrada ? entrada.corporacao.toUpperCase() : '');
+    cabeca('situacao', entrada ? (entrada.situacao === 'ativo' ? 'Ativo' : 'Inativo') : '');
+
+    vazio.hidden = !!entrada;
+    blocos.forEach((b) => (b.hidden = !entrada));
+    if (!entrada) return;
+
+    const resultado = calcularSalario(entrada, tabelas);
+    const porCampo = new Map(RUBRICAS.map((r) => [r.campo as string, r]));
+    preencher(resultado, (campo) => porCampo.get(campo)?.referencia?.(entrada, tabelas) ?? '');
+  }
+
+  function salvar(campos: Campos) {
+    try {
+      localStorage.setItem(CHAVE, JSON.stringify(campos));
+    } catch {}
+  }
+
+  function restaurar() {
+    let campos: Campos | null = null;
+    try {
+      campos = JSON.parse(localStorage.getItem(CHAVE) ?? 'null');
+    } catch {}
+    if (!campos) return;
+    for (const [nome, valor] of Object.entries(campos)) {
+      const els = form.elements.namedItem(nome);
+      if (!els) continue;
+      if (nome === 'cursos') {
+        const marcados = Array.isArray(valor) ? valor : [valor];
+        form.querySelectorAll<HTMLInputElement>('input[name="cursos"]').forEach((cb) => {
+          cb.checked = marcados.includes(cb.value);
+        });
+      } else if (els instanceof HTMLInputElement || els instanceof HTMLSelectElement) {
+        els.value = String(valor);
+      }
+    }
+  }
+
+  form.addEventListener('input', atualizar);
+  form.addEventListener('change', atualizar);
+  form.addEventListener('reset', () => setTimeout(atualizar));
+
+  // Abre e fecha a explicação de cada rubrica.
+  document.getElementById('folha')!.addEventListener('click', (ev) => {
+    const botao = (ev.target as HTMLElement).closest<HTMLButtonElement>('.nome-rubrica');
+    if (!botao) return;
+    const detalhe = document.getElementById(botao.getAttribute('aria-controls')!)!;
+    const abrir = botao.getAttribute('aria-expanded') !== 'true';
+    botao.setAttribute('aria-expanded', String(abrir));
+    detalhe.hidden = !abrir;
+  });
+
+  window.addEventListener('beforeprint', () => {
+    document.querySelector('[data-data-impressao]')!.textContent = new Date().toLocaleDateString('pt-BR');
+  });
+  document.getElementById('imprimir')!.addEventListener('click', () => window.print());
+
+  restaurar();
+  atualizar();
+</script>

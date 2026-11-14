@@ -1,0 +1,713 @@
+/* Design system militaresdf: o site com cara de contracheque.
+   Papel claro com trama de segurança, tinta azul-preta, cantos retos,
+   valores em fonte de largura fixa. Verde e vermelho só para vantagem e
+   desconto; azul de caneta para o que é clicável. */
+
+:root {
+  --papel: #f2f5f1;
+  --folha: #fbfcfa;
+  --tinta: #1a2330;
+  --grafite: #5b6672;
+  --linha: #c8d2cb;
+  --trama: rgba(43, 96, 74, 0.07);
+  --caneta: #1f3fa6;
+  --credito: #1d6a48;
+  --debito: #a03a2b;
+  --faixa: #e3e9e4;
+  --destaque: #fff6d6;
+
+  --f-titulo: 'IBM Plex Sans Condensed', 'Arial Narrow', 'Roboto Condensed', sans-serif;
+  --f-texto: 'IBM Plex Sans', 'Segoe UI', Roboto, Arial, sans-serif;
+  --f-numero: 'IBM Plex Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+
+  --largura: 1120px;
+  --texto: 68ch;
+  --gutter-l: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --papel: #111714;
+    --folha: #171f1b;
+    --tinta: #e3eae5;
+    --grafite: #9aa7a0;
+    --linha: #2c3832;
+    --trama: rgba(140, 200, 170, 0.06);
+    --caneta: #93abff;
+    --credito: #6cc79a;
+    --debito: #ec8a78;
+    --faixa: #202a25;
+    --destaque: #2d2a1a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme='dark'] {
+  --papel: #111714;
+  --folha: #171f1b;
+  --tinta: #e3eae5;
+  --grafite: #9aa7a0;
+  --linha: #2c3832;
+  --trama: rgba(140, 200, 170, 0.06);
+  --caneta: #93abff;
+  --credito: #6cc79a;
+  --debito: #ec8a78;
+  --faixa: #202a25;
+  --destaque: #2d2a1a;
+  color-scheme: dark;
+}
+
+/* ── Base ─────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--f-texto);
+  font-size: 16px;
+  line-height: 1.6;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: var(--caneta);
+  text-underline-offset: 2px;
+}
+:focus-visible {
+  outline: 2px solid var(--caneta);
+  outline-offset: 2px;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--f-titulo);
+  line-height: 1.15;
+  text-wrap: balance;
+  margin: 0;
+}
+h1 {
+  font-size: clamp(28px, 4.4vw, 40px);
+  font-weight: 700;
+}
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+h3 {
+  font-size: 19px;
+  font-weight: 600;
+}
+p {
+  margin: 0;
+}
+.num {
+  font-family: var(--f-numero);
+  font-variant-numeric: tabular-nums;
+}
+.rotulo {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--grafite);
+}
+[hidden] {
+  display: none !important;
+}
+.so-leitor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ── Estrutura da página ──────────────────────────────────────── */
+.moldura {
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding-left: var(--gutter-l);
+  padding-right: var(--gutter-r);
+}
+main.moldura {
+  padding-block: 28px 56px;
+  display: grid;
+  gap: 40px;
+}
+
+.topo {
+  background: var(--folha);
+  border-bottom: 2px solid var(--tinta);
+}
+.topo .moldura {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 24px;
+  padding-block: 12px;
+}
+.marca {
+  font-family: var(--f-titulo);
+  font-weight: 700;
+  font-size: 23px;
+  color: var(--tinta);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+.marca span {
+  color: var(--grafite);
+  font-weight: 500;
+}
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 18px;
+  font-size: 15px;
+}
+.nav a {
+  color: var(--tinta);
+  text-decoration: none;
+  padding-block: 2px;
+  border-bottom: 2px solid transparent;
+}
+.nav a:hover {
+  border-bottom-color: var(--linha);
+}
+.nav a[aria-current='page'] {
+  font-weight: 600;
+  border-bottom-color: var(--tinta);
+}
+
+.rodape {
+  border-top: 1px solid var(--linha);
+  background: var(--folha);
+  font-size: 14px;
+  color: var(--grafite);
+}
+.rodape .moldura {
+  padding-block: 20px 28px;
+  display: grid;
+  gap: 8px;
+}
+.rodape nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+}
+.rodape a {
+  color: var(--tinta);
+}
+
+/* ── Texto corrido ────────────────────────────────────────────── */
+.texto {
+  max-width: var(--texto);
+  display: grid;
+  gap: 14px;
+}
+.texto h2 {
+  margin-top: 12px;
+}
+.texto ul,
+.texto ol {
+  margin: 0;
+  padding-left: 1.3em;
+  display: grid;
+  gap: 4px;
+}
+.abertura {
+  display: grid;
+  gap: 8px;
+  max-width: var(--texto);
+}
+.abertura p {
+  color: var(--grafite);
+}
+
+/* ── Formulário ───────────────────────────────────────────────── */
+.campo {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+.campo > label,
+.campo > .legenda {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--grafite);
+}
+.campo select,
+.campo input[type='text'] {
+  font: inherit;
+  font-size: 15px;
+  color: var(--tinta);
+  background: var(--folha);
+  border: 1px solid var(--linha);
+  border-bottom-color: var(--tinta);
+  border-radius: 2px;
+  padding: 7px 9px;
+  width: 100%;
+  min-height: 40px;
+}
+.campo input[type='text'] {
+  font-family: var(--f-numero);
+}
+.campo .ajuda {
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--grafite);
+}
+.opcoes {
+  border: 1px solid var(--linha);
+  background: var(--folha);
+  margin: 0;
+  padding: 8px 12px 12px;
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+.opcoes legend {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--grafite);
+  padding: 0 4px;
+}
+.opcoes label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 15px;
+  min-height: 32px;
+}
+.opcoes input {
+  accent-color: var(--tinta);
+  width: 16px;
+  height: 16px;
+}
+
+/* Seções recolhíveis do formulário */
+.secao-form {
+  border-top: 1px solid var(--linha);
+}
+.secao-form > summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  font-weight: 600;
+  font-size: 15px;
+}
+.secao-form > summary::-webkit-details-marker {
+  display: none;
+}
+.secao-form > summary::after {
+  content: '+';
+  font-family: var(--f-numero);
+  font-size: 18px;
+  color: var(--grafite);
+}
+.secao-form[open] > summary::after {
+  content: '−';
+}
+.secao-form .corpo {
+  display: grid;
+  gap: 12px;
+  padding-bottom: 14px;
+}
+
+.botao {
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 2px;
+  padding: 8px 14px;
+  border: 1px solid var(--tinta);
+  background: var(--folha);
+  color: var(--tinta);
+  cursor: pointer;
+  min-height: 40px;
+}
+.botao:hover {
+  background: var(--faixa);
+}
+.botao.principal {
+  background: var(--tinta);
+  color: var(--folha);
+}
+
+/* ── Folha de contracheque ────────────────────────────────────── */
+.folha {
+  background-color: var(--folha);
+  background-image:
+    repeating-radial-gradient(circle at 0 0, transparent 0 9px, var(--trama) 9px 10px),
+    repeating-radial-gradient(circle at 100% 100%, transparent 0 9px, var(--trama) 9px 10px);
+  border: 1px solid var(--linha);
+  min-width: 0;
+}
+.folha-cabeca {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px 18px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--tinta);
+}
+.folha-cabeca div {
+  display: grid;
+  min-width: 0;
+}
+.folha-cabeca b {
+  font-weight: 600;
+  font-size: 15px;
+}
+.folha-rolagem {
+  overflow-x: auto;
+}
+.folha table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.folha th,
+.folha td {
+  padding: 5px 16px;
+  text-align: left;
+  border-bottom: 1px dotted var(--linha);
+  vertical-align: top;
+}
+.folha thead th {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--grafite);
+  border-bottom: 1px solid var(--tinta);
+  white-space: nowrap;
+}
+.folha .valor {
+  text-align: right;
+  white-space: nowrap;
+  font-family: var(--f-numero);
+  font-variant-numeric: tabular-nums;
+}
+.folha .ref {
+  color: var(--grafite);
+  white-space: nowrap;
+  font-family: var(--f-numero);
+  font-size: 13px;
+}
+.folha tr.grupo th {
+  background: var(--faixa);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--linha);
+}
+.folha .credito {
+  color: var(--credito);
+}
+.folha .debito {
+  color: var(--debito);
+}
+.folha tr.totais td {
+  font-weight: 600;
+  border-bottom: 1px solid var(--tinta);
+}
+.folha .nome-rubrica {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 6px;
+  align-items: baseline;
+}
+.folha .nome-rubrica::after {
+  content: 'i';
+  font-family: var(--f-numero);
+  font-size: 10px;
+  line-height: 13px;
+  width: 14px;
+  height: 14px;
+  text-align: center;
+  border: 1px solid var(--linha);
+  border-radius: 50%;
+  color: var(--grafite);
+  flex: none;
+}
+.folha .nome-rubrica[aria-expanded='true']::after {
+  border-color: var(--tinta);
+  color: var(--tinta);
+}
+.folha tr.detalhe td {
+  background: var(--destaque);
+  font-size: 13.5px;
+  line-height: 1.5;
+  padding: 10px 16px 12px;
+}
+.folha tr.detalhe .bloco {
+  display: grid;
+  gap: 6px;
+  max-width: 72ch;
+}
+.folha tr.detalhe table {
+  font-size: 13px;
+  margin-block: 4px;
+}
+.folha tr.detalhe table td,
+.folha tr.detalhe table th {
+  padding: 3px 8px;
+}
+.folha-pe {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  padding: 16px;
+}
+.folha-pe .resumo {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 2px 18px;
+  font-size: 14px;
+}
+.folha-pe .resumo span:nth-child(even) {
+  text-align: right;
+  font-family: var(--f-numero);
+  font-variant-numeric: tabular-nums;
+}
+.liquido {
+  border: 2px solid var(--tinta);
+  padding: 8px 14px;
+  display: grid;
+  gap: 2px;
+  min-width: 220px;
+  background: var(--folha);
+}
+.liquido b {
+  font-family: var(--f-numero);
+  font-variant-numeric: tabular-nums;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.folha-nota {
+  padding: 10px 16px 14px;
+  font-size: 12.5px;
+  color: var(--grafite);
+  border-top: 1px dotted var(--linha);
+}
+.folha-vazia {
+  padding: 28px 16px;
+  color: var(--grafite);
+  font-size: 15px;
+}
+
+/* Folha no celular: cada rubrica vira uma linha de duas colunas (nome e
+   valor), com a referência embaixo do nome e o desconto marcado com sinal. */
+@media (max-width: 560px) {
+  .folha-rolagem > table > thead {
+    display: none;
+  }
+  .folha-rolagem > table > tbody > tr:not(.grupo):not(.detalhe) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 12px;
+    padding: 7px 12px;
+    border-bottom: 1px dotted var(--linha);
+  }
+  .folha-rolagem > table > tbody > tr:not(.grupo):not(.detalhe) > td {
+    border: 0;
+    padding: 0;
+  }
+  .folha-rolagem > table > tbody > tr > td.ref {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: 12px;
+  }
+  .folha-rolagem > table > tbody > tr > td:empty {
+    display: none;
+  }
+  .folha-rolagem > table > tbody > tr > td.valor {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .folha-rolagem > table > tbody > tr > td.valor.debito:not(:empty)::before {
+    content: '− ';
+  }
+  .folha tr.totais {
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    border-bottom: 1px solid var(--tinta) !important;
+  }
+  .folha tr.totais td.valor.debito {
+    grid-column: 3;
+  }
+  .folha tr.grupo th,
+  .folha tr.detalhe td {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .folha tr.detalhe td {
+    display: block;
+  }
+  .folha-cabeca,
+  .folha-pe {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .liquido {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+/* ── Calculadora (layout) ─────────────────────────────────────── */
+.calculadora {
+  display: grid;
+  grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .calculadora {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.formulario {
+  display: grid;
+  gap: 14px;
+}
+.resultado {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+/* ── Anúncio ──────────────────────────────────────────────────── */
+.anuncio {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+.anuncio .rotulo {
+  font-size: 10px;
+}
+.anuncio .espaco {
+  min-height: 120px;
+  border: 1px dashed var(--linha);
+  display: grid;
+  place-items: center;
+  color: var(--grafite);
+  font-size: 12px;
+}
+
+/* ── Aviso de cookies ─────────────────────────────────────────── */
+.cookies {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  background: var(--folha);
+  border-top: 2px solid var(--tinta);
+  padding-block: 12px calc(12px + env(safe-area-inset-bottom, 0px));
+}
+.cookies .moldura {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 20px;
+  font-size: 14px;
+}
+.cookies p {
+  flex: 1 1 360px;
+  max-width: 80ch;
+}
+.cookies .botoes {
+  display: flex;
+  gap: 8px;
+}
+
+/* ── Impressão: só a folha ────────────────────────────────────── */
+.so-impressao {
+  display: none;
+}
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+  body {
+    background: #fff;
+    font-size: 12px;
+  }
+  .topo,
+  .rodape,
+  .cookies,
+  .abertura,
+  article.texto,
+  .anuncio,
+  .formulario,
+  .acoes,
+  .nao-imprimir,
+  .folha tr.detalhe {
+    display: none !important;
+  }
+  .so-impressao {
+    display: block;
+  }
+  main.moldura {
+    padding: 0;
+    gap: 12px;
+  }
+  .calculadora {
+    display: block;
+  }
+  .folha {
+    background-image: none;
+  }
+  .folha .nome-rubrica::after {
+    display: none;
+  }
+  .folha th,
+  .folha td {
+    padding: 2px 8px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .nav a {
+    transition: border-color 0.15s;
+  }
+}

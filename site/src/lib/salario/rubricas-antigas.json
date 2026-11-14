@@ -1,0 +1,269 @@
+{
+  "soldo": {
+    "rotulo": "SOLDO",
+    "descricao": "Parcela básica mensal da remuneração e dos proventos, inerentes ao posto ou à graduação do militar e irredutível.",
+    "calculo": null,
+    "baseLegal": "Art. 3º, I c/c Tabela I do Anexo I da Lei 10.486/2002",
+    "baseLegalLink": "http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3i"
+  },
+  "apg": {
+    "rotulo": "ADICIONAL DE POSTO OU GRADUAÇÃO",
+    "descricao": "Parcela remuneratória mensal devida ao militar, inerente à cada círculo hierárquico da carreira militar.",
+    "calculo": null,
+    "baseLegal": "Art. 3º, II c/c Tabela I do Anexo II da Lei 10.486/2002",
+    "baseLegalLink": "http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3ii"
+  },
+  "ats": {
+    "rotulo": "ADICIONAL DE TEMPO DE SERVIÇO",
+    "descricao": "Parcela remuneratória mensal devida ao militar, inerente ao tempo de serviço contado até <b>05/09/2001</b>.",
+    "calculo": null,
+    "baseLegal": "Art. 3º, V c/c Art. 62 e Tabela I do Anexo II da Lei 10.486/2002",
+    "baseLegalLink": "http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3v"
+  },
+  "compl_soldo": {
+    "rotulo": "COMPLEMENTO DE SOLDO",
+    "descricao": "Diferença entre o salário mínimo vigente e o soldo, quotas de soldo ou pensão militar.",
+    "calculo": null,
+    "baseLegal": "Art. 31 da Lei 10.486/2002",
+    "baseLegalLink": "http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art31"
+  },
+  "aom": {
+    "rotulo": "ADICIONAL DE OPERAÇÕES MILITARES",
+    "descricao": "Parcela remuneratória mensal devida ao militar pelo desempenho de operações militares e para compensação dos desgastes orgânicos e danos psicossomáticos decorrentes do desempenho das atividades técnico-profissionais nos respectivos Quadros.",
+    "calculo": null,
+    "baseLegal": "Art. 3º, IV c/c Tabela III do Anexo II da Lei 10.486/2002",
+    "baseLegalLink": "http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3iv"
+  },
+  "gfr": {
+    "rotulo": "GRATIFICAÇÃO DE REPRESENTAÇÃO MILITAR",
+    "descricao": "Parcela remuneratória mensal devida aos militares ativos e inativos, a título de representação",
+    "calculo": null,
+    "baseLegal": "Art. 3º, VI c/c Tabela I do Anexo III da Lei 10.486/2002",
+    "baseLegalLink": "http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3vi"
+  },
+  "acp": {
+    "rotulo": "ADICIONAL DE CERTIFICAÇÃO PROFISSIONAL",
+    "descricao": "Somatório dos percentuais referentes a 1 (um) curso de formação, 1 (um) de especialização ou habilitação, 1 (um) de aperfeiçoamento e 1 (um) de altos estudos, inerente aos cursos realizados com aproveitamento",
+    "calculo": null,
+    "baseLegal": "Art. 3º, III c/c Tabela II do Anexo II da Lei 10.486/2002",
+    "baseLegalLink": "http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3iii"
+  },
+  "gcef": {
+    "rotulo": "GCEF-GRAT. COND. ESP. FUN. MILITAR",
+    "descricao": "Gratificação devida mensal e regularmente aos militares da Polícia Militar do Distrito Federal e do Corpo de Bombeiros Militar do Distrito Federal",
+    "calculo": null,
+    "baseLegal": "Art. 1º-A, c/c Anexo I-A da Lei 11134/2005",
+    "baseLegalLink": "http://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2005/Lei/L11134.htm#art1a.."
+  },
+  "vpe": {
+    "rotulo": "VPE - VANTAGEM PECUNIÁRIA ESPECIAL",
+    "descricao": "Parcela remuneratória devida mensal e regularmente aos militares da Polícia Militar do Distrito Federal e do Corpo de Bombeiros Militar do Distrito Federal, ativos e inativos e aos seus pensionistas",
+    "calculo": null,
+    "baseLegal": "Art. 1º, c/c Anexo I da Lei 11134/2005",
+    "baseLegalLink": "http://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2005/Lei/L11134.htm#art1"
+  },
+  "grv": {
+    "rotulo": "GRV - GRATIFICAÇÃO POR RISCO DE VIDA",
+    "descricao": "Gratificação mensal devida aos militares ativos e inativos",
+    "calculo": null,
+    "baseLegal": "Art. 117 c/c Anexo VI da Lei 12086/2012",
+    "baseLegalLink": "http://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2009/Lei/L12086.htm#art117"
+  },
+  "gfne": {
+    "rotulo": "GFNE",
+    "descricao": "Parcela remuneratória mensal devida aos militares em cargo de função de natureza especial eventual, não podendo ser acumulável com a <b>gratificação de serviço voluntário</b> ou <b>qualquer outra remuneração decorrente do exercício de função comissionada</b>",
+    "calculo": null,
+    "baseLegal": "Art. 3º, VII c/c Tabela II do Anexo III da Lei 10.486/2002",
+    "baseLegalLink": "http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3vii"
+  },
+  "gratGDF": {
+    "rotulo": "GRATIFICAÇÃO GDF",
+    "descricao": "Gratificação mensal devida a militares (ativos e inativos) em Cargos de Natureza Política (CNP), Natureza Especial (CNE) ou em Comissão (CC). Para os militares da ativa, o pagamento restringe-se ao valor de representação; para os inativos, engloba o valor de representação somado ao vencimento do cargo.",
+    "calculo": null,
+    "baseLegal": "Lei Distrital nº 7.254/2023 e outras",
+    "baseLegalLink": "https://www.economia.df.gov.br/tabela-cargos-comissionados/"
+  },
+  "pttc": {
+    "rotulo": "PTTC - PRESTAÇÃO DE TAREFA POR TEMPO CERTO",
+    "descricao": "Execução de encargo, incumbência, tarefa ou missão de caráter voluntário e temporário, em organizações do Corpo de Bombeiros Militar do Distrito Federal, pelo bombeiro militar da inatividade que se encontre na reserva remunerada e, em caráter excepcional, reformado.",
+    "calculo": null,
+    "baseLegal": "Art. 114 da <a href='http://www.planalto.gov.br/ccivil_03/_Ato2007-2010/2009/Lei/L12086.htm#art114' target='_blank'>Lei 12086/2009</a> c/c <a href='http://www.sinj.df.gov.br/sinj/Norma/63309/ Decreto_31856_30_06_2010.html' target='_blank'>Decreto Distrital 31.856/2010</a>",
+    "baseLegalLink": null
+  },
+  "gsv": {
+    "rotulo": "GSV - GRATIFICAÇÃO DE SERVIÇO VOLUNTÁRIO",
+    "descricao": "Parcela remuneratória devida ao militar que voluntariamente, durante seu período de folga, apresentar-se para o serviço de policiamento, prevenção de combate a incêndio e salvamento, atendimento pré-hospitalar ou segurança pública de grandes eventos ou sinistros, com jornada não inferior a 8 (oito) horas, na conveniência e necessidade da Administração.",
+    "calculo": null,
+    "baseLegal": "Art. 3º, VII da <a href='http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3vii' target='_blank'>Lei 10.486/2002</a> c/c <a href='http://www.sinj.df.gov.br/sinj/Norma/ec3f26e7990f4512ba496aa628d235eb/ Decreto_39627_11_01_2019.html' target='_blank'>Decreto Distrital 39.627/2019</a>",
+    "baseLegalLink": null
+  },
+  "aux_mor": {
+    "rotulo": "AUXILIO MORADIA",
+    "descricao": "Direito Pecuniário mensal de natureza <b>INDENIZATÓRIA</b> devido ao militar, na ativa e na inatividade, para auxiliar nas despesas com habitação para si e seus dependentes.",
+    "calculo": null,
+    "baseLegal": "Art. 3º, XIV da <a href='http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3xiv' target='_blank'>Lei 10.486/2002</a>, alterada pelo art. 21, § 2º da <a href='https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2023/Lei/L14724.htm#art21%C2%A72' target='_blank'>Lei 14.724/2023</a>",
+    "baseLegalLink": null
+  },
+  "alim": {
+    "rotulo": "ETAPA ALIMENTAÇÃO",
+    "descricao": "Direito Pecuniário mensal de natureza <b>INDENIZATÓRIA</b> devido ao militar para custear gastos com alimentação.",
+    "calculo": null,
+    "baseLegal": "Art. 3º, XIII da <a href='http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art3xiii' target='_blank'>Lei 10.486/2002</a> c/c <a href='https://www.sinj.df.gov.br/sinj/Norma/76239/Decreto_35182_18_02_2014.html' target='_blank'>Decreto Distrital 35.182/2014</a>",
+    "baseLegalLink": null
+  },
+  "aux_pe": {
+    "rotulo": "AUXÍLIO PRÉ ESCOLAR",
+    "descricao": "Direito Pecuniário mensal de natureza <b>INDENIZATÓRIA</b> devido ao militar para custear gastos com dependentes na faixa etária compreendida desde o <b>nascimento</b> até <b>cinco anos, onze meses e 29 dias</b> de idade.",
+    "calculo": null,
+    "baseLegal": "Art. 2º, II, a) da <a href='www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art2' target='_blank'>Lei 10.486/2002</a> c/c <a href='https://www.planalto.gov.br/ccivil_03/decreto/antigos/d0977.htm' target='_blank'>Decreto Federal 977/1993</a> c/c <a href='http://www.in.gov.br/materia/-/asset_publisher/Kujrw0TZC2Mb/content/id/22312468/do1-2016-02-18-portaria-interministerial-n-10-de-13-de-janeiro-de-2016--22312433' target='_blank'>Portaria Interministerial 10/2016</a>",
+    "baseLegalLink": null
+  },
+  "cota_pe": {
+    "rotulo": "COTA PRÉ ESCOLAR",
+    "descricao": "Desconto efetuado como forma de participação do servidor no custeio do benefício AUXÍLIO PRÉ-ESCOLAR.",
+    "calculo": null,
+    "baseLegal": "Art. 9º do <a href='http://www.planalto.gov.br/ccivil_03/decreto/antigos/d0977.htm' target='_blank'>Decreto Federal 977/1993</a>",
+    "baseLegalLink": null
+  },
+  "pensao_alim": {
+    "rotulo": "PENSÃO ALIMENTÍCIA",
+    "descricao": "Valor a título de alimentos pedido por parentes, cônjuge ou companheiro do servidor, necessário para viver de modo compatível com a condição social, fixados na proporção das necessidades do reclamante e dos recursos da pessoa obrigada.",
+    "calculo": "<table class=\"table table-striped\"> <thead> <tr> <th scope=\"col\">Tipo</th> <th scope=\"col\">Base de Cálculo</th> </tr> </thead> <tbody> <tr> <th scope=\"row\">ABATENDO DESCONTOS COMPULSÓRIOS E VERBAS INDENIZATÓRIAS</th> <td>(Remuneração) - (Contr. Pensão Militar) - (Imposto de Renda antes da Pensão) - (Rep. ao Erário)</td> </tr> <tr> <th scope=\"row\">ABATENDO APENAS DESCONTOS COMPULSÓRIOS</th> <td>(Remuneração) + (Direitos Pecuniários) - (Contr. Pensão Militar) - (Imposto de Renda antes da Pensão) - (Rep. ao Erário)</td> </tr> <tr> <th scope=\"row\">SEM ABATIMENTO DE DESCONTOS COMPULSÓRIOS OU VERBAS INDENIZATÓRIAS</th> <td>(Remuneração) + (Direitos Pecuniários)</td> </tr> <tr> <th scope=\"row\">SOBRE SALÁRIO MÍNIMO</th> <td>(Salário Mínimo Vigente)</td> </tr> </tbody> </table>",
+    "baseLegal": "Art. 1.694 e ss. do <a href='http://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm#art1694' target='_blank'>Código Civil</a> c/c <a href='http://www.planalto.gov.br/ccivil_03/LEIS/L5478.htm' target='_blank'>Lei 5.478/1968</a>",
+    "baseLegalLink": null
+  },
+  "pensao_alim_pe": {
+    "rotulo": "PENSÃO ALIMENTÍCIA SOBRE PRÉ ESCOLAR",
+    "descricao": "Reversão do Auxílio Pré Escolar em prol da criança beneficiária da Pensão Alimentícia",
+    "calculo": null,
+    "baseLegal": "Decisão Judicial",
+    "baseLegalLink": null
+  },
+  "contr_pensao_militar": {
+    "rotulo": "CONTR. PENSÃO MILITAR",
+    "descricao": "Desconto mensal em folha de pagamento dos militares e seus pensionistas destinado destinada ao custeio das pensões militares e da inatividade dos militares",
+    "calculo": "<table class=\"table table-striped\"> <thead> <tr> <th scope=\"col\">Data</th> <th scope=\"col\">Percentual</th> <th scope=\"col\">Quem Contribui?</th> </tr> </thead> <tbody> <tr> <th scope=\"row\">Até 16 de março de 2020</th> <td>7,5%</td> <td>Militares ativos e inativos</td> </tr> <tr> <th scope=\"row\">A partir de 17 de março de 2020</th> <td>9,5%</td> <td>Militares ativos, inativos e pensionistas</td> </tr> <tr> <th scope=\"row\">A partir de 1º de janeiro de 2021</th> <td>10,5%</td> <td>Militares ativos, inativos e pensionistas</td> </tr> </tbody> </table>",
+    "baseLegal": "Art. 24-C do <a href='http://www.planalto.gov.br/ccivil_03/Decreto-Lei/Del0667.htm#art24c' target='_blank'>Decreto-Lei 667/1969</a> c/c Art. 3º-A da <a href='http://www.planalto.gov.br/ccivil_03/LEIS/L3765.htm#art3a.' target='_blank'>Lei 3.765/1960</a> c/c Art. 14, I da <a href='http://www.in.gov.br/en/web/dou/-/instrucao-normativa-n-5-de-15-de-janeiro-de-2020-238382288' target='_blank'>Instrução Normativa 5/2020</a>",
+    "baseLegalLink": null
+  },
+  "contr_pensao_militar_adic": {
+    "rotulo": "CONTR. PENSÃO MILITAR ADICIONAL",
+    "descricao": "Desconto mensal extraordinário em folha de pagamento dos militares e seus pensionistas",
+    "calculo": "<table class=\"table table-striped\"> <thead> <tr> <th scope=\"col\">Tipo</th> <th scope=\"col\">Percentual</th> </tr> </thead> <tbody> <tr> <th scope=\"row\">Militares que tenham ingressado até <u> 29 de dezembro de 2000</u> e optado por poder instituir <u>filha solteira maior e capaz</u> como beneficiária, desde que não tenham irrevogavelmente expressado renúncia</th> <td>1,5%</td> </tr> <tr> <th scope=\"row\">Filhas maiores e capazes pensionistas vitalícias, independente da hipótese</th> <td>3%</td> </tr> <tr> <th scope=\"row\">Pensionistas, excetuadas as filhas maiores e capazes pensionistas vitalícias, cujo instituidor tenha falecido <u>A PARTIR de 29 de dezembro de 2000</u> e optado em vida pelo pagamento da pensão militar adicional</th> <td>1,5%</td> </tr> <tr> <th scope=\"row\">Pensionistas, excetuadas as filhas maiores e capazes pensionistas vitalícias, cujo instituidor tenha falecido <u> ANTES de 29 de dezembro de 2000</u> e optado em vida pelo pagamento da pensão militar adicional</th> <td>Nào pagam</td> </tr> </tbody> </table>",
+    "baseLegal": "Art. 36, § 3º da <a href='http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art36§3.' target='_blank'> Lei 10.486/2002</a> e Art. 24-C do <a href='http://www.planalto.gov.br/ccivil_03/Decreto-Lei/Del0667.htm#art24c' target='_blank'>Decreto-Lei 667/1969</a> c/c Art. 3º-A, § 3º da <a href='www.planalto.gov.br/ccivil_03/LEIS/L3765.htm#art3a§3' target='_blank'>Lei 3.765/1960</a> c/c Art. 14, § 1º da <a href='http://www.in.gov.br/en/web/dou/-/instrucao-normativa-n-5-de-15-de-janeiro-de-2020-238382288' target='_blank'>Instrução Normativa 5/2020</a>",
+    "baseLegalLink": null
+  },
+  "fundo_saude": {
+    "rotulo": "FUNDO DE SAÚDE",
+    "descricao": "Contribuição mensal para a assistência médico-hospitalar, médico-domiciliar, odontológica, psicológica e social ao militar e seus dependentes. </br> </br> A contribuição é <b>facultativa</b> aos militares inativos do Distrito Federal e pensionistas militares, <u>desde que residentes fora do Distrito Federal</u> e a <u>Corporação não proporcione a assistência</u> médica, hospitalar e domiciliar adequada nos locais onde residam",
+    "calculo": "<b>2%</b> sobre o sobre o soldo, quotas de soldo ou a quota-tronco da pensão militar",
+    "baseLegal": "Art. 33 e ss. da<a href='http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art33' target='_blank'>Lei 10.486/2002</a>",
+    "baseLegalLink": null
+  },
+  "fundo_saude_adicional": {
+    "rotulo": "FUNDO DE SAÚDE ADICIONAL",
+    "descricao": "Contribuição mensal adicional <b> por dependente</b> para a assistência médico-hospitalar, médico-domiciliar, odontológica, psicológica e social",
+    "calculo": "<table class=\"table table-striped\"> <thead> <tr> <th scope=\"col\">Posto/Graduação</th> <th scope=\"col\">Valor por dependente (PMDF)</th> <th scope=\"col\">Valor por dependente (CBMDF)</th> </tr> </thead> <tbody> <tr> <th scope=\"row\">Oficiais Superiores</th> <td>R$ 12,00</td> <td>R$ 18,00</td> </tr> <tr> <th scope=\"row\">Oficiais Intermediários e Subalternos</th> <td>R$ 10,00</td> <td>R$ 16,00</td> </tr> <tr> <th scope=\"row\">Aspirantes a Oficial</th> <td>R$ 9,00</td> <td>R$ 16,00</td> </tr> <tr> <th scope=\"row\">Subtenentes e Sargentos</th> <td>R$ 8,00</td> <td>R$ 14,00</td> </tr> <tr> <th scope=\"row\">Cabos e Soldados 1ª Classe</th> <td>R$ 6,00</td> <td>R$ 12,00</td> </tr> <tr> <th scope=\"row\">Cadetes Último Ano</th> <td>R$ 6,00</td> <td>R$ 8,00</td> </tr> <tr> <th scope=\"row\">Cadetes Demais Anos e Soldados 2ª Classe</th> <td>R$ 4,00</td> <td>R$ 8,00</td> </tr> </tbody> </table>",
+    "baseLegal": "Art. 33, § 2º da <a href='http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art33§2' target='_blank'>Lei 10.486/2002</a> c/c art. 4º, § 2º da Portaria 025/2006-CBMDF e art. 5º da Portaria 371/2003-PMDF",
+    "baseLegalLink": null
+  },
+  "reparacao_erario": {
+    "rotulo": "REP. ERARIO L.8112/90-10.486/02",
+    "descricao": "Descontos obrigatórios realizados em folha de pagamento com o fim de devolver ao erário valores <b>tributáveis</b> indevidamente recebidos",
+    "calculo": "10% sobre a remuneração (Decisão TCDF 4463/2004) ou pela mesma quantidade de parcelas quantas corresponderam aos pagamentos indevidos (Decisão TCDF 6806/2007)",
+    "baseLegal": "Art. 28, V da <a href='http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art28v' target='_blank'>Lei 10.486/2002</a> c/c <a href='https://etcdf.tc.df.gov.br/?a=documento&f=downloadPDF&iddocumento=106187' target='_blank'> Decisão TCDF 4463/2004</a> c/c <a href='https://etcdf.tc.df.gov.br/?a=documento&f=downloadPDF&iddocumento=128183' target='_blank'> Decisão TCDF 6806/2007</a>",
+    "baseLegalLink": null
+  },
+  "outros_descontos_dedutiveis": {
+    "rotulo": "OUTROS DESCONTOS DEDUTÍVEIS",
+    "descricao": "Descontos em folha que abatem a base de cálculo de Imposto de Renda. </br></br> <b>Exemplos:</b> Ressarcimento ao Fundo de Saúde por atendimento na rede credenciada, Planos de Saúde, Previdência Privada.",
+    "calculo": null,
+    "baseLegal": "Art. 52, da <a href='http://normas.receita.fazenda.gov.br/sijut2consulta/link.action?visao=anotado&idAto=57670#1459120' target='_blank'> Instrução Normativa 1500/2014 - RFB </a>",
+    "baseLegalLink": null
+  },
+  "outros_descontos_nao_dedutiveis": {
+    "rotulo": "OUTROS DESCONTOS NÃO DEDUTÍVEIS",
+    "descricao": "Demais descontos em folha. </br></br> <b>Exemplos:</b> Empréstimos, Caixas Beneficentes, Clubes etc.",
+    "calculo": null,
+    "baseLegal": null,
+    "baseLegalLink": null
+  },
+  "irrf": {
+    "rotulo": "IRRF - IMPOSTO DE RENDA RETIDO NA FONTE",
+    "descricao": "Tributo Federal recolhido sobre a remuneração",
+    "calculo": "Conforme <a href ='http://www26.receita.fazenda.gov.br/irpfsimulaliq/private/pages/simuladoraliquota.jsf' target='_blank'>Portal</a> da Receita Federal",
+    "baseLegal": "<a href='http://normas.receita.fazenda.gov.br/sijut2consulta/link.action?visao=anotado&idAto=57670#1459120' target='_blank'> Instrução Normativa 1500/2014 - RFB </a>",
+    "baseLegalLink": null
+  },
+  "remuneracao_total": {
+    "rotulo": "REMUNERAÇÃO",
+    "descricao": "Soma das seguintes parcelas: </br></br> <ul class=\"list-group\"> <li class=\"list-group-item\">SOLDO</li> <li class=\"list-group-item\">ADICIONAL DE POSTO OU GRADUAÇÃO</li> <li class=\"list-group-item\">ADICIONAL DE TEMPO DE SERVIÇO</li> <li class=\"list-group-item\">COMPLEMENTO DE SOLDO</li> <li class=\"list-group-item\">ADICIONAL DE OPERAÇÕES MILITARES</li> <li class=\"list-group-item\">GRATIFICAÇÃO DE REPRESENTAÇÃO MILITAR</li> <li class=\"list-group-item\">ADICIONAL DE CERTIFICAÇÃO PROFISSIONAL</li> <li class=\"list-group-item\">GCEF-GRAT. COND. ESP. FUN. MILITAR</li> <li class=\"list-group-item\">VPE - VANTAGEM PECUNIÁRIA ESPECIAL</li> <li class=\"list-group-item\">GRV - GRATIFICAÇÃO POR RISCO DE VIDA</li> <li class=\"list-group-item\">GFNE</li> <li class=\"list-group-item\">GRATIFICAÇÃO GDF</li> <li class=\"list-group-item\">PTTC - PRESTAÇÃO DE TAREFA POR TEMPO CERTO</li> <li class=\"list-group-item\">GSV - GRATIFICAÇÃO DE SERVIÇO VOLUNTÁRIO</li> </ul>",
+    "calculo": null,
+    "baseLegal": "Art. 1º da Lei 10.486/2002",
+    "baseLegalLink": "http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art1"
+  },
+  "direitos_pecuniarios": {
+    "rotulo": "DIREITOS PECUNIÁRIOS",
+    "descricao": "Soma das seguintes parcelas: </br></br> <ul class=\"list-group\"> <li class=\"list-group-item\">AUXILIO MORADIA</li> <li class=\"list-group-item\">ETAPA ALIMENTAÇÃO</li> <li class=\"list-group-item\">AUXÍLIO PRÉ ESCOLAR</li> </ul>",
+    "calculo": null,
+    "baseLegal": "Art. 2º da Lei 10.486/2002",
+    "baseLegalLink": "http://www.planalto.gov.br/ccivil_03/LEIS/2002/L10486.htm#art2"
+  },
+  "descontos_total": {
+    "rotulo": "DESCONTOS",
+    "descricao": null,
+    "calculo": null,
+    "baseLegal": null,
+    "baseLegalLink": null
+  },
+  "rendimento_liquido": {
+    "rotulo": "LÍQUIDO",
+    "descricao": "<b>REMUNERAÇÃO</b> + <b>DIREITOS PECUNIÁRIOS</b> - <b>DESCONTOS</b>",
+    "calculo": null,
+    "baseLegal": null,
+    "baseLegalLink": null
+  },
+  "decimo_terceiro": {
+    "rotulo": "GRATIFICAÇÃO DE NATAL (DÉCIMO TERCEIRO)",
+    "descricao": null,
+    "calculo": null,
+    "baseLegal": null,
+    "baseLegalLink": null
+  },
+  "ferias": {
+    "rotulo": "FÉRIAS",
+    "descricao": null,
+    "calculo": null,
+    "baseLegal": null,
+    "baseLegalLink": null
+  },
+  "auxilio_fardamento": {
+    "rotulo": "AUXÍLIO FARDAMENTO",
+    "descricao": null,
+    "calculo": null,
+    "baseLegal": null,
+    "baseLegalLink": null
+  },
+  "irrf_decimo_terceiro": {
+    "rotulo": "IRRF - DÉCIMO TERCEIRO",
+    "descricao": null,
+    "calculo": null,
+    "baseLegal": null,
+    "baseLegalLink": null
+  },
+  "irrf_ferias": {
+    "rotulo": "IRRF - FÉRIAS",
+    "descricao": null,
+    "calculo": null,
+    "baseLegal": null,
+    "baseLegalLink": null
+  },
+  "pa_decimo_terceiro": {
+    "rotulo": "PENSÃO ALIMENTÍCIA - DÉCIMO TERCEIRO",
+    "descricao": null,
+    "calculo": null,
+    "baseLegal": null,
+    "baseLegalLink": null
+  },
+  "pa_forma_calculo": "<table class=\"table table-striped\"> <thead> <tr> <th scope=\"col\">Tipo</th> <th scope=\"col\">Base de Cálculo</th> </tr> </thead> <tbody> <tr> <th scope=\"row\">ABATENDO DESCONTOS COMPULSÓRIOS E VERBAS INDENIZATÓRIAS</th> <td>(Remuneração) - (Contr. Pensão Militar) - (Imposto de Renda antes da Pensão) - (Rep. ao Erário)</td> </tr> <tr> <th scope=\"row\">ABATENDO APENAS DESCONTOS COMPULSÓRIOS</th> <td>(Remuneração) + (Direitos Pecuniários) - (Contr. Pensão Militar) - (Imposto de Renda antes da Pensão) - (Rep. ao Erário)</td> </tr> <tr> <th scope=\"row\">SEM ABATIMENTO DE DESCONTOS COMPULSÓRIOS OU VERBAS INDENIZATÓRIAS</th> <td>(Remuneração) + (Direitos Pecuniários)</td> </tr> <tr> <th scope=\"row\">SOBRE SALÁRIO MÍNIMO</th> <td>(Salário Mínimo Vigente)</td> </tr> </tbody> </table>"
+}

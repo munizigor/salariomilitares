@@ -1,0 +1,86 @@
+---
+import '@fontsource/ibm-plex-sans/400.css';
+import '@fontsource/ibm-plex-sans/500.css';
+import '@fontsource/ibm-plex-sans/600.css';
+import '@fontsource/ibm-plex-sans-condensed/600.css';
+import '@fontsource/ibm-plex-sans-condensed/700.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/600.css';
+import '../styles/global.css';
+import Consentimento from '../components/Consentimento.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Imagem de compartilhamento relativa à raiz do site. */
+  imagem?: string;
+}
+
+const { title, description, imagem = '/compartilhamento.png' } = Astro.props;
+const url = new URL(Astro.url.pathname, Astro.site);
+const imagemUrl = new URL(imagem, Astro.site);
+const caminho = Astro.url.pathname.replace(/\/$/, '') || '/';
+const links = [
+  { href: '/', texto: 'Salário' },
+  { href: '/sobre', texto: 'Sobre' },
+];
+const producao = import.meta.env.PROD;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={url} />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="militaresdf" />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imagemUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="google-site-verification" content="mw204L5t67rAZIESKy-hIYxF1AqOG9IWf9k_yecNaJ4" />
+    <Consentimento producao={producao} />
+  </head>
+  <body>
+    <header class="topo">
+      <div class="moldura">
+        <a class="marca" href="/">militares<span>df</span></a>
+        <nav class="nav" aria-label="Seções do site">
+          {
+            links.map((l) => (
+              <a href={l.href} aria-current={caminho === l.href ? 'page' : undefined}>
+                {l.texto}
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+    </header>
+
+    <main class="moldura">
+      <slot />
+    </main>
+
+    <footer class="rodape">
+      <div class="moldura">
+        <p>
+          Site independente, sem vínculo com a PMDF, o CBMDF ou o GDF. Os valores são estimativas e não
+          substituem o contracheque.
+        </p>
+        <nav aria-label="Institucional">
+          <a href="/sobre">Sobre</a>
+          <a href="/privacidade">Política de privacidade</a>
+          <a href="#" data-preferencias-cookies>Preferências de cookies</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

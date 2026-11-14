@@ -1,0 +1,102 @@
+---
+// Google Analytics e AdSense com o modo de consentimento do Google (LGPD).
+// Até o visitante aceitar, nada grava cookies de medição ou publicidade.
+// Fora da produção os scripts do Google não são carregados.
+interface Props {
+  producao: boolean;
+}
+const { producao } = Astro.props;
+const GA = 'G-VPCN76JFSY';
+const ADSENSE = 'ca-pub-6699075156846587';
+---
+
+<script is:inline define:vars={{ GA }}>
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () {
+    window.dataLayer.push(arguments);
+  };
+  var escolha = null;
+  try {
+    escolha = localStorage.getItem('consentimento_cookies');
+  } catch (e) {}
+  var estado = escolha === 'aceito' ? 'granted' : 'denied';
+  gtag('consent', 'default', {
+    ad_storage: estado,
+    ad_user_data: estado,
+    ad_personalization: estado,
+    analytics_storage: estado,
+  });
+  gtag('js', new Date());
+  gtag('config', GA);
+</script>
+{
+  producao && (
+    <>
+      <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA}`} />
+      <script
+        is:inline
+        async
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE}`}
+        crossorigin="anonymous"
+      />
+    </>
+  )
+}
+
+<script>
+  const CHAVE = 'consentimento_cookies';
+
+  function ler(): string | null {
+    try {
+      return localStorage.getItem(CHAVE);
+    } catch {
+      return null;
+    }
+  }
+
+  function aplicar(aceito: boolean) {
+    const estado = aceito ? 'granted' : 'denied';
+    (window as any).gtag?.('consent', 'update', {
+      ad_storage: estado,
+      ad_user_data: estado,
+      ad_personalization: estado,
+      analytics_storage: estado,
+    });
+  }
+
+  function mostrarAviso() {
+    if (document.getElementById('aviso-cookies')) return;
+    const aviso = document.createElement('div');
+    aviso.id = 'aviso-cookies';
+    aviso.className = 'cookies';
+    aviso.setAttribute('role', 'region');
+    aviso.setAttribute('aria-label', 'Aviso de cookies');
+    aviso.innerHTML = `
+      <div class="moldura">
+        <p>O site usa cookies do Google Analytics e do AdSense para contar visitas e mostrar os anúncios
+        que pagam a manutenção. Detalhes na <a href="/privacidade">política de privacidade</a>.</p>
+        <div class="botoes">
+          <button type="button" class="botao" data-escolha="recusado">Recusar</button>
+          <button type="button" class="botao principal" data-escolha="aceito">Aceitar</button>
+        </div>
+      </div>`;
+    aviso.addEventListener('click', (ev) => {
+      const escolha = (ev.target as HTMLElement).dataset.escolha;
+      if (!escolha) return;
+      try {
+        localStorage.setItem(CHAVE, escolha);
+      } catch {}
+      aplicar(escolha === 'aceito');
+      aviso.remove();
+    });
+    document.body.appendChild(aviso);
+  }
+
+  if (!ler()) mostrarAviso();
+  document.querySelectorAll('[data-preferencias-cookies]').forEach((el) =>
+    el.addEventListener('click', (ev) => {
+      ev.preventDefault();
+      mostrarAviso();
+    }),
+  );
+</script>

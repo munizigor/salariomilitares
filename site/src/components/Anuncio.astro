@@ -1,0 +1,38 @@
+---
+// Espaço de anúncio com altura reservada, para a página não pular quando o
+// anúncio carrega. Recebe o código do bloco de anúncio criado no AdSense
+// (data-ad-slot). Sem código, em produção não aparece nada: os anúncios
+// automáticos escolhem o lugar sozinhos. Em desenvolvimento mostra uma moldura
+// tracejada para enxergar onde o bloco vai ficar.
+interface Props {
+  bloco?: string;
+  altura?: number;
+}
+const { bloco, altura = 120 } = Astro.props;
+const producao = import.meta.env.PROD;
+const ADSENSE = 'ca-pub-6699075156846587';
+---
+
+{
+  bloco ? (
+    <aside class="anuncio" aria-label="Publicidade">
+      <span class="rotulo">Publicidade</span>
+      <ins
+        class="adsbygoogle espaco"
+        style={`display:block; min-height: ${altura}px`}
+        data-ad-client={ADSENSE}
+        data-ad-slot={bloco}
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      />
+      <script is:inline>(window.adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </aside>
+  ) : (
+    !producao && (
+      <aside class="anuncio" aria-label="Publicidade">
+        <span class="rotulo">Publicidade</span>
+        <div class="espaco" style={`min-height: ${altura}px`}>espaço reservado para anúncio</div>
+      </aside>
+    )
+  )
+}

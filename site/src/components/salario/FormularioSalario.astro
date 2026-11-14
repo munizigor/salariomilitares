@@ -1,0 +1,202 @@
+---
+import { NOME_POSTO, POSTOS, tabelasAtuais } from '../../lib/salario/tabelas';
+import { FORMAS_PENSAO_HTML } from '../../lib/salario/rubricas';
+
+const cargosGDF = Object.keys(tabelasAtuais().cargosGDF).filter((c) => c !== 'nao_recebe');
+const quantidades = Array.from({ length: 16 }, (_, i) => i);
+---
+
+<form class="formulario" id="form-salario" autocomplete="off">
+  <h2 class="so-leitor">Dados do militar</h2>
+
+  <div class="campo">
+    <label for="posto">Posto ou graduação</label>
+    <select id="posto" name="posto" required>
+      <option value="">Escolha</option>
+      {POSTOS.map((p) => <option value={p}>{NOME_POSTO[p]}</option>)}
+    </select>
+  </div>
+
+  <div class="campo">
+    <label for="corporacao">Corporação</label>
+    <select id="corporacao" name="corporacao" required>
+      <option value="">Escolha</option>
+      <option value="pmdf">PMDF</option>
+      <option value="cbmdf">CBMDF</option>
+    </select>
+  </div>
+
+  <div class="campo">
+    <label for="situacao">Situação</label>
+    <select id="situacao" name="situacao" required>
+      <option value="">Escolha</option>
+      <option value="ativo">Ativo</option>
+      <option value="inativo">Inativo</option>
+    </select>
+  </div>
+
+  <div class="campo">
+    <label for="auxMoradia">Auxílio-moradia</label>
+    <select id="auxMoradia" name="auxMoradia">
+      <option value="">Não recebe</option>
+      <option value="comDependente">Com dependente</option>
+      <option value="semDependente">Sem dependente</option>
+    </select>
+  </div>
+
+  <fieldset class="opcoes">
+    <legend>Cursos concluídos</legend>
+    <label><input type="checkbox" id="curso-10" name="cursos" value="10" /> Formação (CFSD, CFO, CHO)</label>
+    <label><input type="checkbox" id="curso-15" name="cursos" value="15" /> Especialização (CESEI, CMAUT, SCI…)</label>
+    <label><input type="checkbox" id="curso-20" name="cursos" value="20" /> Aperfeiçoamento (CAP, CAO)</label>
+    <label><input type="checkbox" id="curso-30" name="cursos" value="30" /> Altos estudos (CAEP, CAEO)</label>
+  </fieldset>
+
+  <div class="campo">
+    <label for="dependentesIR">Dependentes no imposto de renda</label>
+    <select id="dependentesIR" name="dependentesIR">
+      {quantidades.map((n) => <option value={n}>{n}</option>)}
+    </select>
+  </div>
+
+  <div class="campo">
+    <label for="dependentesFundoSaude">Dependentes no fundo de saúde</label>
+    <select id="dependentesFundoSaude" name="dependentesFundoSaude">
+      {quantidades.map((n) => <option value={n}>{n}</option>)}
+    </select>
+  </div>
+
+  <div class="campo">
+    <label for="preEscolar">Filhos com auxílio pré-escolar</label>
+    <select id="preEscolar" name="preEscolar">
+      {quantidades.map((n) => <option value={n}>{n}</option>)}
+    </select>
+    <span class="ajuda">Dependentes de até 5 anos, 11 meses e 29 dias.</span>
+  </div>
+
+  <div>
+    <details class="secao-form">
+      <summary>Gratificações e adicionais</summary>
+      <div class="corpo">
+        <div class="campo">
+          <label for="gfne">GFNE</label>
+          <select id="gfne" name="gfne">
+            <option value="">Não recebe</option>
+            <option value="1">I</option>
+            <option value="2">II</option>
+            <option value="3">III</option>
+            <option value="4">IV</option>
+            <option value="5">V</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="gratificacaoGDF">Cargo no GDF</label>
+          <select id="gratificacaoGDF" name="gratificacaoGDF">
+            <option value="">Não ocupa</option>
+            {cargosGDF.map((c) => <option value={c}>{c}</option>)}
+          </select>
+        </div>
+        <div class="campo">
+          <label for="horasServicoVoluntario">Horas de serviço voluntário no mês</label>
+          <input type="text" inputmode="numeric" id="horasServicoVoluntario" name="horasServicoVoluntario" />
+        </div>
+        <div class="campo">
+          <label for="anosATS">Anos para o adicional de tempo de serviço</label>
+          <input type="text" inputmode="numeric" id="anosATS" name="anosATS" />
+          <span class="ajuda">Anos de serviço militar, incluindo outras Forças, contados até 05/09/2001. Quem entrou depois deixa em branco.</span>
+        </div>
+        <div class="campo" data-so-inativo hidden>
+          <label for="pttc">Está no PTTC?</label>
+          <select id="pttc" name="pttc">
+            <option value="">Não</option>
+            <option value="sim">Sim</option>
+          </select>
+          <span class="ajuda">Militar da reserva que voltou a prestar tarefa por tempo certo.</span>
+        </div>
+        <div class="campo">
+          <label for="pensaoMilitarAdicional">Paga pensão militar adicional?</label>
+          <select id="pensaoMilitarAdicional" name="pensaoMilitarAdicional">
+            <option value="">Não</option>
+            <option value="sim">Sim</option>
+          </select>
+          <span class="ajuda">Para quem entrou até 29/12/2000 e manteve o direito de deixar pensão às filhas (Lei 3.765/1960).</span>
+        </div>
+      </div>
+    </details>
+
+    <details class="secao-form">
+      <summary>Pensão alimentícia</summary>
+      <div class="corpo">
+        <div class="campo">
+          <label for="percentualPensao">Percentual da pensão</label>
+          <input type="text" inputmode="decimal" id="percentualPensao" name="percentualPensao" placeholder="ex.: 20" />
+        </div>
+        <div class="campo">
+          <label for="tipoPensao">Sobre o que incide</label>
+          <select id="tipoPensao" name="tipoPensao">
+            <option value="liquido">Abatendo descontos obrigatórios e verbas indenizatórias</option>
+            <option value="bruto_com_indenizacoes">Abatendo só os descontos obrigatórios</option>
+            <option value="bruto">Sem abater descontos nem verbas indenizatórias</option>
+            <option value="sal_minimo">Sobre o salário mínimo</option>
+          </select>
+          <details class="ajuda">
+            <summary>Como cada forma é calculada</summary>
+            <div class="formas-pensao" set:html={FORMAS_PENSAO_HTML} />
+          </details>
+        </div>
+        <div class="campo">
+          <label for="preEscolarRevertido">Auxílios pré-escolares revertidos na pensão</label>
+          <select id="preEscolarRevertido" name="preEscolarRevertido">
+            {quantidades.map((n) => <option value={n}>{n}</option>)}
+          </select>
+        </div>
+      </div>
+    </details>
+
+    <details class="secao-form">
+      <summary>Outros descontos</summary>
+      <div class="corpo">
+        <div class="campo">
+          <label for="reparacaoErario">Reparação ao erário (R$)</label>
+          <input type="text" inputmode="decimal" id="reparacaoErario" name="reparacaoErario" />
+          <span class="ajuda">Devoluções descontadas em folha, que aparecem no contracheque como REP.ERARIO.</span>
+        </div>
+        <div class="campo">
+          <label for="descontosDedutiveis">Descontos que abatem o imposto (R$)</label>
+          <input type="text" inputmode="decimal" id="descontosDedutiveis" name="descontosDedutiveis" />
+          <span class="ajuda">Previdência privada, plano de saúde, ressarcimento ao fundo de saúde.</span>
+        </div>
+        <div class="campo">
+          <label for="descontosNaoDedutiveis">Outros descontos (R$)</label>
+          <input type="text" inputmode="decimal" id="descontosNaoDedutiveis" name="descontosNaoDedutiveis" />
+          <span class="ajuda">Empréstimos, clubes, caixas beneficentes.</span>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <button type="reset" class="botao">Limpar</button>
+</form>
+
+<style>
+  .formas-pensao :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-top: 6px;
+  }
+  .formas-pensao :global(th),
+  .formas-pensao :global(td) {
+    text-align: left;
+    vertical-align: top;
+    padding: 4px 6px;
+    border-bottom: 1px dotted var(--linha);
+  }
+  details.ajuda > summary {
+    cursor: pointer;
+    color: var(--caneta);
+  }
+  .formulario > .botao {
+    justify-self: start;
+  }
+</style>
