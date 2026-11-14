@@ -1,8 +1,10 @@
 // Cálculo de diárias nacionais e ajuda de custo.
 //
-// Porte fiel das funções do sisdiarias (calc_datas, diarias, ajudadecusto).
-// As regras de período, inclusive o salto entre 60 e 61 dias, foram mantidas
-// como estão no sistema antigo; tests/diarias.test.ts compara com ele.
+// Porte fiel das funções do sisdiarias (calc_datas, diarias, ajudadecusto);
+// tests/diarias.test.ts compara com ele.
+//
+// O salto entre 60 dias (59,5 diárias) e 61 dias (1 diária) é intencional:
+// acima de 60 dias, os 60 primeiros são compensados pela ajuda de custo.
 
 import tabela from './tabelas/decreto-12324-2024.json';
 import { truncarCentavos } from '../salario/calculo';
