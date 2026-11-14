@@ -5,17 +5,18 @@ publicado: o site no ar continua sendo o `index.html` da raiz do repositório.
 
 ## Publicação
 
-O site vai para o Cloudflare Pages. Configuração do projeto:
+O site é publicado no Cloudflare como Worker com arquivos estáticos
+(`wrangler.jsonc`), sem script de Worker. No painel: Workers & Pages >
+Create application > Workers > importar o repositório.
 
 | Campo | Valor |
 | --- | --- |
-| Pasta raiz | `site` |
 | Comando de build | `npm run build` |
-| Pasta de saída | `dist` |
+| Comando de deploy | `npx wrangler deploy` |
 
-Cada push gera um endereço de teste em `.pages.dev`. Os redirecionamentos
-permanentes ficam em `public/_redirects`. A pasta `migracao/` não é publicada:
-guarda o conteúdo do repositório sisdiarias recriado no lançamento.
+Os redirecionamentos permanentes ficam em `public/_redirects`. A pasta
+`migracao/` não é publicada: guarda o conteúdo do repositório sisdiarias
+recriado no lançamento.
 
 ## Comandos
 

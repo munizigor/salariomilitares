@@ -1,0 +1,13 @@
+// Configuração do Cloudflare (Workers com arquivos estáticos).
+// Não há script de Worker: o Cloudflare serve só o que o Astro gera em dist/.
+{
+  "name": "militaresdf",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./dist",
+    // Serve 404.html, com status 404, para endereços que não existem.
+    "not_found_handling": "404-page",
+    // Serve sobre.html em /sobre e leva /sobre.html para /sobre.
+    "html_handling": "auto-trailing-slash"
+  }
+}
