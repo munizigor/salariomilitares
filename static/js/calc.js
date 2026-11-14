@@ -500,67 +500,77 @@ function mostrar_campos(event, classe) {
 }
 
 function imprimir() {
-  style = `
-		<meta charset="utf-8" >
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-		<link rel="stylesheet" href="static/css/base.css">
-`;
+  function textoSelecionado(id) {
+    var el = document.getElementById(id);
+    if (!el || el.selectedIndex < 0) return '';
+    return el.options[el.selectedIndex].text.trim();
+  }
 
-  var cabecalho = `
-</br>
-<div class="form-row">
-<div class="form-group col-md-2">
-	<img src="static/img/cbm.png" alt="Brasao_CBMDF" height="160" width="120">
-</div>
-<div class="form-group col-md-8 my-auto" >
-<h3><b>CÁLCULO SALARIAL</b></h3>
-</div>
-<div class="form-group col-md-2">
-	<img src="static/img/pm.png" alt="Brasao_PMDF" height="160" width="120">
-</div>
-</div>
-</br>
-<div class="dropdown-divider"></div>
-</br>
-</br>
-`;
+  var dados = [
+    ['Posto/Graduação', textoSelecionado('posto')],
+    ['Corporação', textoSelecionado('corporacao')],
+    ['Situação', textoSelecionado('situacao_funcional')],
+  ]
+    .filter(function (d) { return d[1]; })
+    .map(function (d) { return '<span><b>' + d[0] + ':</b> ' + d[1] + '</span>'; })
+    .join('');
 
-  var dados = `
-</br>
-<div class="form-row">
-<div class="form-group col-md-2">
-	<img src="static/img/cbm.png" alt="Brasao_CBMDF" height="160" width="120">
-</div>
-<div class="form-group col-md-8 my-auto" >
-<h3><b>CÁLCULO SALARIAL</b></h3>
-</div>
-<div class="form-group col-md-2">
-	<img src="static/img/pm.png" alt="Brasao_PMDF" height="160" width="120">
-</div>
-</div>
-</br>
-<div class="dropdown-divider"></div>
-</br>
-</br>
-`;
+  var hoje = new Date().toLocaleDateString('pt-BR');
+  var tabela = document.getElementById('salario').cloneNode(true);
+  var legenda = tabela.querySelector('caption');
+  if (legenda) legenda.remove();
 
-  var mywindow = window.open('', 'PRINT', 'height=400,width=800');
-  mywindow.document.write(
-    '<html><head><title>Remuneração dos Militares do Distrito Federal</title>'
-  );
-  mywindow.document.write(style);
-  mywindow.document.write('</head><body>');
-  mywindow.document.write(`<div class="container">`);
-  mywindow.document.write(cabecalho);
-  h = document.getElementById('salario').outerHTML;
-  mywindow.document.write(h);
-  mywindow.document.write(
-    '<p style="font-size:0.75rem;color:#64748b;margin-top:1rem">' +
-      'Simulação gerada em militaresdf.com.br, site independente e sem vínculo ' +
-      'com a PMDF, o CBMDF ou o GDF. Valores estimados, sem caráter oficial.</p>'
-  );
-  mywindow.document.write('</div>');
-  mywindow.document.write('</body></html>');
+  var html = `<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Simulação de remuneração - militaresdf.com.br</title>
+<style>
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; box-sizing: border-box; }
+  @page { size: A4; margin: 12mm; }
+  body { margin: 0; background: #fff; color: #18181b;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; font-size: 11px; }
+  .pdf { max-width: 760px; margin: 0 auto; }
+  .pdf-cabecalho { border-bottom: 2px solid #18181b; padding-bottom: 10px; margin-bottom: 14px; }
+  .pdf-cabecalho h1 { font-size: 18px; font-weight: 700; margin: 0 0 6px; }
+  .pdf-dados { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 11px; color: #3f3f46; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { border: 1px solid #e4e4e7; padding: 2px 8px; line-height: 1.35; }
+  td:first-child { text-align: left; }
+  td:not(:first-child), thead th { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  thead th { background: #eeeeef; font-weight: 700; }
+  tbody tr:nth-of-type(odd) { background: #f8fafc; }
+  tr { page-break-inside: avoid; }
+  .table-section-header { background: #18181b !important; color: #fff; text-align: center !important;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.06em; }
+  .row-remuneracao { background: #eaf7ef !important; color: #1a7a4a; font-weight: 700; }
+  .row-pecuniarios { background: #fffbeb !important; color: #92400e; font-weight: 600; }
+  .row-descontos { background: #fef2f2 !important; color: #b91c1c; font-weight: 700; }
+  .row-liquido { background: #1a7a4a !important; color: #fff; font-weight: 700; font-size: 12px; }
+  .pdf-rodape { margin-top: 14px; font-size: 10px; color: #64748b; line-height: 1.4; }
+</style>
+</head>
+<body>
+<div class="pdf">
+  <header class="pdf-cabecalho">
+    <h1>Simulação de remuneração</h1>
+    <div class="pdf-dados">${dados}<span><b>Gerado em:</b> ${hoje}</span></div>
+  </header>
+  ${tabela.outerHTML}
+  <p class="pdf-rodape">
+    Simulação gerada em militaresdf.com.br, site independente e sem vínculo
+    com a PMDF, o CBMDF ou o GDF. Valores estimados, sem caráter oficial.
+    Confira sempre com a sua unidade de pagamento.
+  </p>
+</div>
+</body>
+</html>`;
+
+  var mywindow = window.open('', 'PRINT', 'height=600,width=820');
+  if (!mywindow) return false;
+  mywindow.document.open();
+  mywindow.document.write(html);
+  mywindow.document.close();
   mywindow.focus();
   setTimeout(function () {
     mywindow.print();
