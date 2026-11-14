@@ -1,0 +1,359 @@
+{
+  "competencia": "2026-01",
+  "salarioMinimo": 1621,
+  "aliquotaPensaoMilitar": 0.105,
+  "aliquotaPensaoMilitarAdicional": 0.015,
+  "aliquotaFundoSaude": 0.02,
+  "etapaAlimentacao": 850,
+  "gcef": 406.89,
+  "grv": 1000,
+  "auxilioPreEscolar": 526.64,
+  "cotaPreEscolar": 26.33,
+  "valorHoraServicoVoluntario": 95,
+  "percentualPTTC": 0.3,
+  "gfne": {
+    "0": 0,
+    "1": 0.3967,
+    "2": 0.3085,
+    "3": 0.2204,
+    "4": 0.1774,
+    "5": 0.0881
+  },
+  "cargosGDF": {
+    "nao_recebe": {
+      "representacao": 0,
+      "remuneracao": 0
+    },
+    "CPE-01": {
+      "representacao": 13930,
+      "remuneracao": 17413
+    },
+    "CPE-02": {
+      "representacao": 12010,
+      "remuneracao": 15013
+    },
+    "CPE-03": {
+      "representacao": 10355,
+      "remuneracao": 12944
+    },
+    "CPE-04": {
+      "representacao": 8925,
+      "remuneracao": 11156
+    },
+    "CPE-05": {
+      "representacao": 6510,
+      "remuneracao": 8138
+    },
+    "CPE-06": {
+      "representacao": 5860,
+      "remuneracao": 7325
+    },
+    "CPE-07": {
+      "representacao": 4685,
+      "remuneracao": 5856
+    },
+    "CPE-08": {
+      "representacao": 3915,
+      "remuneracao": 4894
+    },
+    "CPC-08": {
+      "representacao": 2940,
+      "remuneracao": 3675
+    },
+    "CPC-07": {
+      "representacao": 2555,
+      "remuneracao": 3194
+    },
+    "CPC-06": {
+      "representacao": 2245,
+      "remuneracao": 2806
+    },
+    "CPC-05": {
+      "representacao": 1930,
+      "remuneracao": 2413
+    },
+    "CPC-04": {
+      "representacao": 1620,
+      "remuneracao": 2025
+    },
+    "CPC-03": {
+      "representacao": 1450,
+      "remuneracao": 1813
+    },
+    "CPC-02": {
+      "representacao": 1280,
+      "remuneracao": 1600
+    },
+    "CPC-01": {
+      "representacao": 1110,
+      "remuneracao": 1388
+    }
+  },
+  "irrf": {
+    "deducaoPorDependente": 189.59,
+    "faixas": [
+      {
+        "acimaDe": 2428.8,
+        "aliquota": 0.075,
+        "deducao": 182.16
+      },
+      {
+        "acimaDe": 2826.65,
+        "aliquota": 0.15,
+        "deducao": 394.16
+      },
+      {
+        "acimaDe": 3751.05,
+        "aliquota": 0.225,
+        "deducao": 675.49
+      },
+      {
+        "acimaDe": 4664.68,
+        "aliquota": 0.275,
+        "deducao": 908.73
+      }
+    ]
+  },
+  "postos": {
+    "CORONEL": {
+      "soldo": 4800,
+      "adicionalPostoGraduacao": 3840,
+      "adicionalOperacoesMilitares": 609.6,
+      "gratificacaoRepresentacao": 48,
+      "vpe": 15452.11,
+      "auxilioMoradia": {
+        "comDependente": 4475.61,
+        "semDependente": 1491.87
+      },
+      "fundoSaudePorDependente": {
+        "pmdf": 12,
+        "cbmdf": 18
+      }
+    },
+    "TENENTE-CORONEL": {
+      "soldo": 4608,
+      "adicionalPostoGraduacao": 3686.4,
+      "adicionalOperacoesMilitares": 609.6,
+      "gratificacaoRepresentacao": 46.08,
+      "vpe": 13533.03,
+      "auxilioMoradia": {
+        "comDependente": 4318.48,
+        "semDependente": 1439.49
+      },
+      "fundoSaudePorDependente": {
+        "pmdf": 12,
+        "cbmdf": 18
+      }
+    },
+    "MAJOR": {
+      "soldo": 4401.6,
+      "adicionalPostoGraduacao": 3521.28,
+      "adicionalOperacoesMilitares": 609.6,
+      "gratificacaoRepresentacao": 44.01,
+      "vpe": 11611.03,
+      "auxilioMoradia": {
+        "comDependente": 4048.76,
+        "semDependente": 1349.58
+      },
+      "fundoSaudePorDependente": {
+        "pmdf": 12,
+        "cbmdf": 18
+      }
+    },
+    "CAPITAO": {
+      "soldo": 3657.6,
+      "adicionalPostoGraduacao": 2743.2,
+      "adicionalOperacoesMilitares": 609.6,
+      "gratificacaoRepresentacao": 36.57,
+      "vpe": 10170.43,
+      "auxilioMoradia": {
+        "comDependente": 3249.19,
+        "semDependente": 1083.06
+      },
+      "fundoSaudePorDependente": {
+        "pmdf": 10,
+        "cbmdf": 16
+      }
+    },
+    "PRIMEIRO TENENTE": {
+      "soldo": 3379.2,
+      "adicionalPostoGraduacao": 2365.44,
+      "adicionalOperacoesMilitares": 609.6,
+      "gratificacaoRepresentacao": 33.79,
+      "vpe": 10093.99,
+      "auxilioMoradia": {
+        "comDependente": 2840.31,
+        "semDependente": 946.77
+      },
+      "fundoSaudePorDependente": {
+        "pmdf": 10,
+        "cbmdf": 16
+      }
+    },
+    "SEGUNDO TENENTE": {
+      "soldo": 3124.8,
+      "adicionalPostoGraduacao": 2187.36,
+      "adicionalOperacoesMilitares": 609.6,
+      "gratificacaoRepresentacao": 31.24,
+      "vpe": 9873.7,
+      "auxilioMoradia": {
+        "comDependente": 2677.55,
+        "semDependente": 892.51
+      },
+      "fundoSaudePorDependente": {
+        "pmdf": 10,
+        "cbmdf": 16
+      }
+    },
+    "ASPIRANTE": {
+      "soldo": 2692.8,
+      "adicionalPostoGraduacao": 1884.96,
+      "adicionalOperacoesMilitares": 609.6,
+      "gratificacaoRepresentacao": 26.92,
+      "vpe": 7469.25,
+      "auxilioMoradia": {
+        "comDependente": 2254.56,
+        "semDependente": 751.52
+      },
+      "fundoSaudePorDependente": {
+        "pmdf": 9,
+        "cbmdf": 16
+      }
+    },
+    "SUBTENENTE": {
+      "soldo": 2424,
+      "adicionalPostoGraduacao": 1575.6,
+      "adicionalOperacoesMilitares": 609.6,
+      "gratificacaoRepresentacao": 24.24,
+      "vpe": 10353.04,
+      "auxilioMoradia": {
+        "comDependente": 2415.01,
+        "semDependente": 805
+      },
+      "fundoSaudePorDependente": {
+        "pmdf": 8,
+        "cbmdf": 14
+      }
+    },
+    "PRIMEIRO SARGENTO": {
+      "soldo": 2112,
+      "adicionalPostoGraduacao": 1372.8,
+      "adicionalOperacoesMilitares": 609.6,
+      "gratificacaoRepresentacao": 21.12,
+      "vpe": 7161.85,
+      "auxilioMoradia": {
+        "comDependente": 2192.43,
+        "semDependente": 730.8
+      },
+      "fundoSaudePorDependente": {
+        "pmdf": 8,
+        "cbmdf": 14
+      }
+    },
+    "SEGUNDO SARGENTO": {
+      "soldo": 1804.8,
+      "adicionalPostoGraduacao": 1173.12,
+      "adicionalOperacoesMilitares": 609.6,
+      "gratificacaoRepresentacao": 18.04,
+      "vpe": 6240.41,
+      "auxilioMoradia": {
+        "comDependente": 1884.82,
+        "semDependente": 628.28
+      },
+      "fundoSaudePorDependente": {
+        "pmdf": 8,
+        "cbmdf": 14
+      }
+    },
+    "TERCEIRO SARGENTO": {
+      "soldo": 1608,
+      "adicionalPostoGraduacao": 1045.2,
+      "adicionalOperacoesMilitares": 609.6,
+      "gratificacaoRepresentacao": 16.08,
+      "vpe": 5905.03,
+      "auxilioMoradia": {
+        "comDependente": 1738.68,
+        "semDependente": 579.55
+      },
+      "fundoSaudePorDependente": {
+        "pmdf": 8,
+        "cbmdf": 14
+      }
+    },
+    "CABO": {
+      "soldo": 1204.8,
+      "adicionalPostoGraduacao": 722.88,
+      "adicionalOperacoesMilitares": 609.6,
+      "gratificacaoRepresentacao": 12.04,
+      "vpe": 5343.21,
+      "auxilioMoradia": {
+        "comDependente": 1439.44,
+        "semDependente": 479.81
+      },
+      "fundoSaudePorDependente": {
+        "pmdf": 6,
+        "cbmdf": 12
+      }
+    },
+    "SOLDADO PRIMEIRA CLASSE": {
+      "soldo": 1060.8,
+      "adicionalPostoGraduacao": 636.48,
+      "adicionalOperacoesMilitares": 609.6,
+      "gratificacaoRepresentacao": 10.6,
+      "vpe": 5110.76,
+      "auxilioMoradia": {
+        "comDependente": 1362.05,
+        "semDependente": 454.01
+      },
+      "fundoSaudePorDependente": {
+        "pmdf": 6,
+        "cbmdf": 12
+      }
+    },
+    "SOLDADO SEGUNDA CLASSE": {
+      "soldo": 753.6,
+      "adicionalPostoGraduacao": 376.8,
+      "adicionalOperacoesMilitares": 609.6,
+      "gratificacaoRepresentacao": 7.53,
+      "vpe": 3647.61,
+      "auxilioMoradia": {
+        "comDependente": 1057.47,
+        "semDependente": 352.49
+      },
+      "fundoSaudePorDependente": {
+        "pmdf": 4,
+        "cbmdf": 8
+      }
+    },
+    "CADETE ULTIMO ANO": {
+      "soldo": 1060.8,
+      "adicionalPostoGraduacao": 530.4,
+      "adicionalOperacoesMilitares": 609.6,
+      "gratificacaoRepresentacao": 10.6,
+      "vpe": 4667.88,
+      "auxilioMoradia": {
+        "comDependente": 1277.86,
+        "semDependente": 425.95
+      },
+      "fundoSaudePorDependente": {
+        "pmdf": 6,
+        "cbmdf": 8
+      }
+    },
+    "CADETE DEMAIS ANOS": {
+      "soldo": 753.6,
+      "adicionalPostoGraduacao": 376.8,
+      "adicionalOperacoesMilitares": 609.6,
+      "gratificacaoRepresentacao": 7.53,
+      "vpe": 3647.61,
+      "auxilioMoradia": {
+        "comDependente": 1057.47,
+        "semDependente": 352.49
+      },
+      "fundoSaudePorDependente": {
+        "pmdf": 4,
+        "cbmdf": 8
+      }
+    }
+  }
+}
