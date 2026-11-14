@@ -22,6 +22,7 @@ const imagemUrl = new URL(imagem, Astro.site);
 const caminho = Astro.url.pathname.replace(/\/$/, '') || '/';
 const links = [
   { href: '/', texto: 'Salário' },
+  { href: '/diarias', texto: 'Diárias' },
   { href: '/sobre', texto: 'Sobre' },
 ];
 const producao = import.meta.env.PROD;

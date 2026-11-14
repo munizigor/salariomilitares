@@ -1,0 +1,276 @@
+---
+import Base from '../layouts/Base.astro';
+import Anuncio from '../components/Anuncio.astro';
+import { DESTINOS, TABELA_DIARIAS } from '../lib/diarias/calculo';
+import { NOME_POSTO, POSTOS } from '../lib/salario/tabelas';
+---
+
+<Base
+  title="Calculadora de diárias e ajuda de custo do CBMDF"
+  description="Simule diárias nacionais e ajuda de custo de bombeiros militares do DF pelo Decreto 12.324/2024: quantidade de diárias, desconto do auxílio-alimentação e ajuda de custo de ida e volta."
+>
+  <div class="abertura">
+    <h1>Calculadora de diárias e ajuda de custo</h1>
+    <p>Diárias nacionais pelo {TABELA_DIARIAS.norma}.</p>
+  </div>
+
+  <div class="so-impressao">
+    <h1>Simulação de diárias e ajuda de custo</h1>
+    <p>militaresdf.com.br · gerado em <span data-data-impressao></span></p>
+  </div>
+
+  <div class="calculadora">
+    <form class="formulario" id="form-diarias" autocomplete="off">
+      <div class="campo">
+        <label for="destino">Destino</label>
+        <select id="destino" name="destino" required>
+          <option value="">Escolha</option>
+          {DESTINOS.map((d) => <option value={d}>{TABELA_DIARIAS.destinos[d].nome}</option>)}
+        </select>
+      </div>
+      <div class="campo">
+        <label for="posto">Posto ou graduação</label>
+        <select id="posto" name="posto" required>
+          <option value="">Escolha</option>
+          <option value="CEL CMT-GERAL">Coronel comandante-geral</option>
+          {POSTOS.map((p) => <option value={p}>{NOME_POSTO[p]}</option>)}
+        </select>
+      </div>
+      <div class="campo">
+        <label for="saida">Saída da sede</label>
+        <input type="date" id="saida" name="saida" required />
+      </div>
+      <div class="campo">
+        <label for="retorno">Chegada na sede</label>
+        <input type="date" id="retorno" name="retorno" required />
+        <span class="ajuda" data-erro-datas hidden>A chegada não pode ser antes da saída.</span>
+      </div>
+      <div class="campo">
+        <label for="missao">Missão</label>
+        <select id="missao" name="missao" disabled>
+          <option value="">Automática</option>
+          <option value="eventual">Eventual</option>
+          <option value="nao-eventual">Não eventual</option>
+        </select>
+        <span class="ajuda">Abaixo de 30 dias a missão é sempre eventual. A partir de 30 dias você pode mudar a classificação.</span>
+      </div>
+
+      <div data-so-ajuda hidden>
+        <fieldset class="opcoes">
+          <legend>Cursos concluídos</legend>
+          <label><input type="checkbox" id="curso-10" name="cursos" value="10" /> Formação (CFSD, CFO, CHO)</label>
+          <label><input type="checkbox" id="curso-15" name="cursos" value="15" /> Especialização</label>
+          <label><input type="checkbox" id="curso-20" name="cursos" value="20" /> Aperfeiçoamento (CAP, CAO)</label>
+          <label><input type="checkbox" id="curso-30" name="cursos" value="30" /> Altos estudos (CAEP, CAEO)</label>
+        </fieldset>
+        <div class="campo" style="margin-top: 14px">
+          <label for="anosATS">Anos para o adicional de tempo de serviço</label>
+          <input type="text" inputmode="numeric" id="anosATS" name="anosATS" />
+          <span class="ajuda">Contados até 05/09/2001. Quem entrou depois deixa em branco.</span>
+        </div>
+        <div class="campo" style="margin-top: 14px">
+          <label for="dependente">Vai levar dependente?</label>
+          <select id="dependente" name="dependente">
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+          </select>
+          <span class="ajuda">Sem dependente, a ajuda de custo cai pela metade.</span>
+        </div>
+      </div>
+
+      <button type="reset" class="botao">Limpar</button>
+    </form>
+
+    <div class="resultado">
+      <section class="folha" id="folha" aria-label="Resultado da simulação" aria-live="polite">
+        <div class="folha-cabeca">
+          <div><span class="rotulo">Destino</span><b data-cabeca="destino">–</b></div>
+          <div><span class="rotulo">Período</span><b class="num" data-cabeca="periodo">–</b></div>
+          <div><span class="rotulo">Dias fora</span><b class="num" data-cabeca="dias">–</b></div>
+          <div><span class="rotulo">Missão</span><b data-cabeca="missao">–</b></div>
+        </div>
+        <p class="folha-vazia" data-vazio>Escolha destino, posto e as datas de saída e chegada para ver a simulação.</p>
+        <div data-conteudo hidden>
+          <div class="folha-rolagem">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Rubrica</th>
+                  <th scope="col">Ref.</th>
+                  <th scope="col" class="valor">Vantagens</th>
+                  <th scope="col" class="valor">Descontos</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-linha="diarias">
+                  <td>Diárias</td><td class="ref" data-ref></td><td class="valor credito" data-credito></td><td class="valor debito"></td>
+                </tr>
+                <tr data-linha="alimentacao">
+                  <td>Desconto do auxílio-alimentação</td><td class="ref" data-ref></td><td class="valor credito"></td><td class="valor debito" data-debito></td>
+                </tr>
+                <tr data-linha="ida">
+                  <td>Ajuda de custo, ida</td><td class="ref" data-ref></td><td class="valor credito" data-credito></td><td class="valor debito"></td>
+                </tr>
+                <tr data-linha="volta">
+                  <td>Ajuda de custo, volta</td><td class="ref" data-ref></td><td class="valor credito" data-credito></td><td class="valor debito"></td>
+                </tr>
+                <tr class="totais">
+                  <td>Totais</td><td></td><td class="valor credito" data-total="vantagens"></td><td class="valor debito" data-total="descontos"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="folha-pe">
+            <div class="resumo">
+              <span>Remuneração base da ajuda de custo</span><span data-total="base"></span>
+            </div>
+            <div class="liquido">
+              <span class="rotulo">Total a receber</span>
+              <b data-total="liquido">R$ 0,00</b>
+            </div>
+          </div>
+          <p class="folha-nota">
+            Simulação pelo {TABELA_DIARIAS.norma}. Site independente, sem vínculo com o CBMDF; confira sempre com o setor
+            de pagamento.
+          </p>
+        </div>
+      </section>
+      <div class="acoes" data-conteudo hidden>
+        <button type="button" class="botao" id="imprimir">Imprimir ou salvar PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <Anuncio />
+
+  <article class="texto">
+    <h2>Como a simulação funciona</h2>
+    <p>
+      Os dias fora contam do dia da saída ao dia da chegada, os dois incluídos. Em missões de até 60 dias, o último dia
+      vale meia diária. Cada diária desconta 1/30 do auxílio-alimentação, já que nesses dias ele é coberto pela diária.
+    </p>
+    <h3>Missão eventual e não eventual</h3>
+    <p>
+      Pela Decisão Ordinária TCDF 4663/2009, a missão eventual dura menos de 30 dias e não muda o domicílio do militar:
+      dá direito a diárias, mas não a ajuda de custo. A não eventual dura 30 dias ou mais e muda o domicílio: dá direito a
+      ajuda de custo e ao transporte de bagagem, veículo e dependentes.
+    </p>
+    <p>
+      Entre 30 e 60 dias, a missão pode ser classificada de um jeito ou de outro, mas diárias e ajuda de custo nunca são
+      pagas juntas. Acima de 60 dias, as duas só se somam quando a missão é eventual.
+    </p>
+    <h3>Ajuda de custo</h3>
+    <p>
+      Cada ajuda de custo vale uma remuneração: soldo, adicional de posto ou graduação, adicional de operações
+      militares, gratificação de representação, certificação profissional, tempo de serviço, VPE, GCEF e GRV. A
+      quantidade de ida e de volta depende da duração. Quem viaja sem dependente recebe metade.
+    </p>
+    <p>
+      <a href={TABELA_DIARIAS.normaLink} rel="noopener">{TABELA_DIARIAS.norma}</a>
+    </p>
+  </article>
+</Base>
+
+<script>
+  import { calcularAjudaCusto, calcularDiarias, calcularPeriodo, TABELA_DIARIAS, type Destino, type PostoDiaria } from '../lib/diarias/calculo';
+  import type { Curso } from '../lib/salario/calculo';
+  import { formatarReais, lerDecimal } from '../lib/salario/formulario';
+  import { tabelasAtuais } from '../lib/salario/tabelas';
+
+  const CHAVE = 'militaresdf:diarias';
+  const salario = tabelasAtuais();
+  const form = document.getElementById('form-diarias') as HTMLFormElement;
+  const $ = <T extends HTMLElement = HTMLElement>(sel: string) => document.querySelector<T>(sel)!;
+  const missao = $<HTMLSelectElement>('#missao');
+  const dataBr = (iso: string) => iso.split('-').reverse().join('/');
+  const qtd = (n: number) => n.toLocaleString('pt-BR');
+
+  function linha(nome: string, valor: number, ref: string) {
+    const tr = $(`[data-linha="${nome}"]`);
+    tr.hidden = valor < 0.005;
+    const alvo = tr.querySelector<HTMLElement>('[data-credito]') ?? tr.querySelector<HTMLElement>('[data-debito]')!;
+    alvo.textContent = formatarReais(valor);
+    tr.querySelector<HTMLElement>('[data-ref]')!.textContent = ref;
+  }
+
+  function atualizar() {
+    const d = new FormData(form);
+    const destino = String(d.get('destino') ?? '') as Destino | '';
+    const posto = String(d.get('posto') ?? '') as PostoDiaria | '';
+    const saida = String(d.get('saida') ?? '');
+    const retorno = String(d.get('retorno') ?? '');
+    const escolha = String(d.get('missao') ?? '');
+    salvar();
+
+    const erroDatas = !!saida && !!retorno && retorno < saida;
+    $('[data-erro-datas]').hidden = !erroDatas;
+    const periodo = saida && retorno ? calcularPeriodo(saida, retorno, escolha ? escolha === 'eventual' : null) : null;
+    missao.disabled = !periodo?.missaoEditavel;
+    if (periodo && !periodo.missaoEditavel) missao.value = '';
+
+    const pronto = !!(destino && posto && periodo);
+    $('[data-vazio]').hidden = pronto;
+    document.querySelectorAll<HTMLElement>('[data-conteudo]').forEach((b) => (b.hidden = !pronto));
+    $('[data-cabeca="destino"]').textContent = destino ? TABELA_DIARIAS.destinos[destino].nome : '–';
+    $('[data-cabeca="periodo"]').textContent = periodo ? `${dataBr(saida)} a ${dataBr(retorno)}` : '–';
+    $('[data-cabeca="dias"]').textContent = periodo ? String(periodo.dias) : '–';
+    $('[data-cabeca="missao"]').textContent = periodo ? (periodo.missaoEventual ? 'Eventual' : 'Não eventual') : '–';
+
+    const temAjuda = !!periodo && periodo.ajudaCustoIda + periodo.ajudaCustoVolta > 0;
+    $('[data-so-ajuda]').hidden = !temAjuda;
+    if (!pronto || !destino || !posto || !periodo) return;
+
+    const di = calcularDiarias(destino, posto, periodo.quantidadeDiarias, salario.etapaAlimentacao);
+    const cursos = d.getAll('cursos').map(Number) as Curso[];
+    const ajuda = calcularAjudaCusto(
+      posto, cursos, lerDecimal(String(d.get('anosATS') ?? '')),
+      periodo.ajudaCustoIda, periodo.ajudaCustoVolta, d.get('dependente') !== 'nao', salario,
+    );
+
+    linha('diarias', di.bruto, periodo.quantidadeDiarias ? `${qtd(periodo.quantidadeDiarias)} × ${formatarReais(di.valorDiaria)}` : '');
+    linha('alimentacao', di.descontoAlimentacao, periodo.quantidadeDiarias ? `${qtd(periodo.quantidadeDiarias)}/30` : '');
+    linha('ida', ajuda.ida, `${periodo.ajudaCustoIda}×`);
+    linha('volta', ajuda.volta, `${periodo.ajudaCustoVolta}×`);
+    const vantagens = di.bruto + ajuda.total;
+    $('[data-total="vantagens"]').textContent = formatarReais(vantagens);
+    $('[data-total="descontos"]').textContent = formatarReais(di.descontoAlimentacao);
+    $('[data-total="base"]').textContent = temAjuda ? formatarReais(ajuda.remuneracaoBase) : '–';
+    $('[data-total="liquido"]').textContent = `R$ ${formatarReais(vantagens - di.descontoAlimentacao)}`;
+  }
+
+  function salvar() {
+    try {
+      const d = new FormData(form);
+      const campos: Record<string, string | string[]> = {};
+      for (const nome of new Set(d.keys())) campos[nome] = nome === 'cursos' ? d.getAll(nome).map(String) : String(d.get(nome));
+      campos.missao = missao.value;
+      localStorage.setItem(CHAVE, JSON.stringify(campos));
+    } catch {}
+  }
+
+  function restaurar() {
+    try {
+      const campos = JSON.parse(localStorage.getItem(CHAVE) ?? 'null') as Record<string, string | string[]> | null;
+      if (!campos) return;
+      for (const [nome, valor] of Object.entries(campos)) {
+        if (nome === 'cursos') {
+          form.querySelectorAll<HTMLInputElement>('input[name="cursos"]').forEach((cb) => (cb.checked = (valor as string[]).includes(cb.value)));
+          continue;
+        }
+        const el = form.elements.namedItem(nome);
+        if (el instanceof HTMLInputElement || el instanceof HTMLSelectElement) el.value = String(valor);
+      }
+    } catch {}
+  }
+
+  form.addEventListener('input', atualizar);
+  form.addEventListener('change', atualizar);
+  form.addEventListener('reset', () => setTimeout(atualizar));
+  window.addEventListener('beforeprint', () => {
+    $('[data-data-impressao]').textContent = new Date().toLocaleDateString('pt-BR');
+  });
+  $('#imprimir').addEventListener('click', () => window.print());
+
+  restaurar();
+  atualizar();
+</script>

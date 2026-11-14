@@ -250,7 +250,8 @@ main.moldura {
   color: var(--grafite);
 }
 .campo select,
-.campo input[type='text'] {
+.campo input[type='text'],
+.campo input[type='date'] {
   font: inherit;
   font-size: 15px;
   color: var(--tinta);
@@ -262,8 +263,13 @@ main.moldura {
   width: 100%;
   min-height: 40px;
 }
-.campo input[type='text'] {
+.campo input[type='text'],
+.campo input[type='date'] {
   font-family: var(--f-numero);
+}
+.campo select:disabled {
+  color: var(--grafite);
+  background: var(--papel);
 }
 .campo .ajuda {
   font-size: 13px;

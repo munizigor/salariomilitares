@@ -1,0 +1,248 @@
+{
+  "norma": "Decreto Federal nº 12.324, de 19 de dezembro de 2024",
+  "normaLink": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/Decreto/D12324.htm",
+  "destinos": {
+    "BSB": {
+      "nome": "Brasília",
+      "valores": {
+        "CEL CMT-GERAL": 800,
+        "CORONEL": 510,
+        "TENENTE-CORONEL": 510,
+        "MAJOR": 510,
+        "CAPITAO": 425,
+        "PRIMEIRO TENENTE": 425,
+        "SEGUNDO TENENTE": 425,
+        "ASPIRANTE": 425,
+        "CADETE ULTIMO ANO": 425,
+        "CADETE DEMAIS ANOS": 425,
+        "SUBTENENTE": 425,
+        "PRIMEIRO SARGENTO": 425,
+        "SEGUNDO SARGENTO": 425,
+        "TERCEIRO SARGENTO": 425,
+        "CABO": 355,
+        "SOLDADO PRIMEIRA CLASSE": 355,
+        "SOLDADO SEGUNDA CLASSE": 355
+      }
+    },
+    "MAN": {
+      "nome": "Manaus",
+      "valores": {
+        "CEL CMT-GERAL": 800,
+        "CORONEL": 510,
+        "TENENTE-CORONEL": 510,
+        "MAJOR": 510,
+        "CAPITAO": 425,
+        "PRIMEIRO TENENTE": 425,
+        "SEGUNDO TENENTE": 425,
+        "ASPIRANTE": 425,
+        "CADETE ULTIMO ANO": 425,
+        "CADETE DEMAIS ANOS": 425,
+        "SUBTENENTE": 425,
+        "PRIMEIRO SARGENTO": 425,
+        "SEGUNDO SARGENTO": 425,
+        "TERCEIRO SARGENTO": 425,
+        "CABO": 355,
+        "SOLDADO PRIMEIRA CLASSE": 355,
+        "SOLDADO SEGUNDA CLASSE": 355
+      }
+    },
+    "RIO": {
+      "nome": "Rio de Janeiro",
+      "valores": {
+        "CEL CMT-GERAL": 800,
+        "CORONEL": 510,
+        "TENENTE-CORONEL": 510,
+        "MAJOR": 510,
+        "CAPITAO": 425,
+        "PRIMEIRO TENENTE": 425,
+        "SEGUNDO TENENTE": 425,
+        "ASPIRANTE": 425,
+        "CADETE ULTIMO ANO": 425,
+        "CADETE DEMAIS ANOS": 425,
+        "SUBTENENTE": 425,
+        "PRIMEIRO SARGENTO": 425,
+        "SEGUNDO SARGENTO": 425,
+        "TERCEIRO SARGENTO": 425,
+        "CABO": 355,
+        "SOLDADO PRIMEIRA CLASSE": 355,
+        "SOLDADO SEGUNDA CLASSE": 355
+      }
+    },
+    "BEL": {
+      "nome": "Belo Horizonte",
+      "valores": {
+        "CEL CMT-GERAL": 700,
+        "CORONEL": 450,
+        "TENENTE-CORONEL": 450,
+        "MAJOR": 450,
+        "CAPITAO": 380,
+        "PRIMEIRO TENENTE": 380,
+        "SEGUNDO TENENTE": 380,
+        "ASPIRANTE": 380,
+        "CADETE ULTIMO ANO": 380,
+        "CADETE DEMAIS ANOS": 380,
+        "SUBTENENTE": 380,
+        "PRIMEIRO SARGENTO": 380,
+        "SEGUNDO SARGENTO": 380,
+        "TERCEIRO SARGENTO": 380,
+        "CABO": 315,
+        "SOLDADO PRIMEIRA CLASSE": 315,
+        "SOLDADO SEGUNDA CLASSE": 315
+      }
+    },
+    "FOR": {
+      "nome": "Fortaleza",
+      "valores": {
+        "CEL CMT-GERAL": 700,
+        "CORONEL": 450,
+        "TENENTE-CORONEL": 450,
+        "MAJOR": 450,
+        "CAPITAO": 380,
+        "PRIMEIRO TENENTE": 380,
+        "SEGUNDO TENENTE": 380,
+        "ASPIRANTE": 380,
+        "CADETE ULTIMO ANO": 380,
+        "CADETE DEMAIS ANOS": 380,
+        "SUBTENENTE": 380,
+        "PRIMEIRO SARGENTO": 380,
+        "SEGUNDO SARGENTO": 380,
+        "TERCEIRO SARGENTO": 380,
+        "CABO": 315,
+        "SOLDADO PRIMEIRA CLASSE": 315,
+        "SOLDADO SEGUNDA CLASSE": 315
+      }
+    },
+    "POA": {
+      "nome": "Porto Alegre",
+      "valores": {
+        "CEL CMT-GERAL": 700,
+        "CORONEL": 450,
+        "TENENTE-CORONEL": 450,
+        "MAJOR": 450,
+        "CAPITAO": 380,
+        "PRIMEIRO TENENTE": 380,
+        "SEGUNDO TENENTE": 380,
+        "ASPIRANTE": 380,
+        "CADETE ULTIMO ANO": 380,
+        "CADETE DEMAIS ANOS": 380,
+        "SUBTENENTE": 380,
+        "PRIMEIRO SARGENTO": 380,
+        "SEGUNDO SARGENTO": 380,
+        "TERCEIRO SARGENTO": 380,
+        "CABO": 315,
+        "SOLDADO PRIMEIRA CLASSE": 315,
+        "SOLDADO SEGUNDA CLASSE": 315
+      }
+    },
+    "REC": {
+      "nome": "Recife",
+      "valores": {
+        "CEL CMT-GERAL": 700,
+        "CORONEL": 450,
+        "TENENTE-CORONEL": 450,
+        "MAJOR": 450,
+        "CAPITAO": 380,
+        "PRIMEIRO TENENTE": 380,
+        "SEGUNDO TENENTE": 380,
+        "ASPIRANTE": 380,
+        "CADETE ULTIMO ANO": 380,
+        "CADETE DEMAIS ANOS": 380,
+        "SUBTENENTE": 380,
+        "PRIMEIRO SARGENTO": 380,
+        "SEGUNDO SARGENTO": 380,
+        "TERCEIRO SARGENTO": 380,
+        "CABO": 315,
+        "SOLDADO PRIMEIRA CLASSE": 315,
+        "SOLDADO SEGUNDA CLASSE": 315
+      }
+    },
+    "SAL": {
+      "nome": "Salvador",
+      "valores": {
+        "CEL CMT-GERAL": 700,
+        "CORONEL": 450,
+        "TENENTE-CORONEL": 450,
+        "MAJOR": 450,
+        "CAPITAO": 380,
+        "PRIMEIRO TENENTE": 380,
+        "SEGUNDO TENENTE": 380,
+        "ASPIRANTE": 380,
+        "CADETE ULTIMO ANO": 380,
+        "CADETE DEMAIS ANOS": 380,
+        "SUBTENENTE": 380,
+        "PRIMEIRO SARGENTO": 380,
+        "SEGUNDO SARGENTO": 380,
+        "TERCEIRO SARGENTO": 380,
+        "CABO": 315,
+        "SOLDADO PRIMEIRA CLASSE": 315,
+        "SOLDADO SEGUNDA CLASSE": 315
+      }
+    },
+    "SAO": {
+      "nome": "São Paulo",
+      "valores": {
+        "CEL CMT-GERAL": 700,
+        "CORONEL": 450,
+        "TENENTE-CORONEL": 450,
+        "MAJOR": 450,
+        "CAPITAO": 380,
+        "PRIMEIRO TENENTE": 380,
+        "SEGUNDO TENENTE": 380,
+        "ASPIRANTE": 380,
+        "CADETE ULTIMO ANO": 380,
+        "CADETE DEMAIS ANOS": 380,
+        "SUBTENENTE": 380,
+        "PRIMEIRO SARGENTO": 380,
+        "SEGUNDO SARGENTO": 380,
+        "TERCEIRO SARGENTO": 380,
+        "CABO": 315,
+        "SOLDADO PRIMEIRA CLASSE": 315,
+        "SOLDADO SEGUNDA CLASSE": 315
+      }
+    },
+    "CAP": {
+      "nome": "Demais capitais",
+      "valores": {
+        "CEL CMT-GERAL": 700,
+        "CORONEL": 450,
+        "TENENTE-CORONEL": 450,
+        "MAJOR": 450,
+        "CAPITAO": 380,
+        "PRIMEIRO TENENTE": 380,
+        "SEGUNDO TENENTE": 380,
+        "ASPIRANTE": 380,
+        "CADETE ULTIMO ANO": 380,
+        "CADETE DEMAIS ANOS": 380,
+        "SUBTENENTE": 380,
+        "PRIMEIRO SARGENTO": 380,
+        "SEGUNDO SARGENTO": 380,
+        "TERCEIRO SARGENTO": 380,
+        "CABO": 315,
+        "SOLDADO PRIMEIRA CLASSE": 315,
+        "SOLDADO SEGUNDA CLASSE": 315
+      }
+    },
+    "DES": {
+      "nome": "Demais deslocamentos",
+      "valores": {
+        "CEL CMT-GERAL": 650,
+        "CORONEL": 395,
+        "TENENTE-CORONEL": 395,
+        "MAJOR": 395,
+        "CAPITAO": 335,
+        "PRIMEIRO TENENTE": 335,
+        "SEGUNDO TENENTE": 335,
+        "ASPIRANTE": 335,
+        "CADETE ULTIMO ANO": 335,
+        "CADETE DEMAIS ANOS": 335,
+        "SUBTENENTE": 335,
+        "PRIMEIRO SARGENTO": 335,
+        "SEGUNDO SARGENTO": 335,
+        "TERCEIRO SARGENTO": 335,
+        "CABO": 280,
+        "SOLDADO PRIMEIRA CLASSE": 280,
+        "SOLDADO SEGUNDA CLASSE": 280
+      }
+    }
+  }
+}
